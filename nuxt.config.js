@@ -72,7 +72,7 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: { dir: 'docs' },
   router: {
     base: '/Nuxt-Portfolio/',
   },
