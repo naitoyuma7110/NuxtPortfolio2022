@@ -75,14 +75,15 @@
     </v-row>
 
     <v-card-text>
-      <v-timeline>
+      <v-timeline :dense="$vuetify.breakpoint.name == 'xs'">
         <v-timeline-item
           v-for="(year, i) in years"
           :key="i"
           :color="year.color"
+          :right="$vuetify.breakpoint.name == 'xs'"
           small
         >
-          <template v-slot:opposite>
+          <template>
             <span
               :class="`headline font-weight-bold ${year.color}--text`"
               v-text="year.year"
