@@ -17,11 +17,24 @@
       </v-app-bar>
       <v-layout class="card-front-items" d-flex flex-column align-center>
         <v-avatar size="170">
-          <v-img class="avater-img" alt="user" src="myimg.jpg" />
+          <v-img
+            class="avater-img"
+            alt="user"
+            :src="require('~/assets/img/myimg.jpg')"
+          />
         </v-avatar>
         <p class="text-h4">Naito Yuma</p>
       </v-layout>
     </v-img>
+
+    <v-card-text>
+      <v-btn depressed rounded fab small>
+        <v-icon>mdi-facebook</v-icon>
+      </v-btn>
+      <v-btn depressed rounded fab small>
+        <v-icon>mdi-instagram</v-icon>
+      </v-btn>
+    </v-card-text>
 
     <v-row>
       <v-col cols="12" sm="7">
@@ -45,10 +58,10 @@
         <v-divider class="mx-5"></v-divider>
 
         <v-card-text>
-          <div class="mb-2">Birth Day: 1991/11/18</div>
-          <div class="mb-2">Birth Day: 1991/11/18</div>
-          <div class="mb-2">Birth Day: 1991/11/18</div>
-          <div></div>
+          <div class="mb-2">Date of birth: 1991/11/18</div>
+          <div class="mb-2">Birthplace: Shizuoka</div>
+          <div class="mb-2">Family: Baby on my wife</div>
+          <div class="mb-2">Likes: Muscle</div>
         </v-card-text>
       </v-col>
     </v-row>
@@ -88,7 +101,7 @@
         <v-timeline-item>
           <template v-slot:icon>
             <v-avatar size="50">
-              <v-img src="man.PNG" />
+              <v-img :src="require('~/assets/img/man.PNG')" />
             </v-avatar>
           </template>
           <template v-slot:opposite>
@@ -138,13 +151,11 @@
 
     <SkillsTab></SkillsTab>
 
-    <v-row>
-      <v-col cols="12" sm="5">
-        <v-card-title class="pb-0">技術・知識</v-card-title>
-        <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="py-0">Skills</v-card-subtitle>
-      </v-col>
-    </v-row>
+    <v-col cols="12" sm="5">
+      <v-card-title class="pb-0">技術・知識</v-card-title>
+      <v-divider class="mx-5"></v-divider>
+      <v-card-subtitle class="py-0">Skills</v-card-subtitle>
+    </v-col>
   </v-card>
 </template>
 
@@ -199,16 +210,14 @@ export default {
   components: { SkillsTab },
 }
 </script>
+
 <style>
 body {
   font-family: 'Roboto', sans-serif;
 }
-</style>
-
-<style>
 .card-back-image {
   overflow: visible;
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
 }
 
 .card-front-items {
