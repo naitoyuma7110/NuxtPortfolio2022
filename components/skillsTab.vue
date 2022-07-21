@@ -1,69 +1,64 @@
 <template>
   <div>
-    <v-card-text>
-      <v-tabs v-model="tab" icons-and-text>
-        <v-tabs-slider></v-tabs-slider>
+    <v-tabs show-arrows v-model="tab" icons-and-text>
+      <v-tabs-slider></v-tabs-slider>
 
-        <v-tab>
-          Recents
-          <v-icon>mdi-phone</v-icon>
-        </v-tab>
+      <v-tab>
+        開発環境/ツール
+        <v-icon>mdi-hammer-wrench</v-icon>
+      </v-tab>
 
-        <v-tab>
-          Favorites
-          <v-icon>mdi-heart</v-icon>
-        </v-tab>
+      <v-tab>
+        フロントエンド
+        <v-icon>mdi-application-brackets-outline</v-icon>
+      </v-tab>
 
-        <v-tab>
-          Nearby
-          <v-icon>mdi-account-box</v-icon>
-        </v-tab>
-      </v-tabs>
+      <v-tab>
+        バックエンド
+        <v-icon>mdi-server </v-icon>
+      </v-tab>
 
-      <v-tabs-items v-model="tab">
-        <v-tab-item :value="'tab-' + 1">
-          <v-card-text>
-            <v-btn class="ma-1" rounded color="primary" dark> HELLO </v-btn>
-            <v-btn
-              class="m-1 justify-self-end"
-              fab
-              outlined
-              small
-              color="primary"
-            >
-              <v-icon dark> mdi-plus </v-icon>
-            </v-btn>
-          </v-card-text>
+      <v-tab>
+        フィジカル
+        <v-icon>mdi-arm-flex-outline </v-icon>
+      </v-tab>
+    </v-tabs>
 
-          <div>
-            <v-scroll-x-transition apper hide-on-leave
-              >HELLO
-            </v-scroll-x-transition>
-          </div>
-        </v-tab-item>
+    <v-tabs-items v-model="tab">
+      <v-tab-item :value="0">
+        <v-card-text>
+          <v-row>
+            <v-col cols="3" v-for="(dev, i) in skillSet.devs" :key="i">
+              <v-btn rounded depressed fab small color="primary" dark>
+                <v-icon>{{ `mdi-` + dev.icon }}</v-icon>
+              </v-btn>
+              <div>{{ dev.name }}</div>
+            </v-col>
+          </v-row>
+          <v-spacer></v-spacer>
+        </v-card-text>
 
-        <v-tab-item :value="'tab-' + 2">
-          <v-card-text>
-            <v-btn class="ma-1" rounded color="primary" dark> World </v-btn>
-            <v-btn
-              class="m-1 justify-self-end"
-              fab
-              outlined
-              small
-              color="primary"
-            >
-              <v-icon dark> mdi-plus </v-icon>
-            </v-btn>
-          </v-card-text>
+        <div>
+          <v-scroll-x-transition apper hide-on-leave
+            >HELLO
+          </v-scroll-x-transition>
+        </div>
+      </v-tab-item>
 
-          <div>
-            <v-scroll-x-transition apper hide-on-leave
-              >World
-            </v-scroll-x-transition>
-          </div>
-        </v-tab-item>
-      </v-tabs-items>
-    </v-card-text>
+      <v-tab-item :value="1">
+        <v-card-text>
+          <v-btn rounded fab small color="primary" dark>
+            <v-icon>mdi-plus</v-icon>
+          </v-btn>
+        </v-card-text>
+
+        <div>
+          <v-scroll-x-transition apper hide-on-leave
+            >World
+          </v-scroll-x-transition>
+        </div>
+      </v-tab-item>
+    </v-tabs-items>
   </div>
 </template>
 
@@ -73,7 +68,28 @@ export default {
     return {
       tab: null,
       skillSet: {
-        DevEnvironment: ['Docker'],
+        devs: [
+          {
+            name: 'Docker',
+            icon: 'docker',
+          },
+          {
+            name: 'AWS',
+            icon: 'aws',
+          },
+          {
+            name: 'Azure',
+            icon: 'microsoft-azure',
+          },
+          {
+            name: 'XAMP',
+            icon: 'application-edit-outline',
+          },
+          {
+            name: 'VScode',
+            icon: 'application-edit-outline',
+          },
+        ],
       },
     }
   },

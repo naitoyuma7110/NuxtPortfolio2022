@@ -29,7 +29,7 @@
           理学療法士/プログラマー
         </v-card-title>
         <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="py-0"
+        <v-card-subtitle class="pt-0"
           >Pyhisical Therapist / Programer
         </v-card-subtitle>
         <v-card-text>
@@ -54,7 +54,7 @@
     </v-row>
     <!-- <div class="d-flex justify-center text-h5 ma-5">History</div> -->
     <v-row>
-      <v-col cols="4">
+      <v-col cols="12" sm="5">
         <v-card-title class="pb-0">経歴</v-card-title>
         <v-divider class="mx-5"></v-divider>
         <v-card-subtitle class="py-0">History</v-card-subtitle>
@@ -98,7 +98,7 @@
       </v-timeline>
     </v-card-text>
     <v-row>
-      <v-col cols="4">
+      <v-col cols="12" sm="5">
         <v-card-title class="pb-0">資格</v-card-title>
         <v-divider class="mx-5"></v-divider>
         <v-card-subtitle class="py-0">Lisence</v-card-subtitle>
@@ -107,13 +107,8 @@
     <v-list>
       <v-layout d-flex flex-column v-for="file in files" :key="file.title">
         <v-list-item>
-          <v-list-item-avatar>
-            <v-icon :class="file.color" dark v-text="file.icon"></v-icon>
-          </v-list-item-avatar>
-
           <v-list-item-content>
             <v-list-item-title v-text="file.title"></v-list-item-title>
-
             <v-list-item-subtitle
               class="mb-2"
               v-text="file.subtitle"
@@ -134,7 +129,7 @@
       </v-layout>
     </v-list>
     <v-row>
-      <v-col cols="4">
+      <v-col cols="12" sm="5">
         <v-card-title class="pb-0">技術・知識</v-card-title>
         <v-divider class="mx-5"></v-divider>
         <v-card-subtitle class="py-0">Skills</v-card-subtitle>
@@ -144,7 +139,7 @@
     <SkillsTab></SkillsTab>
 
     <v-row>
-      <v-col cols="4">
+      <v-col cols="12" sm="5">
         <v-card-title class="pb-0">技術・知識</v-card-title>
         <v-divider class="mx-5"></v-divider>
         <v-card-subtitle class="py-0">Skills</v-card-subtitle>
@@ -183,26 +178,18 @@ export default {
       ],
       files: [
         {
-          color: 'blue',
-          icon: 'mdi-clipboard-text',
           subtitle: 'Jan 20, 2014',
           title: 'Vacation itinerary',
         },
         {
-          color: 'amber',
-          icon: 'mdi-gesture-tap-button',
           subtitle: 'Jan 10, 2014',
           title: 'Kitchen remodel',
         },
         {
-          color: 'red',
-          icon: 'mdi-clipboard-text',
           subtitle: 'Jan 20, 2014',
           title: 'Vacation itinerary',
         },
         {
-          color: 'green',
-          icon: 'mdi-gesture-tap-button',
           subtitle: 'Jan 10, 2014',
           title: 'Kitchen remodel',
         },
