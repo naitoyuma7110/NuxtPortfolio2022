@@ -65,7 +65,6 @@
         </v-card-text>
       </v-col>
     </v-row>
-    <!-- <div class="d-flex justify-center text-h5 ma-5">History</div> -->
     <v-row>
       <v-col cols="12" sm="5">
         <v-card-title class="pb-0">経歴</v-card-title>

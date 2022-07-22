@@ -56,52 +56,49 @@
             </v-row>
           </v-btn-toggle>
         </v-card-text>
-
-        <div>
-          <v-row>
-            <v-col cols="12" sm="6">
-              <v-card
-                v-for="(skill, k) in skills"
-                :key="k"
-                v-show="toggle[i] == k"
-                outlined
-              >
-                <v-card-title class="text-h5">
-                  {{ skill.name }}
-                </v-card-title>
-                <v-card-text> {{ skill.discription }}</v-card-text>
-                <v-card-text>
-                  <v-row>
-                    <v-col
-                      v-for="(item, j) in skill.flamework"
-                      :key="j"
-                      cols="auto"
-                      class="px-1 mx-1 text-center"
-                    >
-                      <v-icon>{{ `mdi-` + item.icon }}</v-icon>
-                      <div>
-                        {{ item.name }}
-                      </div>
-                    </v-col>
-                  </v-row>
-                </v-card-text>
-                <v-card-actions class="d-flex justify-end mx-5">
-                  <v-rating
-                    :value="skill.rate"
-                    background-color="gray"
-                    color="amber"
-                    small
-                    dense
-                    readonly
-                  ></v-rating>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-            <v-col cols="12" sm="6">
-              <SkillChart></SkillChart>
-            </v-col>
-          </v-row>
-        </div>
+        <v-row>
+          <v-col cols="12" sm="6">
+            <v-card
+              v-for="(skill, k) in skills"
+              :key="k"
+              v-show="toggle[i] == k"
+              outlined
+            >
+              <v-card-subtitle>
+                {{ skill.name }}
+              </v-card-subtitle>
+              <v-card-text> {{ skill.discription }}</v-card-text>
+              <v-card-text>
+                <v-row>
+                  <v-col
+                    v-for="(item, j) in skill.flamework"
+                    :key="j"
+                    cols="auto"
+                    class="px-1 mx-1 text-center"
+                  >
+                    <v-icon>{{ `mdi-` + item.icon }}</v-icon>
+                    <div>
+                      {{ item.name }}
+                    </div>
+                  </v-col>
+                </v-row>
+              </v-card-text>
+              <v-card-actions class="d-flex justify-end mx-5">
+                <v-rating
+                  :value="skill.rate"
+                  background-color="gray"
+                  color="amber"
+                  small
+                  dense
+                  readonly
+                ></v-rating>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+          <v-col cols="12" sm="6">
+            <SkillChart></SkillChart>
+          </v-col>
+        </v-row>
       </v-tab-item>
     </v-tabs-items>
   </div>
