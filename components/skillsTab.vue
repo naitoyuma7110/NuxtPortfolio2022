@@ -164,8 +164,16 @@ export default {
               'this is Docker discription. Simple and No error great container env',
             flamework: [
               {
-                name: 'Vue/Nuxt',
+                name: 'Vue',
                 icon: 'vuejs',
+                color: 'teal',
+                rate: '3',
+                discription:
+                  'this is discription. this is discription.this is discription.this is discription.',
+              },
+              {
+                name: 'Nuxt',
+                icon: 'nuxt',
                 color: 'teal',
                 rate: '3',
                 discription:

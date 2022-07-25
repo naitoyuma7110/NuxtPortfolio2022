@@ -1,17 +1,15 @@
 <template>
-  <v-card>
+  <v-card rounded>
     <v-img
       height="16rem"
       lazy-src
       src="https://cdn.pixabay.com/photo/2020/07/12/07/47/bee-5396362_1280.jpg"
-      class="card-back-image"
+      class="card-back-image rounded-0"
     >
       <v-app-bar flat color="rgba(0, 0, 0, 0)">
         <!-- <v-app-bar-nav-icon color="white"></v-app-bar-nav-icon> -->
 
-        <v-toolbar-title class="text-h5 white--text">
-          About Me
-        </v-toolbar-title>
+        <v-toolbar-title class="text-h5 white--text"> About </v-toolbar-title>
 
         <v-spacer></v-spacer>
       </v-app-bar>
@@ -35,7 +33,6 @@
         <v-icon>mdi-instagram</v-icon>
       </v-btn>
     </v-card-text>
-
     <v-row>
       <v-col cols="12" sm="7">
         <v-card-title class="text--primary pb-0">
@@ -152,9 +149,9 @@
     <SkillsTab></SkillsTab>
 
     <v-col cols="12" sm="5">
-      <v-card-title class="pb-0">技術・知識</v-card-title>
+      <v-card-title class="pb-0">Dream</v-card-title>
       <v-divider class="mx-5"></v-divider>
-      <v-card-subtitle class="py-0">Skills</v-card-subtitle>
+      <v-card-subtitle class="py-0">I have a dream</v-card-subtitle>
     </v-col>
   </v-card>
 </template>

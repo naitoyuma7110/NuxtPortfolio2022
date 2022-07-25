@@ -40,12 +40,29 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/google-fonts', //追加
+    'nuxt-microcms-module', //追加
   ],
+  microcms: {
+    options: {
+      serviceDomain: process.env.SERVICE_DOMAIN,
+      apiKey: process.env.API_KEY,
+    },
+    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxt/content',
+    '@nuxtjs/date-fns',
   ],
+
+  // content: {
+  // markdown: {
+  // remarkPlugins: ['remark-math'],
+  // rehypePlugins: ['rehype-katex'],
+  // },
+  // },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
