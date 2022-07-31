@@ -1,15 +1,13 @@
 /*!
- * @kurkle/color v0.2.1
- * https://github.com/kurkle/color#readme
- * (c) 2022 Jukka Kurkela
- * Released under the MIT License
- */
+  * vue-router v3.5.4
+  * (c) 2022 Evan You
+  * @license MIT
+  */
 
 /*!
- * Chart.js v3.8.0
- * https://www.chartjs.org
- * (c) 2022 Chart.js Contributors
- * Released under the MIT License
+ * Vue.js v2.7.6
+ * (c) 2014-2022 Evan You
+ * Released under the MIT License.
  */
 
 
@@ -25,15 +23,26 @@
  * Released under the MIT License.
  */
 
+/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ *
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Lea Verou <https://lea.verou.me>
+ * @namespace
+ * @public
+ */
+
 
 /*!
-  * vue-router v3.5.4
-  * (c) 2022 Evan You
-  * @license MIT
-  */
+ * @kurkle/color v0.2.1
+ * https://github.com/kurkle/color#readme
+ * (c) 2022 Jukka Kurkela
+ * Released under the MIT License
+ */
 
 /*!
- * Vue.js v2.7.6
- * (c) 2014-2022 Evan You
- * Released under the MIT License.
+ * Chart.js v3.8.0
+ * https://www.chartjs.org
+ * (c) 2022 Chart.js Contributors
+ * Released under the MIT License
  */

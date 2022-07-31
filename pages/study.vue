@@ -1,101 +1,100 @@
 <template>
   <div>
     <v-row>
-      <v-col cols="12" sm="12">
-        <v-card-title class="pb-0 text-h5">プログラミング</v-card-title>
+      <v-col cols="12" sm="5">
+        <v-card-title class="pb-0">プログラミング</v-card-title>
         <v-divider class="mx-5"></v-divider>
         <v-card-subtitle class="py-0">Programing</v-card-subtitle>
       </v-col>
     </v-row>
-    <v-card v-for="work in contents" :key="work.id">
-      <!-- ここで指定したwork.idのPathは _idフォルダに動的に紐づけられる -->
-      <v-img width="30%" :src="work.thumbnail.url" :alt="work.title" />
-      <v-card-title class="works__name">{{ work.title }}</v-card-title>
-      <nuxt-link :to="`/works/${work.id}/`" class="works__inner">
-        リンク先へ
-      </nuxt-link>
-    </v-card>
-    <v-timeline dense>
-      <v-timeline-item
-        v-for="(card, i) in cards"
-        :key="i"
-        :color="card.color"
-        :right="$vuetify.breakpoint.name == 'xs'"
-        small
-      >
-        <template>
-          <span :class="`headline font-weight-bold ${card.color}--text`"></span>
-        </template>
-        <div class="py-4">
-          <h2 :class="`headline font-weight-light mb-4 ${card.color}--text`">
-            Lorem ipsum
-          </h2>
-          <v-row>
-            <v-col>
-              <v-card :loading="loading" class="mx-auto my-12" max-width="374">
-                <template slot="progress">
-                  <v-progress-linear
-                    color="deep-purple"
-                    height="10"
-                    indeterminate
-                  ></v-progress-linear>
-                </template>
 
-                <v-img
-                  height="250"
-                  src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-                ></v-img>
+    <v-stepper v-model="stepId" vertical outlined>
+      <div v-for="(works, i) in categrisedWorks" :key="i">
+        <v-stepper-step :step="i + 1">
+          <a @click="stepId = i + 1">
+            {{ stepInfo[i].title }}
+            <small>{{ stepInfo[i].discription }}</small>
+          </a>
+        </v-stepper-step>
 
-                <v-card-title>first step</v-card-title>
-
-                <v-card-text>
-                  <div>
-                    Small plates, salads & sandwiches - an intimate setting with
-                    12 indoor seats plus patio seating.
-                  </div>
+        <v-stepper-content :step="i + 1">
+          <v-row class="mx-0">
+            <v-col cols="12" sm="6" lg="4" v-for="work in works" :key="work.id">
+              <v-card class="mx-auto" elevation="1">
+                <v-row align="center">
+                  <v-col cols="4" sm="12">
+                    <v-img
+                      v-if="$vuetify.breakpoint.name !== 'xs'"
+                      lazy-src
+                      position="top"
+                      width="auto"
+                      height="10rem"
+                      :src="work.thumbnail.url"
+                    ></v-img>
+                    <v-avatar
+                      size="6rem"
+                      class="ms-4"
+                      v-if="$vuetify.breakpoint.name == 'xs'"
+                    >
+                      <v-img
+                        rounded
+                        :src="work.thumbnail.url"
+                        class="programing-icon"
+                      ></v-img>
+                    </v-avatar>
+                  </v-col>
+                  <v-col cols="8" sm="12">
+                    <div class="px-2">{{ work.title }}</div>
+                    <div class="d-flex flex-wrap pa-2">
+                      <v-btn
+                        v-for="(item, i) in work.skills"
+                        :key="i"
+                        x-small
+                        rounded
+                        depressed
+                        outlined
+                        class="mb-1"
+                      >
+                        {{ item }}</v-btn
+                      >
+                    </div>
+                  </v-col>
+                </v-row>
+                <v-card-text class="pa-2">
+                  {{ work.discription }}
                 </v-card-text>
-
-                <v-divider class="mx-4"></v-divider>
-
-                <v-card-title>Tonight's availability</v-card-title>
-
-                <v-card-text>
-                  <v-chip-group
-                    v-model="selection"
-                    active-class="deep-purple accent-4 white--text"
-                    column
+                <v-card-text class="pa-2">
+                  <v-btn
+                    @click="externalLink(work.url)"
+                    x-small
+                    outlined
+                    fab
+                    rounded
+                    color="primary"
                   >
-                    <v-chip>5:30PM</v-chip>
-
-                    <v-chip>7:30PM</v-chip>
-
-                    <v-chip>8:00PM</v-chip>
-
-                    <v-chip>9:00PM</v-chip>
-                  </v-chip-group>
-                </v-card-text>
-
-                <v-card-actions>
-                  <v-btn color="deep-purple lighten-2" text @click="reserve">
-                    Reserve
+                    <v-icon> mdi-github </v-icon>
                   </v-btn>
-                </v-card-actions>
+                  <v-btn
+                    @click="externalLink(work.url)"
+                    x-small
+                    outlined
+                    fab
+                    rounded
+                    color="primary"
+                  >
+                    <v-icon> mdi-link-variant </v-icon>
+                  </v-btn>
+                </v-card-text>
               </v-card>
             </v-col>
           </v-row>
-        </div>
-      </v-timeline-item>
-      <v-timeline-item>
-        <template v-slot:icon>
-          <v-avatar size="50">
-            <v-img :src="require('~/assets/img/man.PNG')" />
-          </v-avatar>
-        </template>
-        <template v-slot:opposite>
-          <span>Current</span>
-        </template>
-      </v-timeline-item>
-    </v-timeline>
+          <v-layout class="my-5" justify-end>
+            <v-btn outlined class="mx-1" @click="stepId -= 1"> Back </v-btn>
+            <v-btn color="primary mx-1" @click="stepId += 1">Next</v-btn>
+          </v-layout>
+        </v-stepper-content>
+      </div>
+    </v-stepper>
   </div>
 </template>
 
@@ -103,35 +102,106 @@
 export default {
   data() {
     return {
-      cards: [
+      stepId: 1,
+      stepInfo: [
         {
-          color: 'cyan',
-          year: '1960',
+          title: 'Learn HTML,css',
+          discription: 'How to make static web site',
         },
         {
-          color: 'green',
-          year: '1970',
+          title: 'First prgraming langage is JS',
+          discription: 'It based my fronend work',
         },
         {
-          color: 'pink',
-          year: '1980',
+          title: 'Learn more about design frameworks',
+          discription: 'very usefull',
         },
         {
-          color: 'amber',
-          year: '1990',
+          title: 'Vue of js framework',
+          discription: 'very usefull',
         },
         {
-          color: 'orange',
-          year: '2000',
+          title: 'Backend and API servies',
+          discription: 'very usefull',
+        },
+        {
+          title: 'Nuxt makes SSG, SSR anable',
+          discription: 'very usefull',
         },
       ],
     }
   },
+  methods: {
+    externalLink(url) {
+      window.open(url, '_blank')
+    },
+  },
+  computed: {
+    htmlWorks() {
+      const htmlWorks = this.contents.filter((work) => {
+        return (
+          !work.skills.includes('JavaScript') && work.skills.includes('HTML')
+        )
+      })
+      return htmlWorks
+    },
+    javascriptWorks() {
+      const javascriptWorks = this.contents.filter((work) => {
+        return work.skills.includes('JavaScript')
+      })
+      return javascriptWorks
+    },
+    bootstrapWorks() {
+      const bootstrapWorks = this.contents.filter((work) => {
+        return work.skills.includes('Bootstrap')
+      })
+      return bootstrapWorks
+    },
+    vueWorks() {
+      const vueWorks = this.contents.filter((work) => {
+        return work.skills.includes('Vue.js')
+      })
+      return vueWorks
+    },
+    apiWorks() {
+      const apiWorks = this.contents.filter((work) => {
+        return work.api.length && !work.skills.includes('Nuxt.js')
+      })
+      return apiWorks
+    },
+    nuxtWorks() {
+      const nuxtWorks = this.contents.filter((work) => {
+        return work.skills.includes('Nuxt.js')
+      })
+      return nuxtWorks
+    },
+    categrisedWorks() {
+      return [
+        this.htmlWorks,
+        this.javascriptWorks,
+        this.bootstrapWorks,
+        this.vueWorks,
+        this.apiWorks,
+        this.nuxtWorks,
+      ]
+    },
+  },
+
+  // ライフフック：asyncDataメソッドは、APIなどからデータを取得し、ローカルデータに格納する時に使用
   async asyncData({ $microcms }) {
-    const works = await $microcms.get({
+    const contents = await $microcms.get({
       endpoint: 'works',
+      queries: { limit: 20 },
+      // 取得するコンテンツにフィルターをかける場合
+      // queries: { filters: 'skill[contains]Bootstrap' },
     })
-    return works
+    return contents
   },
 }
 </script>
+
+<style>
+.programing-icon {
+  border: 1px solid #ccc;
+}
+</style>

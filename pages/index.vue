@@ -14,7 +14,7 @@
         <v-spacer></v-spacer>
       </v-app-bar>
       <v-layout class="card-front-items" d-flex flex-column align-center>
-        <v-avatar size="170">
+        <v-avatar size="170" color="primary">
           <v-img
             class="avater-img"
             alt="user"

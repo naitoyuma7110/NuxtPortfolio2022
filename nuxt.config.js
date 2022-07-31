@@ -22,13 +22,19 @@ export default {
         href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
       },
     ],
+    // MathJaxのライブラリをCDN経由で読み込み
+    script: [
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['@/plugins/prism'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -58,10 +64,9 @@ export default {
   ],
 
   // content: {
-  // markdown: {
-  // remarkPlugins: ['remark-math'],
-  // rehypePlugins: ['rehype-katex'],
-  // },
+  //   markdown: {
+  //     remarkPlugins: ['@/plugins/prism'],
+  //   },
   // },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

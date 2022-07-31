@@ -61,6 +61,8 @@ export default {
   data() {
     return {
       drawer: false,
+      clipped: true,
+      fixed: true,
       items: [
         {
           icon: 'mdi-card-account-details-outline',
@@ -76,6 +78,11 @@ export default {
           icon: 'mdi-card-text-outline',
           title: 'Post',
           to: '/post',
+        },
+        {
+          icon: 'mdi-card-text-outline',
+          title: 'Test',
+          to: '/test',
         },
       ],
       miniVariant: false,
