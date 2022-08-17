@@ -10,16 +10,23 @@
 
     <v-stepper v-model="stepId" vertical outlined>
       <div v-for="(works, i) in categrisedWorks" :key="i">
-        <v-stepper-step :step="i + 1">
-          <a @click="stepId = i + 1">
+        <v-stepper-step class="title-pointer" :step="i + 1">
+          <div @click="stepId = i + 1">
             {{ stepInfo[i].title }}
             <small>{{ stepInfo[i].discription }}</small>
-          </a>
+          </div>
         </v-stepper-step>
 
         <v-stepper-content :step="i + 1">
-          <v-row class="mx-0">
-            <v-col cols="12" sm="6" lg="4" v-for="work in works" :key="work.id">
+          <v-row class="mx-0 pa-0">
+            <v-col
+              cols="12"
+              sm="6"
+              class="pa-1 my-1"
+              lg="4"
+              v-for="work in works"
+              :key="work.id"
+            >
               <v-card class="mx-auto" elevation="1">
                 <v-row align="center">
                   <v-col cols="4" sm="12">
@@ -32,7 +39,7 @@
                       :src="work.thumbnail.url"
                     ></v-img>
                     <v-avatar
-                      size="6rem"
+                      size="3.5rem"
                       class="ms-4"
                       v-if="$vuetify.breakpoint.name == 'xs'"
                     >
@@ -203,5 +210,8 @@ export default {
 <style>
 .programing-icon {
   border: 1px solid #ccc;
+}
+.title-pointer {
+  cursor: pointer;
 }
 </style>

@@ -1,50 +1,123 @@
 <template>
-  <v-stepper v-model="e6" vertical>
-    <v-stepper-step :complete="e6 > 1" step="1">
-      Select an app
-      <small>Summarize if needed</small>
-    </v-stepper-step>
+  <div>
+    <div class="text-center d-flex pb-4">
+      <v-btn @click="all"> all </v-btn>
+      <div>{{ panel }}</div>
+      <v-btn @click="none"> none </v-btn>
+    </div>
 
-    <v-stepper-content step="1">
-      <v-card color="grey lighten-1" class="mb-12" height="200px"></v-card>
-      <v-btn color="primary" @click="e6 = 2"> Continue </v-btn>
-      <v-btn text> Cancel </v-btn>
-    </v-stepper-content>
-
-    <v-stepper-step :complete="e6 > 2" step="2">
-      Configure analytics for this app
-    </v-stepper-step>
-
-    <v-stepper-content step="2">
-      <v-card color="grey lighten-1" class="mb-12" height="200px"></v-card>
-      <v-btn color="primary" @click="e6 = 3"> Continue </v-btn>
-      <v-btn text> Cancel </v-btn>
-    </v-stepper-content>
-
-    <v-stepper-step :complete="e6 > 3" step="3">
-      Select an ad format and name ad unit
-    </v-stepper-step>
-
-    <v-stepper-content step="3">
-      <v-card color="grey lighten-1" class="mb-12" height="200px"></v-card>
-      <v-btn color="primary" @click="e6 = 4"> Continue </v-btn>
-      <v-btn text> Cancel </v-btn>
-    </v-stepper-content>
-
-    <v-stepper-step step="4"> View setup instructions </v-stepper-step>
-    <v-stepper-content step="4">
-      <v-card color="grey lighten-1" class="mb-12" height="200px"></v-card>
-      <v-btn color="primary" @click="e6 = 1"> Continue </v-btn>
-      <v-btn text> Cancel </v-btn>
-    </v-stepper-content>
-  </v-stepper>
+    <v-expansion-panels v-model="panel" multiple>
+      <v-expansion-panel v-for="(works, i) in categrisedWorks" :key="i">
+        <v-expansion-panel-header>{{
+          stepInfo[i].title
+        }}</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
+  </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      e6: 1,
+      stepInfo: [
+        {
+          title: 'Learn HTML,css',
+          discription: 'How to make static web site',
+        },
+        {
+          title: 'First prgraming langage is JS',
+          discription: 'It based my fronend work',
+        },
+        {
+          title: 'Learn more about design frameworks',
+          discription: 'very usefull',
+        },
+        {
+          title: 'Vue of js framework',
+          discription: 'very usefull',
+        },
+        {
+          title: 'Backend and API servies',
+          discription: 'very usefull',
+        },
+        {
+          title: 'Nuxt makes SSG, SSR anable',
+          discription: 'very usefull',
+        },
+      ],
     }
+  },
+  methods: {
+    externalLink(url) {
+      window.open(url, '_blank')
+    },
+  },
+  computed: {
+    htmlWorks() {
+      const htmlWorks = this.contents.filter((work) => {
+        return (
+          !work.skills.includes('JavaScript') && work.skills.includes('HTML')
+        )
+      })
+      return htmlWorks
+    },
+    javascriptWorks() {
+      const javascriptWorks = this.contents.filter((work) => {
+        return work.skills.includes('JavaScript')
+      })
+      return javascriptWorks
+    },
+    bootstrapWorks() {
+      const bootstrapWorks = this.contents.filter((work) => {
+        return work.skills.includes('Bootstrap')
+      })
+      return bootstrapWorks
+    },
+    vueWorks() {
+      const vueWorks = this.contents.filter((work) => {
+        return work.skills.includes('Vue.js')
+      })
+      return vueWorks
+    },
+    apiWorks() {
+      const apiWorks = this.contents.filter((work) => {
+        return work.api.length && !work.skills.includes('Nuxt.js')
+      })
+      return apiWorks
+    },
+    nuxtWorks() {
+      const nuxtWorks = this.contents.filter((work) => {
+        return work.skills.includes('Nuxt.js')
+      })
+      return nuxtWorks
+    },
+    categrisedWorks() {
+      return [
+        this.htmlWorks,
+        this.javascriptWorks,
+        this.bootstrapWorks,
+        this.vueWorks,
+        this.apiWorks,
+        this.nuxtWorks,
+      ]
+    },
+  },
+
+  // ライフフック：asyncDataメソッドは、APIなどからデータを取得し、ローカルデータに格納する時に使用
+  async asyncData({ $microcms }) {
+    const contents = await $microcms.get({
+      endpoint: 'works',
+      queries: { limit: 20 },
+      // 取得するコンテンツにフィルターをかける場合
+      // queries: { filters: 'skill[contains]Bootstrap' },
+    })
+    return contents
   },
 }
 </script>
