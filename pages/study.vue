@@ -28,6 +28,12 @@
               :key="work.id"
             >
               <v-card class="mx-auto" elevation="1">
+                <div
+                  v-if="$vuetify.breakpoint.name == 'xs'"
+                  class="pa-2 text-center"
+                >
+                  {{ work.title }}
+                </div>
                 <v-row align="center">
                   <v-col cols="4" sm="12">
                     <v-img
@@ -51,7 +57,9 @@
                     </v-avatar>
                   </v-col>
                   <v-col cols="8" sm="12">
-                    <div class="px-2">{{ work.title }}</div>
+                    <div v-if="$vuetify.breakpoint.name != 'xs'" class="px-2">
+                      {{ work.title }}
+                    </div>
                     <div class="d-flex flex-wrap pa-2">
                       <v-btn
                         v-for="(item, i) in work.skills"

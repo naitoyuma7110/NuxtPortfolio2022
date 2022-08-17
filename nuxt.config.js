@@ -63,16 +63,11 @@ export default {
     '@nuxtjs/date-fns',
   ],
 
-  // content: {
-  //   markdown: {
-  //     remarkPlugins: ['@/plugins/prism'],
-  //   },
-  // },
-
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
+    proxy: true,
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -94,8 +89,6 @@ export default {
     },
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  // build: { dir: 'docs' },
   router: {
     base: '/NuxtPortfolio/',
   },
