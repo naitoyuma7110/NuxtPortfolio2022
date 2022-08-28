@@ -51,7 +51,7 @@
     <!-- :to="'/articles/' + article.dir + article.slug" -->
     <v-scroll-y-reverse-transition group hide-on-leave>
       <v-card
-        @click="toArticles(article.path)"
+        @click="toArticles(article.slug)"
         outlined
         hover
         v-for="article in filteredArticle"
@@ -153,10 +153,17 @@ export default {
     },
   },
   methods: {
-    toArticles(articleUrl) {
+    // "/article/index"へのリンク
+    // toArticles(articleUrl) {
+    //   this.$router.push({
+    //     path: 'articles/',
+    //     query: { url: articleUrl },
+    //   })
+    // },
+    // /article/_slugへのリンク
+    toArticles(slug) {
       this.$router.push({
-        path: 'articles/',
-        query: { url: articleUrl },
+        path: `articles/${slug}`,
       })
     },
   },

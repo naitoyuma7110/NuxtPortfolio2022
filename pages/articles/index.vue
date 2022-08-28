@@ -16,6 +16,14 @@
 <script>
 import Prism from '@/plugins/prism'
 export default {
+  // params.slugは.mdのslug(ファイル名)
+  async asyncData({ $content, query }) {
+    // const article = await $content('/articles/blog/', params.slug).fetch()
+    const article = await $content(query.url).fetch()
+    return {
+      article,
+    }
+  },
   mounted() {
     Prism.highlightAll()
     this.renderMathJax()
@@ -39,14 +47,6 @@ export default {
         window.MathJax.Hub.Queue(['Typeset', window.MathJax.Hub])
       }
     },
-  },
-  // params.slugは.mdのslug(ファイル名)
-  async asyncData({ $content, query }) {
-    // const article = await $content('/articles/blog/', params.slug).fetch()
-    const article = await $content(query.url).fetch()
-    return {
-      article,
-    }
   },
 }
 </script>
