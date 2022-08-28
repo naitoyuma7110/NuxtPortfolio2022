@@ -45,8 +45,10 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/google-fonts', //追加
-    'nuxt-microcms-module', //追加
+    // 追加
+    '@nuxtjs/google-fonts',
+    // 追加
+    'nuxt-microcms-module',
   ],
   microcms: {
     options: {
@@ -95,10 +97,5 @@ export default {
 
   generate: {
     dir: 'docs',
-    async ready() {
-      const { $content } = require('@nuxt/content')
-      const files = await $content().only(['slug']).fetch()
-      console.log(files)
-    },
   },
 }

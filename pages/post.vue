@@ -51,11 +51,11 @@
     <!-- :to="'/articles/' + article.dir + article.slug" -->
     <v-scroll-y-reverse-transition group hide-on-leave>
       <v-card
+        @click="toArticles(article.path)"
         outlined
         hover
         v-for="article in filteredArticle"
         :key="article.slug"
-        @click="toArticles(article.path)"
         class="my-2"
       >
         <!-- to="/dir/ + param の形で記事のslugをparamとして渡す + _paramsファイルへルーティング" -->
@@ -76,6 +76,13 @@
 
 <script>
 export default {
+  async asyncData({ $content }) {
+    // 記事を全て取得（作成日で降順にソート）
+    const articles = await $content('articles', { deep: true })
+      .sortBy('createdAt', 'desc')
+      .fetch()
+    return { articles }
+  },
   data: () => ({
     selectedTag: '全ての記事',
     date: null,
@@ -101,14 +108,6 @@ export default {
       'Java Silver',
     ],
   }),
-  methods: {
-    toArticles(articleUrl) {
-      this.$router.push({
-        path: 'articles/',
-        query: { url: articleUrl },
-      })
-    },
-  },
   computed: {
     filteredArticle() {
       const articles = []
@@ -121,7 +120,6 @@ export default {
         }
         // console.log(article.tags && article.tags.includes('tag1'))
       })
-
       return articles
     },
     articleTags() {
@@ -154,12 +152,13 @@ export default {
       return tags
     },
   },
-  async asyncData({ $content }) {
-    // 記事を全て取得（作成日で降順にソート）
-    const articles = await $content('articles', { deep: true })
-      .sortBy('createdAt', 'desc')
-      .fetch()
-    return { articles }
+  methods: {
+    toArticles(articleUrl) {
+      this.$router.push({
+        path: 'articles/',
+        query: { url: articleUrl },
+      })
+    },
   },
 }
 </script>
