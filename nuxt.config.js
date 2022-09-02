@@ -99,7 +99,7 @@ export default {
     base: '/NuxtPortfolio/',
   },
 
-  generate: {
-    dir: 'docs',
-  },
+  // generate: {
+  //   dir: 'docs',
+  // },
 }
