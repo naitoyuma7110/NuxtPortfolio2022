@@ -95,9 +95,9 @@ export default {
     },
   },
 
-  router: {
-    base: '/NuxtPortfolio/',
-  },
+  // router: {
+  //   base: '/NuxtPortfolio/',
+  // },
 
   generate: {
     dir: 'docs',
