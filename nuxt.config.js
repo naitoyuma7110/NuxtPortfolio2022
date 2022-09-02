@@ -63,7 +63,11 @@ export default {
     '@nuxtjs/axios',
     '@nuxt/content',
     '@nuxtjs/date-fns',
+    '@nuxtjs/markdownit',
   ],
+  markdownit: {
+    injected: true,
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

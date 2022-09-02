@@ -4,11 +4,13 @@
     elevation="3"
   >
     <v-card-subtitle class="py-1">
-      <time :datetime="article.createdAt">
+      <time :datetime="article.createdAt" v-if="article.createdAt">
         {{ $dateFns.format(new Date(article.createdAt), 'yyyy/MM/dd') }}
       </time>
     </v-card-subtitle>
-    <v-card-title class="px-1">{{ article.title }}</v-card-title>
+    <v-card-title class="px-1">{{
+      article.title ? article.title : 'notitle'
+    }}</v-card-title>
     <NuxtContent :document="article" />
   </v-card>
 </template>
@@ -51,7 +53,7 @@ export default {
 }
 </script>
 
-<style>
+<style scorped>
 .v-application code {
   all: unset !important;
 }
@@ -74,5 +76,13 @@ h3 {
 }
 ul {
   margin: 1rem 0;
+}
+
+v-card {
+  max-width: 1vw;
+}
+img {
+  width: 100%;
+  height: auto;
 }
 </style>
