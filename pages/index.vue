@@ -15,7 +15,7 @@
       </v-app-bar>
       <v-layout class="card-front-items" d-flex flex-column align-center>
         <v-avatar class="myimg_border" size="170" color="white">
-          <img class="avater-img" alt="user" src="~/assets/img/myimg.jpg" />
+          <img class="avater-img" alt="user" src="/img/myimg.jpg" />
         </v-avatar>
         <p class="text-h4">Naito Yuma</p>
       </v-layout>
