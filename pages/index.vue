@@ -14,12 +14,8 @@
         <v-spacer></v-spacer>
       </v-app-bar>
       <v-layout class="card-front-items" d-flex flex-column align-center>
-        <v-avatar size="170" color="primary">
-          <v-img
-            class="avater-img"
-            alt="user"
-            :src="require('~/assets/img/myimg.jpg')"
-          />
+        <v-avatar class="myimg_border" size="170" color="white">
+          <img class="avater-img" alt="user" src="@/assets/img/myimg.jpg" />
         </v-avatar>
         <p class="text-h4">Naito Yuma</p>
       </v-layout>
@@ -94,16 +90,6 @@
               scaevola imperdiet nec ut
             </div>
           </div>
-        </v-timeline-item>
-        <v-timeline-item>
-          <template v-slot:icon>
-            <v-avatar size="50">
-              <v-img :src="require('~/assets/img/man.PNG')" />
-            </v-avatar>
-          </template>
-          <template v-slot:opposite>
-            <span>Current</span>
-          </template>
         </v-timeline-item>
       </v-timeline>
     </v-card-text>
@@ -223,6 +209,9 @@ body {
 }
 
 .card-front-items .avater-img {
-  border: 0.2rem white solid;
+  width: auto;
+}
+.myimg_border {
+  border: 0.2rem solid white;
 }
 </style>
