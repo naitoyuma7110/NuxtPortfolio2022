@@ -32,23 +32,13 @@
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title v-text="activeTitle" />
     </v-app-bar>
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
-    <!-- <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer> -->
     <v-footer :absolute="!fixed" app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
@@ -66,17 +56,17 @@ export default {
       items: [
         {
           icon: 'mdi-card-account-details-outline',
-          title: 'About Me',
+          title: 'プロフィール',
           to: '/',
         },
         {
           icon: 'mdi-pen',
-          title: 'Study Load Map',
+          title: 'プログラミング',
           to: '/study',
         },
         {
           icon: 'mdi-card-text-outline',
-          title: 'Post',
+          title: '勉強ノート',
           to: '/post',
         },
         {
@@ -86,8 +76,18 @@ export default {
         },
       ],
       miniVariant: false,
-      title: 'Portfolio',
     }
+  },
+  computed: {
+    activeTitle() {
+      let activeTitle = ''
+      this.items.forEach((item) => {
+        if (item.to === this.$route.path) {
+          activeTitle = item.title
+        }
+      })
+      return activeTitle
+    },
   },
 }
 </script>

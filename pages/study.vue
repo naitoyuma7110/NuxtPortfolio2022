@@ -1,10 +1,10 @@
 <template>
   <div>
-    <v-row>
+    <v-row class="py-5">
       <v-col cols="12" sm="5">
-        <v-card-title class="pb-0">プログラミング</v-card-title>
+        <v-card-title class="pb-0">学習ロードマップ</v-card-title>
         <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="py-0">Programing</v-card-subtitle>
+        <v-card-subtitle class="py-0">Load Map</v-card-subtitle>
       </v-col>
     </v-row>
 
@@ -20,12 +20,12 @@
         <v-stepper-content :step="i + 1">
           <v-row class="mx-0 pa-0">
             <v-col
+              v-for="work in works"
+              :key="work.id"
               cols="12"
               sm="6"
               class="pa-1 my-1"
               lg="4"
-              v-for="work in works"
-              :key="work.id"
             >
               <v-card class="mx-auto" elevation="1">
                 <div
@@ -45,9 +45,9 @@
                       :src="work.thumbnail.url"
                     ></v-img>
                     <v-avatar
+                      v-if="$vuetify.breakpoint.name == 'xs'"
                       size="3.5rem"
                       class="ms-4"
-                      v-if="$vuetify.breakpoint.name == 'xs'"
                     >
                       <v-img
                         rounded
@@ -80,22 +80,22 @@
                 </v-card-text>
                 <v-card-text class="pa-2">
                   <v-btn
-                    @click="externalLink(work.url)"
                     x-small
                     outlined
                     fab
                     rounded
                     color="primary"
+                    @click="externalLink(work.url)"
                   >
                     <v-icon> mdi-github </v-icon>
                   </v-btn>
                   <v-btn
-                    @click="externalLink(work.url)"
                     x-small
                     outlined
                     fab
                     rounded
                     color="primary"
+                    @click="externalLink(work.url)"
                   >
                     <v-icon> mdi-link-variant </v-icon>
                   </v-btn>
@@ -115,6 +115,16 @@
 
 <script>
 export default {
+  // ライフフック：asyncDataメソッドは、APIなどからデータを取得し、ローカルデータに格納する時に使用
+  async asyncData({ $microcms }) {
+    const contents = await $microcms.get({
+      endpoint: 'works',
+      queries: { limit: 20 },
+      // 取得するコンテンツにフィルターをかける場合
+      // queries: { filters: 'skill[contains]Bootstrap' },
+    })
+    return contents
+  },
   data() {
     return {
       stepId: 1,
@@ -145,11 +155,6 @@ export default {
         },
       ],
     }
-  },
-  methods: {
-    externalLink(url) {
-      window.open(url, '_blank')
-    },
   },
   computed: {
     htmlWorks() {
@@ -201,16 +206,10 @@ export default {
       ]
     },
   },
-
-  // ライフフック：asyncDataメソッドは、APIなどからデータを取得し、ローカルデータに格納する時に使用
-  async asyncData({ $microcms }) {
-    const contents = await $microcms.get({
-      endpoint: 'works',
-      queries: { limit: 20 },
-      // 取得するコンテンツにフィルターをかける場合
-      // queries: { filters: 'skill[contains]Bootstrap' },
-    })
-    return contents
+  methods: {
+    externalLink(url) {
+      window.open(url, '_blank')
+    },
   },
 }
 </script>

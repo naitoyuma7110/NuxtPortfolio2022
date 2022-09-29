@@ -1,0 +1,82 @@
+<template>
+  <div>
+    <v-img
+      height="16rem"
+      lazy-src
+      src="https://cdn.pixabay.com/photo/2020/07/12/07/47/bee-5396362_1280.jpg"
+      class="card-back-image rounded-0"
+    >
+      <v-app-bar flat color="rgba(0, 0, 0, 0)">
+        <v-toolbar-title class="text-h5 white--text">About me</v-toolbar-title>
+        <v-spacer></v-spacer>
+      </v-app-bar>
+      <v-layout class="card-front-items" d-flex flex-column align-center>
+        <v-avatar class="myimg_border" size="170" color="white">
+          <img class="avater-img" alt="user" src="/img/myimg.jpg" />
+        </v-avatar>
+        <p class="text-h4">Naito Yuma</p>
+      </v-layout>
+    </v-img>
+
+    <v-card-text>
+      <v-btn depressed rounded fab small>
+        <v-icon color="blue">mdi-facebook</v-icon>
+      </v-btn>
+      <v-btn depressed rounded fab small>
+        <v-icon>mdi-github</v-icon>
+      </v-btn>
+      <v-btn depressed rounded fab small>
+        <v-icon>mdi-account-arrow-right</v-icon>
+      </v-btn>
+    </v-card-text>
+    <v-row>
+      <v-col cols="12" sm="7">
+        <v-card-title class="text--primary pb-0">
+          理学療法士/プログラマー
+        </v-card-title>
+        <v-divider class="mx-5"></v-divider>
+        <v-card-subtitle class="pt-0"
+          >Pyhisical Therapist / Programer
+        </v-card-subtitle>
+        <v-card-text>
+          <div class="mb-2">
+            私の夢は医療・介護業界を日々、自己を高め社会に貢献しようと努める人達が、
+            長所や専門性を発揮できる場所にすることです。
+          </div>
+        </v-card-text>
+      </v-col>
+      <v-col cols="12" sm="5">
+        <v-card-title class="text--primary pb-0">プロフィール</v-card-title>
+        <v-divider class="mx-5"></v-divider>
+        <v-card-subtitle class="pt-0">Profile</v-card-subtitle>
+        <v-card-text>
+          <div class="mb-2">出身地: 静岡</div>
+          <div class="mb-2">年齢: 30</div>
+          <div class="mb-2">仕事: プログラマー(フロントエンド)</div>
+          <div class="mb-2">デッドリフト:140kg(5rep)</div>
+          <div class="mb-2"></div>
+        </v-card-text>
+      </v-col>
+    </v-row>
+  </div>
+</template>
+
+<script></script>
+<style>
+.card-back-image {
+  overflow: visible;
+  margin-bottom: 6rem;
+}
+
+.card-front-items {
+  bottom: -8rem;
+  transform: translateY(40%);
+}
+
+.card-front-items .avater-img {
+  width: auto;
+}
+.myimg_border {
+  border: 0.2rem solid white;
+}
+</style>

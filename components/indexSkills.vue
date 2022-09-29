@@ -1,5 +1,12 @@
 <template>
   <div>
+    <v-row>
+      <v-col cols="12" sm="5">
+        <v-card-title class="pb-0">技術・知識</v-card-title>
+        <v-divider class="mx-5"></v-divider>
+        <v-card-subtitle class="py-0">Skills</v-card-subtitle>
+      </v-col>
+    </v-row>
     <v-tabs v-model="tab" show-arrows icons-and-text>
       <v-tabs-slider></v-tabs-slider>
 
@@ -17,97 +24,36 @@
         バックエンド
         <v-icon>mdi-server </v-icon>
       </v-tab>
-
-      <v-tab>
-        フィジカル
-        <v-icon>mdi-arm-flex-outline </v-icon>
-      </v-tab>
     </v-tabs>
-
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="(skills, i) in skillSet" :key="i" :value="i">
-        <v-card-text>
-          <v-btn-toggle v-model="toggle[i]" group mandatory>
-            <v-row>
-              <v-col
-                v-for="(skill, k) in skills"
-                :key="k"
-                cols="auto"
-                class="px-1 mx-1 text-center"
-              >
-                <v-btn
-                  :outlined="!(toggle[i] == k)"
-                  :color="skill.color"
-                  depressed
-                  rounded
-                  fab
-                  small
-                >
-                  <v-icon>{{ `mdi-` + skill.icon }}</v-icon>
-                </v-btn>
-                <div
-                  :class="
-                    !(toggle[i] == k) ? `text--disabled` : `` + `text-center`
-                  "
-                >
-                  {{ skill.name }}
-                </div>
-              </v-col>
-            </v-row>
-          </v-btn-toggle>
-        </v-card-text>
-        <v-row>
-          <v-col cols="12" sm="6">
-            <v-card
-              v-for="(skill, k) in skills"
-              v-show="toggle[i] == k"
-              :key="k"
-              outlined
-            >
-              <v-card-subtitle>
-                {{ skill.name }}
-              </v-card-subtitle>
-              <v-card-text> {{ skill.discription }}</v-card-text>
-              <v-card-text>
-                <v-row>
-                  <v-col
-                    v-for="(item, j) in skill.flamework"
-                    :key="j"
-                    cols="auto"
-                    class="px-1 mx-1 text-center"
-                  >
-                    <v-icon>{{ `mdi-` + item.icon }}</v-icon>
-                    <div>
-                      {{ item.name }}
-                    </div>
-                  </v-col>
-                </v-row>
+        <v-card
+          v-for="(skill, j) in skills"
+          :key="j"
+          class="mx-auto"
+          elevation="1"
+        >
+          <v-layout d-flex align-center class="py-2">
+            <v-avatar class="ma-5">
+              <v-icon size="50" :color="skill.color">
+                {{ `mdi-` + skill.icon }}
+              </v-icon>
+            </v-avatar>
+            <div>
+              <v-card-title class="my-0 py-0">{{ skill.name }}</v-card-title>
+              <v-card-text class="my-0 py-0">
+                {{ skill.discription }}
+                {{ skill.discription }}
               </v-card-text>
-              <v-card-actions class="d-flex justify-end mx-5">
-                <v-rating
-                  :value="skill.rate"
-                  background-color="gray"
-                  color="amber"
-                  small
-                  dense
-                  readonly
-                ></v-rating>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-          <v-col cols="12" sm="6">
-            <SkillChart></SkillChart>
-          </v-col>
-        </v-row>
+            </div>
+          </v-layout>
+        </v-card>
       </v-tab-item>
     </v-tabs-items>
   </div>
 </template>
-
 <script>
-import SkillChart from './skillChart.vue'
 export default {
-  components: { SkillChart },
   data() {
     return {
       tab: null,
@@ -129,22 +75,6 @@ export default {
             rate: 2,
             discription:
               'this is AWS discription. I aften use EC2 server as static hosting servies',
-          },
-          {
-            name: 'Azure',
-            icon: 'microsoft-azure',
-            color: 'primary',
-            rate: 1,
-            discription:
-              'this is Azure discription. I use faceAI-API. It anlysis face image to read that feel',
-          },
-          {
-            name: 'XAMP',
-            icon: 'application-edit-outline',
-            color: 'orange',
-            rate: 2,
-            discription:
-              'this is XAMP discription. XAMP and Wordpress are best friend',
           },
           {
             name: 'Heroku',
