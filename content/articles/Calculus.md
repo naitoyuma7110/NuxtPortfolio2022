@@ -1,10 +1,10 @@
 ---
 title: 積分
-description: 積分
-tags: ['tag3']
+description:
+tags: ['数学', '積分']
 ---
 
-## 「変化」を表す傾きを求める微分
+## 「傾き」を求める微分
 
 #### <b>1 次関数の傾き</b>
 
@@ -46,7 +46,7 @@ plt.ylabel("( cm )")
 plt.show()
 ```
 
-![Calculus_2_0.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/601137/9396111b-38f8-7d7c-da9c-b6ef75f17337.png)
+![png](Calculus_files/Calculus_2_0.png)
 
 ```python
 def katamuki(x1,x2,y1,y2): # 2点の座標(x,y)を引数に傾きを求める式を作成
@@ -91,7 +91,7 @@ plt.ylabel("( f(x) )")
 plt.show()
 ```
 
-![Calculus_6_0.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/601137/44407561-4323-f4e0-8649-da34ae3d833d.png)
+![png](Calculus_files/Calculus_6_0.png)
 
 例えば上記のグラフ
 $$ y = x^2 + 4x + 4\\ $$
@@ -125,7 +125,7 @@ $\displaystyle 2 x + 4$
 plot(expr2,(x, -20 , 20))
 ```
 
-![Calculus_10_0.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/601137/8f01fef1-7fa5-e9e8-d065-b3c5adef8120.png)
+![png](Calculus_files/Calculus_10_0.png)
 
     <sympy.plotting.plot.Plot at 0x7ff729872f20>
 
@@ -134,18 +134,17 @@ $$ y = x^2 + 4x + 4 \\ $$
 で表せる桜の落下距離 Y と時間 X について t 秒時点の桜の落下速度は
 
 $$ \\ f(t) = 2t + 4 \\ $$
-となる。例えば４秒時点なら秒速 12cm
+となる。例えば４秒時点なら秒速 8㎝
 
 ### <b>この微分計算のポイント</b>
 
 #### <b>この例でいうと傾きは時間あたりの変化量（変化の割合）であるが、X の特定の範囲の傾きを求めるのではなく、特定の時点の傾きを求めている</b>
 
-![katamuki.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/601137/9e169c2b-994d-fecc-f1b2-34af7c9ab54a.png)
-
+<img src="./biseki/katamuki.png">  
 例えば上記グラフでは  
 $$a = \frac{f(x_2)-f(x_1)}{x_2-x_1}\\ $$
-のように、傾きを導く関数を表せるがこれでは特定の 2 点間(範囲)の傾きしか求める事ができない  
-そのため、X1 と X2 の距離を限りなく近づける。ただし完全に重なると x,y の増加量がどちらも 0 となり傾きは 0/0 となってしまう  
+のように、傾きを導く関数を表せるがこれでは特定の2点間(範囲)の傾きしか求める事ができない  
+そのため、X1とX2の距離を限りなく近づける。ただし完全に重なるとx,yの増加量がどちらも0となり傾きは 0/0 となってしまう  
 そこで<b>極点</b>の考えが必要となる
 
 関数 f に対し、変数 h を a に近づけていった際、f(h)が近づく値を lim と表す
@@ -158,7 +157,7 @@ $$ \lim\_{\substack{h \to a}} f(h) \\ $$
 $$ \lim\_{\substack{h \to 0}} 3h = 0 \\ $$
 
 この極点の考え方を先ほどのグラフの傾きに当てはめる　
-![katamuki2.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/601137/f4203d3e-1929-f94f-79ed-a34e4f632529.png)
+<img src="./biseki/katamuki2.png">
 
 $$
 a = \lim_{\substack{h \to 0}}  \frac{f(x+h)-f(x)}{(x+h)-x}　\\
@@ -168,7 +167,7 @@ $$
 Ｘの値によって 1 つの値(傾き)を求める事ができる  
 この式を<b>導関数:f(x)</b>と呼び、<b>微分とはこの導関数を求める計算の事</b>  
 <b>極点はグラフの接点となり、ある接点におけるグラフの傾きは接線の傾きと一致する</b>  
-あってるのか…
+あってます？
 
 導関数を表す場合 f(x)を
 
@@ -176,6 +175,11 @@ $$ \frac{d}{dx}f(x) $$ または　$$ \frac{df}{dx}(x) $$ と表すこともで�
 
 ### 結論:微分で傾きを導くための関数がわかる
 
+## これができて何が嬉しいのか
+
+ここに書いてありした
+[結城浩 on Twitter: "質問（微分の何が嬉しいか）](https://twitter.com/hyuki/status/1206882565228875776)
+
 参考サイト  
 [中学数学からはじめる微分積分](https://www.youtube.com/watch?v=4p1rwfXbCoY)  
-[ディープラーニング入門](https://tutorials.chainer.org/ja/04_Basics_of_Differential.html)
+[微分とは何か？ ](https://sci-pursuit.com/math/differential-1.html)

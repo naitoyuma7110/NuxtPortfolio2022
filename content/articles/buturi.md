@@ -1,16 +1,9 @@
 ---
 title: ニュートンの運動方程式
-description:
+description: この記事の説明がここに入ります
+createdAt: 2020/11/18
 tags: ['力学', '物理']
 ---
-
-## ニュートンの運動方程式
-
-<!-- <img src="~/assets/img/md/biseki/katamuki.png" > -->
-
-![gazou](~/assets/img/md/biseki/katamuki.png)
-
-<img src="~/assets/img/md/biseki/katamuki.png" alt="" />
 
 $$ m\vec{a}=\vec{F} $$
 
@@ -37,7 +30,7 @@ $$ m\vec{a}=\vec{F} $$
 <b>1. 初速に加速度と時間の積を加えると速度が求められる</b>
 
 <b>2. 初期位置に初速度と時間の積(距離)を加えた位置から,さらに加速度分の距離を追加すると位置が求められる</b>  
-<img src="./syahou/sokudo.png">
+<img src="/img/md/syahou/sokudo.png">
 
 上記グラフの面積を求めると距離が求められる
 
@@ -53,14 +46,14 @@ $t = 0$の時$x = x_0$を上式に代入して$C_2 = x_0$が求められる
 よって $$ x = x_0 + V_0t + \frac{1}{2}at^2 $$
 
 <b>3. 1-2 の連立方程式で時間を消す</b>  
- <img src="./syahou/k_sci_phy_1_2_8_1_image01.png" width=400px>
+ <img src="/img/md/syahou/k_sci_phy_1_2_8_1_image01.png">
 
 よって  
  $$V^2 - V_0^2 = 2a(x - x_0)$$
 
 #### 基本問題
 
-<img src="~/assets/img/md/syahou/mondai.png">
+<img src="/img/md/syahou/mondai.png">
 
 <b>問題に入る前に 2 次元の問題は 1 次元に分解して情報を整理する</b>
 
@@ -184,7 +177,7 @@ plt.grid(True)
 plt.show()
 ```
 
-![png](buturi_files/buturi_14_0.png)
+![png](/img/md/buturi_files/buturi_14_0.png)
 
 $\sin$の最大値は 1 のため  
 $\sin2\theta = 1$の時 $2\theta = 90°$  
@@ -225,7 +218,7 @@ $$ y = -\frac{g}{2V_0^2\cos^2\theta}(x - \frac{V_0^2\sin^2\theta}{2g})^2 + q $$
 
 #### 応用問題：モンキーハント
 
-<img src="./syahou/saru.png" width=400px>
+<img src="/img/md/syahou/saru.png" width=400px>
 
 <b><情報の整理></b>
 

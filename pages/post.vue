@@ -10,15 +10,17 @@
     <v-expansion-panels flat>
       <v-expansion-panel>
         <v-expansion-panel-header>
-          <v-layout align-center>
-            <div>タグ選択</div>
-            <v-chip
-              class="ml-2"
-              v-if="selectedTag"
-              :close="selectedTag == '全ての記事' ? false : true"
-              @click:close="selectedTag = '全ての記事'"
-              >{{ selectedTag }}</v-chip
-            >
+          <v-layout column>
+            <v-layout align-center class="my-3">
+              <div>タグ選択</div>
+              <v-chip
+                v-if="selectedTag"
+                class="ml-2"
+                :close="selectedTag == '全ての記事' ? false : true"
+                @click:close="selectedTag = '全ての記事'"
+                >{{ selectedTag }}</v-chip
+              >
+            </v-layout>
           </v-layout>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -29,9 +31,9 @@
             column
           >
             <v-chip
-              filter
               v-for="(tag, i) in articleTags"
               :key="i"
+              filter
               :value="tag"
               @click="selectedTag = tag.name"
             >
@@ -51,12 +53,12 @@
     <!-- :to="'/articles/' + article.dir + article.slug" -->
     <v-scroll-y-reverse-transition group hide-on-leave>
       <v-card
-        @click="toArticles(article.slug)"
-        outlined
-        hover
         v-for="article in filteredArticle"
         :key="article.slug"
         class="my-2"
+        hover
+        outlined
+        @click="toArticles(article.slug)"
       >
         <!-- to="/dir/ + param の形で記事のslugをparamとして渡す + _paramsファイルへルーティング" -->
         <v-card-subtitle class="py-2">
@@ -85,28 +87,12 @@ export default {
   },
   data: () => ({
     selectedTag: '全ての記事',
-    date: null,
     trip: {
       name: '',
       location: null,
       start: null,
       end: null,
     },
-    sizes: [
-      '全ての記事',
-      'tag1',
-      'tag2',
-      'tag3',
-      '数学',
-      '物理',
-      '本',
-      '転職',
-      '統計学',
-      'バイオメカニクス',
-      'プログラミング',
-      'Python',
-      'Java Silver',
-    ],
   }),
   computed: {
     filteredArticle() {

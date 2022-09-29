@@ -60,8 +60,8 @@
           <v-col cols="12" sm="6">
             <v-card
               v-for="(skill, k) in skills"
-              :key="k"
               v-show="toggle[i] == k"
+              :key="k"
               outlined
             >
               <v-card-subtitle>
@@ -107,6 +107,7 @@
 <script>
 import SkillChart from './skillChart.vue'
 export default {
+  components: { SkillChart },
   data() {
     return {
       tab: null,
@@ -239,7 +240,6 @@ export default {
       ],
     }
   },
-  components: { SkillChart },
 }
 </script>
 <style>
