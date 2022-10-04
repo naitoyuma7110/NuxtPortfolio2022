@@ -1,10 +1,9 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
-      fixed
       app
     >
       <v-list>
@@ -24,13 +23,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      color="white"
-      elevate-on-scroll
-      app
-    >
+    <v-app-bar collapse-on-scroll color="white" app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="activeTitle" />
     </v-app-bar>
@@ -39,7 +32,7 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <v-footer :absolute="!fixed" app>
+    <v-footer app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>

@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div>
-      <YoutubePlayer> </YoutubePlayer>
-
-      <!-- <v-img
+    <v-img
       height="16rem"
       lazy-src
       :src="path"
@@ -20,8 +17,7 @@
         <h3 class="text-h4 mb-0">内藤祐馬</h3>
         <small>Naito Yuma</small>
       </v-layout>
-    </v-img> -->
-    </div>
+    </v-img>
 
     <v-card-text>
       <v-btn depressed rounded fab small>
@@ -66,10 +62,8 @@
 </template>
 
 <script>
-import YoutubePlayer from './youtubePlayer.vue'
 import imgPath from '~/assets/img/gotfathe.jpg'
 export default {
-  components: { YoutubePlayer },
   data() {
     return {
       path: imgPath,
@@ -95,5 +89,4 @@ export default {
 .myimg_border {
   border: 0.2rem solid white;
 }
-
 </style>

@@ -70,7 +70,7 @@
           {{ article.title }}
         </v-card-title>
         <v-card-text>{{ article.description }}</v-card-text>
-        <v-layout class="pa-3">
+        <v-layout class="pa-3" d-flex>
           <v-chip
             v-for="(tag, i) in article.tags"
             :key="i"
