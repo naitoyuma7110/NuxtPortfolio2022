@@ -14,7 +14,7 @@
         <v-avatar class="myimg_border" size="170" color="white">
           <img class="avater-img" alt="user" src="/img/myimg.jpg" />
         </v-avatar>
-        <p class="text-h4">Naito Yuma</p>
+        <h3 class="text-h4">内藤祐馬</h3>
       </v-layout>
     </v-img>
 
@@ -78,4 +78,5 @@
 .myimg_border {
   border: 0.2rem solid white;
 }
+
 </style>
