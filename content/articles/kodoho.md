@@ -40,7 +40,7 @@ $$ \theta = 360×\frac{r}{2\pi r}$$
 
 $$ \theta = \frac{180}{\pi}$$
 
-<img src="./rad/rad.png">
+<img src="/img/md/rad/rad.png">
 
 $$ $$
 

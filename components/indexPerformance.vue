@@ -38,24 +38,24 @@ export default {
     return {
       files: [
         {
-          title: '理学療法の学会の賞',
-          subtitle: '抄録とスライド発表',
-          body: 'この辺の実績が転職に一番役に立った',
+          title: 'I AM A CAT',
+          subtitle: 'As yet I have no name.',
+          body: 'Teachers have it easy. If you are born a human, it’s best to become a teacher',
         },
         {
-          title: '基本情報技術者資格',
-          subtitle: 'IT全般',
-          body: '就活で使いたかったので1発で合格したかった。仕事しながら勉強するのがマジでしんどかった。',
+          title: 'I AM A CAT',
+          subtitle: 'As yet I have no name.',
+          body: 'Teachers have it easy. If you are born a human, it’s best to become a teacher',
         },
         {
-          subtitle: 'オブジェクト指向の基礎知識',
-          title: 'Java Silver',
-          body: '難しかったが何回でも受けられるのでプレッシャーは少なかった。退職後だったので時間もあった。',
+          title: 'I AM A CAT',
+          subtitle: 'As yet I have no name.',
+          body: 'Teachers have it easy. If you are born a human, it’s best to become a teacher',
         },
         {
-          title: '統計検定3級',
-          subtitle: 'データを解釈する技術',
-          body: '今仕事で使うことはないがデータ解析の知識はプログムと非常に関係性が高い。2級からが難しくて3級は算数だった',
+          title: 'I AM A CAT',
+          subtitle: 'As yet I have no name.',
+          body: 'Teachers have it easy. If you are born a human, it’s best to become a teacher',
         },
       ],
     }

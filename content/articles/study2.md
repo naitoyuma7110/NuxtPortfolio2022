@@ -7,7 +7,7 @@ tags: ['力学', '物理']
 ### 参考サイト
 
 - Pythonn による統計処理  
-  [Python エンジニアによる Python3 学習サイト](https://www.python.ambitious-engineer.com/archives/category/application/data_analysis)  
+  [Python エンジニアによる Python3 学習サイト](https://www.python.ambitious-engineer.com/archives/category/application/data_analysis)
 
 - 統計学  
   [統計 WEB](https://bellcurve.jp/statistics/)
@@ -15,7 +15,7 @@ tags: ['力学', '物理']
 ### 参考サイト
 
 - Pythonn による統計処理  
-  [Python エンジニアによる Python3 学習サイト](https://www.python.ambitious-engineer.com/archives/category/application/data_analysis)  
+  [Python エンジニアによる Python3 学習サイト](https://www.python.ambitious-engineer.com/archives/category/application/data_analysis)
 
 - 統計学  
   [統計 WEB](https://bellcurve.jp/statistics/)
@@ -37,7 +37,7 @@ from scipy import stats
 
 各データの値が平均値からどのくらい離れているか、各データ値の平均との差を求めて 2 乗した後、更にその合計の平均値を出したもの  
 平均との差は正負が入り混じっているため、2 乗して正に数に統一する
-<img src="./test_files/bunsan.png" width="300">  
+<img src="/img/md/test_files/bunsan.png" width="300">  
 言葉にするとややこしい
 
 ### 実際に算出してみる
@@ -196,7 +196,7 @@ print("手掌の長さの分散:" + str(round(np.var(hand_length),2)) + "cm^2")
 
 ## 標準偏差
 
-<img src="./test_files/hyozyunhensa.png" style="width:300px">
+<img src="/img/md/test_files/hyozyunhensa.png" style="width:300px">
 分散の平方を求める
 
 ```python
@@ -216,7 +216,7 @@ print("手掌の長さの標準偏差:±" + str(round(np.std(hand_length),2)) + 
 
 ### 変動係数
 
-<img src="./test_files/hendokeisu.png" style="width=300px">
+<img src="/img/md/test_files/hendokeisu.png" style="width=300px">
 標準偏差を平均値で割る
 
 もともとの大きさ(平均値)に対する相対的な値となるので、データが異なっても比較可能

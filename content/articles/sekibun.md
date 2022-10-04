@@ -6,7 +6,7 @@ tags: ['数学', '物理']
 
 ## 距離・速度・加速度を例にしてみる
 
-<img src="./sekibun_files/kasoku1.jpg">
+<img src="/img/md/sekibun_files/kasoku1.jpg">
 
 ### <strong>微分の復習</strong>
 
@@ -205,7 +205,7 @@ createF()
   後退(y が負)と前進(y が正)が切り替わる時点とも言える
 
 - <b>極大点</b>：山の頂点  
-  グラフが増加から減少に転じる点では、傾きが 0 になる ＝ 微分した値が 0  
+  グラフが増加から減少に転じる点では、傾きが 0 になる ＝ 微分した値が 0
 
 - <b>極小点</b>：谷の頂点  
   グラフが減少から増加に転じる点でも、傾きが 0 になる = 微分した値が 0
@@ -285,7 +285,7 @@ plt.show()
 <b>定積分</b>
 
 - 無限に小さな底辺を持つ長方形を無限個足し合わせると面積になる  
-  <img src="./sekibun_files/riemann-integral1.png">
+  <img src="/img/md/sekibun_files/riemann-integral1.png">
 
 a から b までの区間を x の連続する$ x*k $という値を使ってめっちゃ細かく区切ったら  
 $$ Δ_k = x_k-x*{k-1} $$

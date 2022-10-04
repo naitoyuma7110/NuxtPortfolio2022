@@ -21,7 +21,7 @@ $$ W = Fl\cos\theta [J] $$
 ベクトルの内積は物理では仕事を導く公式と同じ  
 方向の異なる２要素から同一方向の成分を抽出して積を取るという考え方で使われる
 
-<img src="./vec/naiseki.png">
+<img src="/img/md/vec/naiseki.png">
 上の図で
 $$ 働いた力：F_b = \vec{b}$$   
 $$移動距離,方向を L = \vec{a} $$
@@ -42,7 +42,7 @@ $$ P = \frac{W}{t}【W】 $$
 
 <b>これからすることができる仕事の量</b>
 
-<img src="./buturi5/undoE.png">
+<img src="/img/md/buturi5/undoE.png">
 
 速度 v、質量ｍのボールをキャッチしたらグローブが距離Ｌ移動した  
 この場面でボールがすることができる仕事の量について考える

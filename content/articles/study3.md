@@ -277,7 +277,7 @@ print("手掌の長さの変動係数:" + str(round(variation(hand_length),2)))
 - 0 ～ 90deg の範囲に命中する確率は算出可能(25%)
 - 90deg の点に命中する確率は算出不可(<strong>1/360 ではない</strong>)
 
-<img src="./study3_files/fukiya.png" width=400px>  
+<img src="/img/md/study3_files/fukiya.png" width=400px>  
   
   
 なぜなら、指定した90degの角度とは90.0000...であり、90.00001でもなければ89.9999でもない。  
@@ -304,7 +304,7 @@ plt.show()
 離散型確率分布：X 軸に離散確率変数,Y 軸に確率を取るグラフ
 
 各確率変数 × 確率の総和が 1 になる特徴がある
-<img src="./study3_files/sikorokakuritu.png">
+<img src="/img/md/study3_files/sikorokakuritu.png">
 
 ## 連続型確率分布はどう表現するか
 
@@ -345,7 +345,7 @@ $ f(1) = \frac{2}{9} , f(3) = \frac{2}{3} $であることから確率変数は 
 
 ## 連続型確率分布における「確率」
 
-<img src="./study3_files/renzokubun.png">  
+<img src="/img/md/study3_files/renzokubun.png">  
 積分で求められる
 
 $$ P( y \leqq x \leqq b) = \int\_{a}^{b}f(x)dx $$
@@ -380,7 +380,7 @@ $$ 　 F(x) = P(X \leqq x) = \int\_{-\infty}^{x}f(t)dt $$
 
 > 青いグラフのような確率密度関数：$f(x)$の積分$F(x)$となる
 
-<img src="./study3_files/renzoku.png">
+<img src="/img/md/study3_files/renzoku.png">
 
 > この時 $(b<X)$ では $F(X) = 1$となる  
 > また $(a<X)$ では $F(X) = 0$ となる
@@ -508,7 +508,7 @@ $$ V(X) = \int\_{-\infty}^{\infty}(x - μ)^2f(x)dx $$
 ### 参考サイト
 
 - Pythonn による統計処理  
-  [Python エンジニアによる Python3 学習サイト](https://www.python.ambitious-engineer.com/archives/category/application/data_analysis)  
+  [Python エンジニアによる Python3 学習サイト](https://www.python.ambitious-engineer.com/archives/category/application/data_analysis)
 
 - 統計学  
   [統計 WEB](https://bellcurve.jp/statistics/)

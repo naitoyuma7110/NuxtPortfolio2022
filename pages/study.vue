@@ -11,10 +11,10 @@
     <v-stepper v-model="stepId" vertical outlined>
       <div v-for="(works, i) in categrisedWorks" :key="i">
         <v-stepper-step class="title-pointer" :step="i + 1">
-          <div @click="stepId = i + 1">
+          <div class="mb-2" @click="stepId = i + 1">
             {{ stepInfo[i].title }}
-            <small>{{ stepInfo[i].discription }}</small>
           </div>
+          <small>{{ stepInfo[i].discription }}</small>
         </v-stepper-step>
 
         <v-stepper-content :step="i + 1">
@@ -130,28 +130,28 @@ export default {
       stepId: 1,
       stepInfo: [
         {
-          title: 'Learn HTML,css',
+          title: 'HTML,CSSによるWebサイトの外観',
           discription: 'How to make static web site',
         },
         {
-          title: 'First prgraming langage is JS',
-          discription: 'It based my fronend work',
+          title: 'クライアントサイドのプログラミング言語JavaScript',
+          discription: 'It is based my fronend work',
         },
         {
-          title: 'Learn more about design frameworks',
-          discription: 'very usefull',
+          title: 'CSSフレームワーク使用した効率的なデザイン',
+          discription: 'complement the design',
         },
         {
-          title: 'Vue of js framework',
-          discription: 'very usefull',
+          title: 'JSフレームワークによるSPA',
+          discription: 'Technology in browser languages',
         },
         {
-          title: 'Backend and API servies',
-          discription: 'very usefull',
+          title: 'サーバー言語によるAPI作成,既存のAPIサービスの利用',
+          discription: 'Backend and API servies',
         },
         {
-          title: 'Nuxt makes SSG, SSR anable',
-          discription: 'very usefull',
+          title: 'クライアントサイドのルーティング,データフロー管理',
+          discription: 'Nuxt Includes Vue-X,Vue-roouter',
         },
       ],
     }

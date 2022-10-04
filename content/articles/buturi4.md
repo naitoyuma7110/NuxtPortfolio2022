@@ -17,7 +17,7 @@ $$ (N/m^2) $$
 - 水圧による力は面に対して垂直に働く
 
 大気圧と水圧  
-<img src="./buturi3/atu.png">
+<img src="/img/md/buturi3/atu.png">
 
 水圧の性質を理解するために、水中から$S × h$の直方体を仮想的に切り出して考える
 
@@ -40,7 +40,7 @@ $$ PS = \rho Shg + P_0S $$
 
 > $$ P = \rho hg + P_0 $$
 
-<img src="./buturi3/suiatu.png">
+<img src="/img/md/buturi3/suiatu.png">
 
 物体は直上の全ての大気の重さと水中であれば、液体の重さを受ける  
 受けた重さに対し、物体を静止して留めようとする力が大気圧や水圧となる
@@ -51,7 +51,7 @@ $$ PS = \rho Shg + P_0S $$
 
 水圧による力の差
 
-<img src="./buturi3/hu.png">
+<img src="/img/md/buturi3/hu.png">
 
 水中に沈めた長方形 Sh の浮力について考える
 
@@ -80,7 +80,7 @@ $$ F = \rho Vg $$
 
 ### 問題：水に浮く物質
 
-<img src="./buturi3/suiatu2.png">
+<img src="/img/md/buturi3/suiatu2.png">
 
 (1)X を求めよ
 
@@ -110,7 +110,7 @@ $$ W = Fl\cos\theta [J] $$
 
 ### 問題:斜面を滑る箱
 
-<img src="./buturi3/workq.png">
+<img src="/img/md/buturi3/workq.png">
 
 斜面上の箱が L の距離移動した時  
 <b>(1)重力のした仕事 W を求めよ</b>  
@@ -130,7 +130,7 @@ $$ w_1 = mgl\cos(\frac{\pi}{2}-\theta) $$
 
 別の解法
 
-<img src="./buturi3/workq2.png">
+<img src="/img/md/buturi3/workq2.png">
 
 重力の成分を分解  
 L 方向の重力
@@ -138,7 +138,7 @@ $$ w_1 = mg\sin\theta$$
 
 また移動距離 L との積を取り
 
-> $$ w_1 = mgl\sin\theta$$
+$$ w_1 = mgl\sin\theta$$
 
 <b>(2)垂直抗力のした仕事 W を求めよ</b>
 

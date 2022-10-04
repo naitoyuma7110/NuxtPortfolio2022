@@ -140,7 +140,7 @@ $$ \\ f(t) = 2t + 4 \\ $$
 
 #### <b>この例でいうと傾きは時間あたりの変化量（変化の割合）であるが、X の特定の範囲の傾きを求めるのではなく、特定の時点の傾きを求めている</b>
 
-<img src="./biseki/katamuki.png">  
+<img src="/img/md/biseki/katamuki.png">  
 例えば上記グラフでは  
 $$a = \frac{f(x_2)-f(x_1)}{x_2-x_1}\\ $$
 のように、傾きを導く関数を表せるがこれでは特定の2点間(範囲)の傾きしか求める事ができない  
@@ -157,7 +157,7 @@ $$ \lim\_{\substack{h \to a}} f(h) \\ $$
 $$ \lim\_{\substack{h \to 0}} 3h = 0 \\ $$
 
 この極点の考え方を先ほどのグラフの傾きに当てはめる　
-<img src="./biseki/katamuki2.png">
+<img src="/img/md/biseki/katamuki2.png">
 
 $$
 a = \lim_{\substack{h \to 0}}  \frac{f(x+h)-f(x)}{(x+h)-x}　\\

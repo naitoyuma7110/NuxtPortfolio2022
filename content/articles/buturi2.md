@@ -16,11 +16,11 @@ tags: ['力学', '物理']
 質量 M の箱と、質量 m の糸を F の力で引っ張った際、  
 箱と糸全体を 1 つの物体とした場合と、箱と糸を長さ L を x で区切ったものを１つの物体とした場合について考える。
 
-<img src="./syahou/himo2.png">
+<img src="/img/md/syahou/himo2.png">
 
 $$(M + m)a = F$$
 
-<img src="./syahou/himo1.png">
+<img src="/img/md/syahou/himo1.png">
 
 $$(M + \frac{x}{L}m)a = T $$
 
@@ -46,7 +46,7 @@ $$ T = F$$
 例えば糸でつながれた物体 A、B の物体 B の方を右側に引っ張るとき、物体 A、B の面に糸による張力が生じる。  
 また<b>作用・反作用の法則</b>で糸の両端には図のような力が働く
 
-<img src="./syahou/himo4.png">
+<img src="/img/md/syahou/himo4.png">
 
 この時、糸に働く力は水平方向のみで、右側が正とすると
 
@@ -61,7 +61,7 @@ $$ m_sa + T_A = T_B$$
 
 ## 滑車の問題
 
-<img src="./syahou/kasya.png">
+<img src="/img/md/syahou/kasya.png">
 
 (1)A、B の加速度$a$の大きさを求めよ
 
@@ -101,7 +101,7 @@ $$ \vec{F_1}+\vec{F_2}+\vec{F_3}+・・・ = 0 $$
 
 ### 問題:2 本の糸でつり下げられる物体
 
-<img src="./syahou/turi2.png">
+<img src="/img/md/syahou/turi2.png">
 
 <b>(1)糸 A、B の張力$T_A,T_B$を求めよ</b>
 
@@ -154,7 +154,7 @@ $$ T_B = \sqrt T_A$$
 
 ## 弾性力
 
-<img src="./syahou/bane.png" width="300px">
+<img src="/img/md/syahou/bane.png" width="300px">
 
 伸びた距離に比例して力が増す
 
@@ -166,9 +166,9 @@ x：自然長からの伸縮距離[m]
 k：ばね係数【n/m】（ばねの強さ）
 
 ### 問題：2つのばね
-<img src="./syahou/bane2.png">
+<img src="/img/md/syahou/bane2.png">
 
-<img src="./syahou/bane3.png">
+<img src="/img/md/syahou/bane3.png">
 
 <b>(1)すべてが自然長の状態からBをdだけ引くとき、Aの動く距離xを求めよ
 
@@ -187,7 +187,7 @@ $$ 3kx = 2kd $$
 ## 摩擦力
 
 ### 静止摩擦力
-<img src="./syahou/masatu.png">
+<img src="/img/md/syahou/masatu.png">
 
 上図で外力Tで引かれる箱が静止状態であるとすると
 $F_0:静止摩擦力$
@@ -210,7 +210,7 @@ $$(静止摩擦係数：\mu)$$
 ### 問題：傾斜面上の物体の摩擦
 
 
-<img src="./syahou/masatu2.png">
+<img src="/img/md/syahou/masatu2.png">
 
 滑り出す瞬間では、fは最大静止摩擦力(μN)となる
 
@@ -232,7 +232,7 @@ $$ \mu = \frac{\sin\theta}{\cos\theta}$$
 
 ## 動摩擦力
 
-<img src="./syahou/doumasatu.png">
+<img src="/img/md/syahou/doumasatu.png">
 
 
 外力が最大静止摩擦力を超えた時、面に対し物体が滑理始める
@@ -244,12 +244,12 @@ $$ F' = \mu'N $$
 静止摩擦力よりも小さい
 
 
-<img src="./syahou/doumasatu2.png">
+<img src="/img/md/syahou/doumasatu2.png">
 
 
 ### 問題：ざらざらの面上の箱を押す
 
-<img src="./syahou/doumasatuq.png">
+<img src="/img/md/syahou/doumasatuq.png">
 
 (1)どれだけの距離を進んで止まるか求めよ
 
