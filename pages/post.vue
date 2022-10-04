@@ -70,7 +70,7 @@
           {{ article.title }}
         </v-card-title>
         <v-card-text>{{ article.description }}</v-card-text>
-        <v-layout class="pa-3" d-flex>
+        <v-chip-group class="pa-3" column>
           <v-chip
             v-for="(tag, i) in article.tags"
             :key="i"
@@ -78,7 +78,7 @@
             outlined
             >{{ tag }}
           </v-chip>
-        </v-layout>
+        </v-chip-group>
       </v-card>
     </v-scroll-y-reverse-transition>
   </div>
