@@ -1,5 +1,5 @@
 <template>
-  <v-card rounded>
+  <div>
     <IndexProfile></IndexProfile>
 
     <IndexCareer></IndexCareer>
@@ -7,7 +7,7 @@
     <IndexPerformance></IndexPerformance>
 
     <IndexSkills></IndexSkills>
-  </v-card>
+  </div>
 </template>
 
 <script>

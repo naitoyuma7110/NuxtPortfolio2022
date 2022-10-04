@@ -4,10 +4,11 @@
       <youtube
         ref="youtube"
         :video-id="videoId"
-        :player-vars="{ autoplay: 1, mute: mute }"
+        :player-vars="{ autoplay: 1, mute: mute, playsinline: 1 }"
         @playing="playing"
         @paused="paused"
         @ended="ended"
+        @ready="ready"
       />
       <div class="youtube-filter">
         <v-app-bar flat color="rgba(0, 0, 0, 0)">
@@ -68,9 +69,12 @@ export default {
     ended() {
       this.player.playVideo()
     },
-    musicSwitch() {
-      this.mute = !this.mute
+    ready() {
+      const youtubePlayer = this.$refs.youtube.player
+      youtubePlayer.mute()
+      youtubePlayer.playVideo()
     },
+    musicSwitch() {},
   },
 }
 </script>

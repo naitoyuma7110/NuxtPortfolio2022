@@ -8,7 +8,7 @@
       </v-col>
     </v-row>
 
-    <v-stepper v-model="stepId" vertical outlined>
+    <v-stepper v-model="stepId" vertical flat>
       <div v-for="(works, i) in categrisedWorks" :key="i">
         <v-stepper-step class="title-pointer" :step="i + 1">
           <div class="mb-2" @click="stepId = i + 1">
@@ -221,4 +221,5 @@ export default {
 .title-pointer {
   cursor: pointer;
 }
+
 </style>
