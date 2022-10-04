@@ -1,7 +1,8 @@
 ---
 title: 積分
-description:
-tags: ['数学', '物理']
+description: もとの式$f(x)$に対し区間を[a,x]として面積を求める定積分を変数化した$F(x)$を不定積分という
+tags: ['数学', '積分', '定積分', '不定積分']
+createdAt: 2022/9/11
 ---
 
 ## 距離・速度・加速度を例にしてみる
@@ -52,7 +53,7 @@ plt.ylabel("距離")
 plt.show()
 ```
 
-![png](sekibun_files/sekibun_3_0.png)
+![png](/img/md/sekibun_files/sekibun_3_0.png)
 
 距離のグラフが描けた
 $$ f(x) = 2x^2 + 4 x $$
@@ -111,7 +112,7 @@ plt.ylabel("速さ")
 plt.show()
 ```
 
-![png](sekibun_files/sekibun_7_0.png)
+![png](/img/md/sekibun_files/sekibun_7_0.png)
 
 速さのグラフが描けた
 
@@ -119,7 +120,7 @@ $$ y = 4x + 4 $$
 
 時間の経過と共にどんどん速度が増加している  
 この時、速度変化の割合を<b>「加速度」</b>と呼ぶ  
-１次関数 $ y = ax + b $　では a が変化の割合(傾き)なので、加速度は 4 とわかる
+１次関数 $ y = ax + b $ では a が変化の割合(傾き)なので、加速度は 4 とわかる
 
 せっかくなので微分で加速度を求める
 
@@ -144,7 +145,7 @@ plt.axhline(y=4, xmin=0, xmax=5)
 plt.show()
 ```
 
-![png](sekibun_files/sekibun_10_0.png)
+![png](/img/md/sekibun_files/sekibun_10_0.png)
 
 <b>グラフの捉え方</b>
 
@@ -197,7 +198,7 @@ def createF():
 createF()
 ```
 
-![png](sekibun_files/sekibun_15_0.png)
+![png](/img/md/sekibun_files/sekibun_15_0.png)
 
 <b>グラフの捉え方</b>
 
@@ -266,7 +267,7 @@ plt.ylabel("加速度")
 plt.show()
 ```
 
-![png](sekibun_files/sekibun_20_0.png)
+![png](/img/md/sekibun_files/sekibun_20_0.png)
 
 加速度のグラフが書けた
 
@@ -325,7 +326,7 @@ ax.plot( p, [f(p[k]) for k in range(N)] )
 plt.show()
 ```
 
-![png](sekibun_files/sekibun_25_0.png)
+![png](/img/md/sekibun_files/sekibun_25_0.png)
 
 X:[2,3]の面積は…
 

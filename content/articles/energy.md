@@ -1,7 +1,8 @@
 ---
-title: 物理4
-description:
-tags: ['力学', '物理']
+title: 仕事とエネルギー
+description: どれだけの力の大きさでどれだけ物体を移動させたか、力の方向と移動方向を一致させて積を取る$$ W = Fl\cos\theta [J] $$
+tags: ['力学', '物理', 'エネルギー', '仕事', 'ベクトル内積']
+createdAt: 2022/9/20
 ---
 
 ## エネルギー
@@ -425,7 +426,3 @@ $$ Mgh = \frac{1}{2}MV^2 + \frac{1}{2}mV^2 -\mu'mgh $$
 ### 参考
 
 [高校の力学を全部解説する授業(前編)](https://www.youtube.com/watch?v=9XEX4mZFOhA)
-
-```python
-
-```

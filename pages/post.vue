@@ -70,7 +70,15 @@
           {{ article.title }}
         </v-card-title>
         <v-card-text>{{ article.description }}</v-card-text>
-        <v-card-text>{{ article.slug }}</v-card-text>
+        <v-layout class="pa-3">
+          <v-chip
+            v-for="(tag, i) in article.tags"
+            :key="i"
+            class="mx-0"
+            outlined
+            >{{ tag }}
+          </v-chip>
+        </v-layout>
       </v-card>
     </v-scroll-y-reverse-transition>
   </div>
@@ -139,14 +147,6 @@ export default {
     },
   },
   methods: {
-    // "/article/index"へのリンク
-    // toArticles(articleUrl) {
-    //   this.$router.push({
-    //     path: 'articles/',
-    //     query: { url: articleUrl },
-    //   })
-    // },
-    // /article/_slugへのリンク
     toArticles(slug) {
       this.$router.push({
         path: `articles/${slug}`,

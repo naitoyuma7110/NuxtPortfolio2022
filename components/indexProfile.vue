@@ -1,9 +1,12 @@
 <template>
   <div>
-    <v-img
+    <div>
+      <YoutubePlayer> </YoutubePlayer>
+
+      <!-- <v-img
       height="16rem"
       lazy-src
-      src="https://cdn.pixabay.com/photo/2020/07/12/07/47/bee-5396362_1280.jpg"
+      :src="path"
       class="card-back-image rounded-0"
     >
       <v-app-bar flat color="rgba(0, 0, 0, 0)">
@@ -14,9 +17,11 @@
         <v-avatar class="myimg_border" size="170" color="white">
           <img class="avater-img" alt="user" src="/img/myimg.jpg" />
         </v-avatar>
-        <h3 class="text-h4">内藤祐馬</h3>
+        <h3 class="text-h4 mb-0">内藤祐馬</h3>
+        <small>Naito Yuma</small>
       </v-layout>
-    </v-img>
+    </v-img> -->
+    </div>
 
     <v-card-text>
       <v-btn depressed rounded fab small>
@@ -60,7 +65,18 @@
   </div>
 </template>
 
-<script></script>
+<script>
+import YoutubePlayer from './youtubePlayer.vue'
+import imgPath from '~/assets/img/gotfathe.jpg'
+export default {
+  components: { YoutubePlayer },
+  data() {
+    return {
+      path: imgPath,
+    }
+  },
+}
+</script>
 <style>
 .card-back-image {
   overflow: visible;
@@ -70,6 +86,7 @@
 .card-front-items {
   bottom: -8rem;
   transform: translateY(40%);
+  z-index: 20;
 }
 
 .card-front-items .avater-img {

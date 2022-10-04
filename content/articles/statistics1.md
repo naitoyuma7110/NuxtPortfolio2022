@@ -1,20 +1,13 @@
 ---
-title: 統計1
-description:
-tags: ['力学', '物理']
+title: 統計学1
+description: 統計処理や数値計算を得意とするプログラミング言語である Python を使用し実際にデータ処理や表出力を行いながら学習を進めようと思いました。
+tags: ['統計', '基本統計量', '平均', '中央値', '分散', 'python', 'Jupyter']
+createdAt: 2022/8/23
 ---
 
-# Python の Jupyter Lab で学ぶ統計学
+# Python の Jupyter Lab 統計学
 
-統計学の勉強をしようと参考書を買ってみたのですが、公式やデータを眺めながら、説明を覚えるだけになってしまい面白くなくなってしまいました。
-
-そこで、統計処理や数値計算を得意とするプログラミング言語である Python を使用し実際にデータ処理や表出力を行いながら学習を進めようと思いました。
-
-統計処理の方法はこちらのサイトを参考にしています  
- [Python エンジニアによる Python3 学習サイト](https://www.python.ambitious-engineer.com/application#i-4)
-
-基礎的な内容は参考書です  
- [統計学検定 2 級](https://www.amazon.co.jp/%E6%94%B9%E8%A8%82%E7%89%88-%E6%97%A5%E6%9C%AC%E7%B5%B1%E8%A8%88%E5%AD%A6%E4%BC%9A%E5%85%AC%E5%BC%8F%E8%AA%8D%E5%AE%9A-%E7%B5%B1%E8%A8%88%E6%A4%9C%E5%AE%9A2%E7%B4%9A%E5%AF%BE%E5%BF%9C-%E7%B5%B1%E8%A8%88%E5%AD%A6%E5%9F%BA%E7%A4%8E-%E7%94%B0%E4%B8%AD%E8%B1%8A/dp/4489022271/ref=sr_1_2?keywords=%E7%B5%B1%E8%A8%88%E5%AD%A6%E6%A4%9C%E5%AE%9A2%E7%B4%9A&qid=1655036998&s=books&sprefix=%E7%B5%B1%E8%A8%88%E5%AD%A6%E6%A4%9C%E5%AE%9A%2Cstripbooks%2C214&sr=1-2)
+統計処理や数値計算を得意とするプログラミング言語である Python を使用し実際にデータ処理や表出力を行いながら学習を進めようと思いました。
 
 ### 実行環境
 
@@ -411,7 +404,7 @@ ax.hist(data, bins=10,  histtype='bar', ec='black')
 plt.show()
 ```
 
-![png](test_files/test_17_0.png)
+![png](/img/md/test_files/test_17_0.png)
 
 ### matplotlib.pyplot.hist 関数について
 
@@ -445,7 +438,7 @@ ax4.hist(data, bins="auto", histtype='bar', ec='black')
 plt.show()
 ```
 
-![png](test_files/test_20_0.png)
+![png](/img/md/test_files/test_20_0.png)
 
 ### 階級数の決定方法
 
@@ -466,11 +459,11 @@ plt.show()
 print("階級値を自動算出")
 ```
 
-![png](test_files/test_22_0.png)
+![png](/img/md/test_files/test_22_0.png)
 
     階級値を自動算出
 
-## 3. 統計量とデータの中心　　
+## 3. 統計量とデータの中心
 
 - 統計量:観測したデータそのものではなくそれらのデータの特徴を代表的に表す値
 - 基本統計量:平均，中央値，分散，標準偏差など
@@ -513,7 +506,7 @@ print("平均値：" + str(np.mean(data)))
 print("中央値：" + str(np.median(data)))
 ```
 
-![png](test_files/test_27_0.png)
+![png](/img/md/test_files/test_27_0.png)
 
     平均値：603.0
     中央値：432.5
@@ -521,3 +514,9 @@ print("中央値：" + str(np.median(data)))
 > 分布が左右対称でない、外れ値がある、下限があり上限がない、といったデータの場合は平均と中央値が異なる
 
 > ロバスト性：中央値のような外れ値に対する安定性
+
+統計処理の方法はこちらのサイトを参考にしています  
+ [Python エンジニアによる Python3 学習サイト](https://www.python.ambitious-engineer.com/application#i-4)
+
+基礎的な内容は参考書です  
+ [統計学検定 2 級](https://www.amazon.co.jp/%E6%94%B9%E8%A8%82%E7%89%88-%E6%97%A5%E6%9C%AC%E7%B5%B1%E8%A8%88%E5%AD%A6%E4%BC%9A%E5%85%AC%E5%BC%8F%E8%AA%8D%E5%AE%9A-%E7%B5%B1%E8%A8%88%E6%A4%9C%E5%AE%9A2%E7%B4%9A%E5%AF%BE%E5%BF%9C-%E7%B5%B1%E8%A8%88%E5%AD%A6%E5%9F%BA%E7%A4%8E-%E7%94%B0%E4%B8%AD%E8%B1%8A/dp/4489022271/ref=sr_1_2?keywords=%E7%B5%B1%E8%A8%88%E5%AD%A6%E6%A4%9C%E5%AE%9A2%E7%B4%9A&qid=1655036998&s=books&sprefix=%E7%B5%B1%E8%A8%88%E5%AD%A6%E6%A4%9C%E5%AE%9A%2Cstripbooks%2C214&sr=1-2)

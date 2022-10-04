@@ -1,18 +1,27 @@
 <template>
-  <v-card
-    :class="$vuetify.breakpoint.name == 'xs' ? 'pa-2 mx-0 ' : 'pa-10'"
-    elevation="3"
-  >
-    <v-card-subtitle class="py-1">
-      <time :datetime="article.createdAt" v-if="article.createdAt">
-        {{ $dateFns.format(new Date(article.createdAt), 'yyyy/MM/dd') }}
-      </time>
-    </v-card-subtitle>
-    <v-card-title class="px-1">{{
-      article.title ? article.title : 'notitle'
-    }}</v-card-title>
-    <NuxtContent :document="article" />
-  </v-card>
+  <div>
+    <v-row class="mb-4">
+      <v-col cols="12" sm="5">
+        <v-card-title class="pb-0">勉強ノート</v-card-title>
+        <v-divider class="mx-5"></v-divider>
+        <v-card-subtitle class="py-0">Sutudy Article</v-card-subtitle>
+      </v-col>
+    </v-row>
+    <v-card
+      :class="$vuetify.breakpoint.name == 'xs' ? 'pa-2 mx-0 ' : 'pa-10'"
+      elevation="3"
+    >
+      <v-card-subtitle class="px-1">
+        <time v-if="article.createdAt" :datetime="article.createdAt">
+          {{ $dateFns.format(new Date(article.createdAt), 'yyyy/MM/dd') }}
+        </time>
+      </v-card-subtitle>
+      <v-card-title class="px-1">{{
+        article.title ? article.title : 'notitle'
+      }}</v-card-title>
+      <NuxtContent :document="article" />
+    </v-card>
+  </div>
 </template>
 
 <script>
@@ -85,4 +94,5 @@ img {
   width: 100%;
   height: auto;
 }
+
 </style>

@@ -1,24 +1,9 @@
 ---
-title: 統計2
-description:
-tags: ['力学', '物理']
+title: 統計学2
+description: 分散:各データの値が平均値からどのくらい離れているか、各データ値の平均との差を求めて 2 乗した後、更にその合計の平均値を出したもの.平均との差は正負が入り混じっているため、2 乗して正に数に統一する
+tags: ['統計', '基本統計量', '分散', '標準偏差', 'python', 'Jupyter']
+createdAt: 2022/8/28
 ---
-
-### 参考サイト
-
-- Pythonn による統計処理  
-  [Python エンジニアによる Python3 学習サイト](https://www.python.ambitious-engineer.com/archives/category/application/data_analysis)
-
-- 統計学  
-  [統計 WEB](https://bellcurve.jp/statistics/)
-
-### 参考サイト
-
-- Pythonn による統計処理  
-  [Python エンジニアによる Python3 学習サイト](https://www.python.ambitious-engineer.com/archives/category/application/data_analysis)
-
-- 統計学  
-  [統計 WEB](https://bellcurve.jp/statistics/)
 
 ```python
 import pandas as pd
@@ -31,13 +16,13 @@ from scipy import stats
 
 > 平均値や中央値など中心が同じでもばらつきが異なる 2 つのデータ
 
-![img](test_files/test_30.png)
+![img](/img/md/test_files/test_30.png)
 
 ## 分散
 
 各データの値が平均値からどのくらい離れているか、各データ値の平均との差を求めて 2 乗した後、更にその合計の平均値を出したもの  
 平均との差は正負が入り混じっているため、2 乗して正に数に統一する
-<img src="/img/md/test_files/bunsan.png" width="300">  
+<img src="/img/md/test_files/bunsan.png">  
 言葉にするとややこしい
 
 ### 実際に算出してみる
@@ -233,3 +218,11 @@ print("手掌の長さの変動係数:" + str(round(stats.variation(hand_length)
     手掌の長さの変動係数:0.04
 
 #### もとの数値の大きさを加味すると身長の方がばらつきが少ない
+
+### 参考サイト
+
+- Pythonn による統計処理  
+  [Python エンジニアによる Python3 学習サイト](https://www.python.ambitious-engineer.com/archives/category/application/data_analysis)
+
+- 統計学  
+  [統計 WEB](https://bellcurve.jp/statistics/)

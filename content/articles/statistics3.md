@@ -1,7 +1,8 @@
 ---
-title: 統計4
-description:
-tags: ['力学', '物理']
+title: 統計学3
+description: 上述の通り、連続型確率変数の場合は確率変数がある一点の値をとる確率は限りなく 0 になるため、縦軸は確率ではなく「確率密度」を使用する。確率密度は定義域内における確率変数値の「相対的な出やすさ」を表し、関数で表される。
+tags: ['統計', '基本統計量', '確率変数', 'python', 'Jupyter']
+createdAt: 2022/8/28
 ---
 
 # 統計学の体系
@@ -14,7 +15,7 @@ tags: ['力学', '物理']
 - 推計統計学  
   母集団から抽出した特定の標本(サンプル)を使い、母集団の性質を推論する
 
-![image](./study3_files/tech_data1.jpg)
+![img](/img/md/study3_files/tech_data1.jpg)
 
 ### 「ビッグデータ」
 
@@ -43,7 +44,7 @@ plt.rcParams['font.family'] = 'Noto Sans JP'
 
 > 平均値や中央値など中心が同じでもばらつきが異なる 2 つのデータ
 
-![img](test_files/test_30.png)
+![img](/img/md/test_files/test_30.png)
 
 ## 分散
 
@@ -194,11 +195,11 @@ print("体重の分散:" + str(round(np.var(weight),2))+ "cm^2")
 print("手掌の長さの分散:" + str(round(np.var(hand_length),2)) + "cm^2")
 ```
 
-![png](study3_files/study3_8_0.png)
+![png](/img/md/study3_files/study3_8_0.png)
 
-![png](study3_files/study3_8_1.png)
+![png](/img/md/study3_files/study3_8_1.png)
 
-![png](study3_files/study3_8_2.png)
+![png](/img/md/study3_files/study3_8_2.png)
 
     身長の分散:20.46cm^2
     体重の分散:41.89cm^2
@@ -299,7 +300,7 @@ plt.ylabel("確率")
 plt.show()
 ```
 
-![png](study3_files/study3_18_0.png)
+![png](/img/md/study3_files/study3_18_0.png)
 
 離散型確率分布：X 軸に離散確率変数,Y 軸に確率を取るグラフ
 
@@ -337,7 +338,7 @@ plt.ylabel("確率密度")
 plt.show()
 ```
 
-![png](study3_files/study3_21_0.png)
+![png](/img/md/study3_files/study3_21_0.png)
 
 $ f(1) = \frac{2}{9} , f(3) = \frac{2}{3} $であることから確率変数は P(1)よりも P(3)が「相対的に出やすい」といえる
 
@@ -445,7 +446,7 @@ plt.ylabel("確率密度")
 plt.show()
 ```
 
-![png](study3_files/study3_28_0.png)
+![png](/img/md/study3_files/study3_28_0.png)
 
 上記グラフ$(0 \leqq X \leqq 6)$の面積：期待値 = $ 3 $
 
@@ -512,7 +513,3 @@ $$ V(X) = \int\_{-\infty}^{\infty}(x - μ)^2f(x)dx $$
 
 - 統計学  
   [統計 WEB](https://bellcurve.jp/statistics/)
-
-```python
-
-```
