@@ -7,8 +7,8 @@
         <v-card-subtitle class="py-0">Sutudy Article</v-card-subtitle>
       </v-col>
     </v-row>
-    <v-card
-      :class="$vuetify.breakpoint.name == 'xs' ? 'pa-2 mx-0 ' : 'pa-10'"
+    <div
+      :class="$vuetify.breakpoint.name == 'xs' ? 'pa-2 mx-0 ' : 'pa-5'"
       elevation="3"
     >
       <v-card-subtitle class="px-1">
@@ -20,7 +20,7 @@
         article.title ? article.title : 'notitle'
       }}</v-card-title>
       <NuxtContent :document="article" />
-    </v-card>
+    </div>
   </div>
 </template>
 
@@ -94,5 +94,4 @@ img {
   width: 100%;
   height: auto;
 }
-
 </style>
