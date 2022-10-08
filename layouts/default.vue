@@ -23,26 +23,43 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar collapse-on-scroll color="white" app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="activeTitle" />
+    <v-app-bar dark collapse-on-scroll app :src="path">
+      <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer" />
+      <v-toolbar-title color="white" v-text="activeTitle" />
     </v-app-bar>
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
-    <v-footer app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer color="black">
+      <v-row justify="center" no-gutters>
+        <v-btn
+          v-for="(footerItem, i) in items"
+          :key="i"
+          color="white"
+          :to="footerItem.to"
+          text
+          rounded
+          class="my-2"
+        >
+          {{ footerItem.title }}
+        </v-btn>
+        <v-col class="black py-4 text-center white--text" cols="12">
+          {{ new Date().getFullYear() }} — <strong>Hello,world</strong>
+        </v-col>
+      </v-row>
     </v-footer>
   </v-app>
 </template>
 
 <script>
+import imgPath from '~/assets/img/gotfather-nav.jpg'
 export default {
   name: 'DefaultLayout',
   data() {
     return {
+      path: imgPath,
       drawer: false,
       clipped: true,
       fixed: true,

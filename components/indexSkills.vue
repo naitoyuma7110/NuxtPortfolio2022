@@ -25,7 +25,7 @@
         <v-icon>mdi-server </v-icon>
       </v-tab>
     </v-tabs>
-    <v-tabs-items v-model="tab">
+    <v-tabs-items v-model="tab" class="bg-black">
       <v-tab-item v-for="(skills, i) in skillSet" :key="i" :value="i">
         <v-card
           v-for="(skill, j) in skills"
@@ -175,5 +175,8 @@ export default {
 <style>
 .skillArea {
   height: 600px;
+}
+.bg-black {
+  background: black;
 }
 </style>
