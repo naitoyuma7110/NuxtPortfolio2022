@@ -146,6 +146,9 @@ export default {
       return tags
     },
   },
+  mounted() {
+    this.$vuetify.theme.dark = true
+  },
   methods: {
     toArticles(slug) {
       this.$router.push({

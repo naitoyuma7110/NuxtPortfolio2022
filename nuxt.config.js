@@ -4,10 +4,10 @@ export default {
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - portfolio',
+    // titleTemplate: '%s - portfolio',
     title: 'portfolio',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },
@@ -45,9 +45,9 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    // 追加
+    // フォント
     '@nuxtjs/google-fonts',
-    // 追加
+    // microcms
     'nuxt-microcms-module',
   ],
   microcms: {
@@ -80,7 +80,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,

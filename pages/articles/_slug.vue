@@ -38,6 +38,7 @@ export default {
   mounted() {
     Prism.highlightAll()
     this.renderMathJax()
+    this.$vuetify.theme.dark = false
   },
   methods: {
     renderMathJax() {

@@ -25,7 +25,7 @@
     </v-navigation-drawer>
     <v-app-bar dark collapse-on-scroll app :src="path">
       <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer" />
-      <v-toolbar-title color="white" v-text="activeTitle" />
+      <v-toolbar-title color="white" class="nav-title" v-text="activeTitle" />
     </v-app-bar>
     <v-main>
       <v-container>
@@ -59,6 +59,7 @@ export default {
   name: 'DefaultLayout',
   data() {
     return {
+      isDarkMode: false,
       path: imgPath,
       drawer: false,
       clipped: true,
@@ -99,5 +100,17 @@ export default {
       return activeTitle
     },
   },
+  mounted() {
+    if (this.$route.path === '/post') {
+      this.$vuetify.theme.dark = false
+    } else {
+      this.$vuetify.theme.dark = true
+    }
+  },
 }
 </script>
+<style>
+.nav-title {
+  text-shadow: 0.5px 0.5px 0.1px black;
+}
+</style>

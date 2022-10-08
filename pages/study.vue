@@ -2,7 +2,7 @@
   <div>
     <v-row class="py-5">
       <v-col cols="12" sm="5">
-        <v-card-title class="pb-0">学習ロードマップ</v-card-title>
+        <v-card-title class="pb-0">学習ステップ</v-card-title>
         <v-divider class="mx-5"></v-divider>
         <v-card-subtitle class="py-0">Load Map</v-card-subtitle>
       </v-col>
@@ -130,28 +130,28 @@ export default {
       stepId: 1,
       stepInfo: [
         {
-          title: 'HTML,CSSによるWebサイトの外観',
+          title: 'HTML,CSS',
           discription: 'How to make static web site',
         },
         {
-          title: 'クライアントサイドのプログラミング言語JavaScript',
+          title: 'JavaScript',
           discription: 'It is based my fronend work',
         },
         {
-          title: 'CSSフレームワーク使用した効率的なデザイン',
-          discription: 'complement the design',
+          title: 'Bootstrap',
+          discription: 'complement the design by CSS framework',
         },
         {
-          title: 'JSフレームワークによるSPA',
-          discription: 'Technology in browser languages',
+          title: 'Vue.js',
+          discription: 'JS frameWork Vue-X,Vue-roouter',
         },
         {
-          title: 'サーバー言語によるAPI作成,既存のAPIサービスの利用',
+          title: 'サーバーサイド言語',
           discription: 'Backend and API servies',
         },
         {
-          title: 'クライアントサイドのルーティング,データフロー管理',
-          discription: 'Nuxt Includes Vue-X,Vue-roouter',
+          title: 'Nuxt.js',
+          discription: 'SPA,SSR',
         },
       ],
     }
@@ -206,6 +206,9 @@ export default {
       ]
     },
   },
+  mounted() {
+    this.$vuetify.theme.dark = false
+  },
   methods: {
     externalLink(url) {
       window.open(url, '_blank')
@@ -214,12 +217,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .programing-icon {
   border: 1px solid #ccc;
 }
 .title-pointer {
   cursor: pointer;
 }
-
 </style>

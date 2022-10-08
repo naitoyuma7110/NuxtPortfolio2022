@@ -21,6 +21,9 @@ export default {
   data() {
     return {}
   },
+  mounted() {
+    this.$vuetify.theme.dark = true
+  },
 }
 </script>
 
