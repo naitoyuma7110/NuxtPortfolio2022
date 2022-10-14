@@ -24,7 +24,11 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar dark collapse-on-scroll app :src="path">
-      <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon
+        color="white"
+        class="nav-icon"
+        @click.stop="drawer = !drawer"
+      />
       <v-toolbar-title color="white" class="nav-title" v-text="activeTitle" />
     </v-app-bar>
     <v-main>
@@ -100,17 +104,14 @@ export default {
       return activeTitle
     },
   },
-  mounted() {
-    if (this.$route.path === '/post') {
-      this.$vuetify.theme.dark = false
-    } else {
-      this.$vuetify.theme.dark = true
-    }
-  },
+  mounted() {},
 }
 </script>
 <style>
 .nav-title {
   text-shadow: 0.5px 0.5px 0.1px black;
+}
+.nav-icon {
+  text-shadow: 1px 2px 1px black;
 }
 </style>
