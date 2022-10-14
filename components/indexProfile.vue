@@ -74,7 +74,7 @@ export default {
 <style>
 .card-back-image {
   overflow: visible;
-  margin-bottom: 6rem;
+  margin-bottom: 7rem;
 }
 
 .card-front-items {
