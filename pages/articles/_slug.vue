@@ -93,6 +93,9 @@ v-card {
 }
 img {
   width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
   height: auto;
 }
 </style>

@@ -301,6 +301,4 @@ $$ x = \frac{v_0^2}{2\mu'g} $$
 
 
 - [高校の力学を全部解説する授業(前編)【物理】](https://www.youtube.com/watch?v=9XEX4mZFOhA&t=16058s)
-
-
 $$
