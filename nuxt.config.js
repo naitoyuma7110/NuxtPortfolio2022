@@ -18,6 +18,11 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
+        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap',
+        rel: 'stylesheet',
+      },
+
+      {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
       },

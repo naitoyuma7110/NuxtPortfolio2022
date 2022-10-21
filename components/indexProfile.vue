@@ -7,7 +7,7 @@
       class="card-back-image rounded-0"
     >
       <v-app-bar flat color="rgba(0, 0, 0, 0)">
-        <v-toolbar-title class="text-h5 white--text">About me</v-toolbar-title>
+        <v-toolbar-title class="text-h5 white--text">自己紹介</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-app-bar>
       <v-layout class="card-front-items" d-flex flex-column align-center>
@@ -15,41 +15,58 @@
           <img class="avater-img" alt="user" src="/img/myimg.jpg" />
         </v-avatar>
         <h3 class="text-h4 mb-0">内藤祐馬</h3>
-        <small>Naito Yuma</small>
+        <p class="grey--text">Naito Yuma</p>
       </v-layout>
     </v-img>
 
-    <v-card-text>
-      <v-btn depressed rounded fab small>
-        <v-icon color="blue">mdi-facebook</v-icon>
-      </v-btn>
-      <v-btn depressed rounded fab small>
-        <v-icon>mdi-github</v-icon>
-      </v-btn>
-      <v-btn depressed rounded fab small>
-        <v-icon>mdi-account-arrow-right</v-icon>
-      </v-btn>
-    </v-card-text>
     <v-row>
       <v-col cols="12" sm="7">
         <v-card-title class="text--primary pb-0">
           理学療法士/プログラマー
         </v-card-title>
         <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="pt-0"
+        <v-card-subtitle class="pt-0 grey--text"
           >Pyhisical Therapist / Programer
         </v-card-subtitle>
-        <v-card-text>
-          <div class="mb-2">
-            勉強もかねてプロフィールサイトを作成 実験的に色々使ってみる
-          </div>
+        <v-card-text class="mb-1 grey--text text--lighten-1">
+          医療業界が抱える問題を解決する手段としてIT技術に興味を持ち転職しました。
+          前職の経験とプログラムの技術を利用して医療現場の専門家に貢献する仕事がしたいと思っています。
         </v-card-text>
+        <v-layout d-flex>
+          <v-btn
+            depressed
+            rounded
+            small
+            @click="externalLink('https://www.facebook.com/naitoyuma/')"
+          >
+            <v-icon color="blue" left>mdi-facebook</v-icon>
+            FaceBook
+          </v-btn>
+          <v-btn
+            depressed
+            rounded
+            small
+            @click="externalLink('https://github.com/naitoyuma3230')"
+          >
+            <v-icon left>mdi-github</v-icon>
+            GitHub
+          </v-btn>
+          <v-btn
+            depressed
+            rounded
+            small
+            @click="externalLink('https://www.wantedly.com/id/naito_yuma')"
+          >
+            <v-icon left>mdi-account-arrow-right</v-icon>
+            Wantedly
+          </v-btn>
+        </v-layout>
       </v-col>
       <v-col cols="12" sm="5">
-        <v-card-title class="text--primary pb-0">プロフィール</v-card-title>
+        <v-card-title class="pb-0">プロフィール</v-card-title>
         <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="pt-0">Profile</v-card-subtitle>
-        <v-card-text>
+        <v-card-subtitle class="pt-0 grey--text">Profile</v-card-subtitle>
+        <v-card-text class="grey--text text--lighten-1">
           <div class="mb-2">出身地: 静岡</div>
           <div class="mb-2">年齢: 30</div>
           <div class="mb-2">仕事: プログラマー(フロントエンド)</div>
@@ -69,12 +86,17 @@ export default {
       path: imgPath,
     }
   },
+  methods: {
+    externalLink(url) {
+      window.open(url, '_blank')
+    },
+  },
 }
 </script>
 <style>
 .card-back-image {
   overflow: visible;
-  margin-bottom: 7rem;
+  margin-bottom: 8rem;
 }
 
 .card-front-items {

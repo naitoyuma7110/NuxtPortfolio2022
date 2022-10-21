@@ -2,114 +2,70 @@
   <div>
     <v-row class="py-5">
       <v-col cols="12" sm="5">
-        <v-card-title class="pb-0">学習ステップ</v-card-title>
+        <v-card-title class="pb-0">プログラムの勉強</v-card-title>
         <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="py-0">Load Map</v-card-subtitle>
+        <v-card-subtitle class="py-0">pleasure</v-card-subtitle>
       </v-col>
     </v-row>
 
-    <v-stepper v-model="stepId" vertical flat>
-      <div v-for="(works, i) in categrisedWorks" :key="i">
-        <v-stepper-step class="title-pointer" :step="i + 1">
-          <div class="mb-2" @click="stepId = i + 1">
-            {{ stepInfo[i].title }}
-          </div>
-          <small>{{ stepInfo[i].discription }}</small>
-        </v-stepper-step>
-
-        <v-stepper-content :step="i + 1">
-          <v-row class="mx-0 pa-0">
-            <v-col
-              v-for="work in works"
-              :key="work.id"
-              cols="12"
-              sm="6"
-              class="pa-1 my-1"
-              lg="4"
-            >
-              <v-card class="mx-auto" elevation="1">
-                <div
-                  v-if="$vuetify.breakpoint.name == 'xs'"
-                  class="pa-2 text-center"
+    <div>
+      <v-row class="mx-0 pa-0">
+        <v-col
+          v-for="(work, i) in contents"
+          :key="i"
+          cols="12"
+          sm="6"
+          class="pa-1 my-1"
+          lg="4"
+        >
+          <v-card class="mx-auto" rounded outlined elevation="1">
+            <v-img
+              lazy-src
+              position="center"
+              width="auto"
+              height="12rem"
+              :src="work.thumbnail.url"
+            ></v-img>
+            <div class="pa-2 text-center">
+              {{ work.title }}
+            </div>
+            <div class="flex-wrap pa-2 card-skills">
+              <v-btn
+                v-for="(item, i) in work.skills"
+                :key="i"
+                small
+                rounded
+                depressed
+                outlined
+                class="mb-1"
+              >
+                <v-icon
+                  size="1.8rem"
+                  class="mr-1"
+                  :color="getSkillIcon(item).color"
+                  left
+                  >{{ getSkillIcon(item).icon }}</v-icon
                 >
-                  {{ work.title }}
-                </div>
-                <v-row align="center">
-                  <v-col cols="4" sm="12">
-                    <v-img
-                      v-if="$vuetify.breakpoint.name !== 'xs'"
-                      lazy-src
-                      position="top"
-                      width="auto"
-                      height="10rem"
-                      :src="work.thumbnail.url"
-                    ></v-img>
-                    <v-avatar
-                      v-if="$vuetify.breakpoint.name == 'xs'"
-                      size="3.5rem"
-                      class="ms-4"
-                    >
-                      <v-img
-                        rounded
-                        :src="work.thumbnail.url"
-                        class="programing-icon"
-                      ></v-img>
-                    </v-avatar>
-                  </v-col>
-                  <v-col cols="8" sm="12">
-                    <div v-if="$vuetify.breakpoint.name != 'xs'" class="px-2">
-                      {{ work.title }}
-                    </div>
-                    <div class="d-flex flex-wrap pa-2">
-                      <v-btn
-                        v-for="(item, i) in work.skills"
-                        :key="i"
-                        x-small
-                        rounded
-                        depressed
-                        outlined
-                        class="mb-1"
-                      >
-                        {{ item }}</v-btn
-                      >
-                    </div>
-                  </v-col>
-                </v-row>
-                <v-card-text class="pa-2">
-                  {{ work.discription }}
-                </v-card-text>
-                <v-card-text class="pa-2">
-                  <v-btn
-                    x-small
-                    outlined
-                    fab
-                    rounded
-                    color="primary"
-                    @click="externalLink(work.url)"
-                  >
-                    <v-icon> mdi-github </v-icon>
-                  </v-btn>
-                  <v-btn
-                    x-small
-                    outlined
-                    fab
-                    rounded
-                    color="primary"
-                    @click="externalLink(work.url)"
-                  >
-                    <v-icon> mdi-link-variant </v-icon>
-                  </v-btn>
-                </v-card-text>
-              </v-card>
-            </v-col>
-          </v-row>
-          <v-layout class="my-5" justify-end>
-            <v-btn outlined class="mx-1" @click="stepId -= 1"> Back </v-btn>
-            <v-btn color="primary mx-1" @click="stepId += 1">Next</v-btn>
-          </v-layout>
-        </v-stepper-content>
-      </div>
-    </v-stepper>
+                {{ item }}</v-btn
+              >
+            </div>
+            <v-card-text class="pa-2 card-text">
+              {{ work.discription }}
+            </v-card-text>
+            <v-card-text class="pa-2">
+              <v-btn small text color="dark" @click="externalLink(work.url)">
+                <v-icon size="1.8rem" left> mdi-github </v-icon>
+                view code
+              </v-btn>
+              <v-btn small text color="primary" @click="externalLink(work.url)">
+                <v-icon size="1.8rem" left> mdi-link-variant </v-icon>
+                view site
+              </v-btn>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </div>
   </div>
 </template>
 
@@ -156,56 +112,7 @@ export default {
       ],
     }
   },
-  computed: {
-    htmlWorks() {
-      const htmlWorks = this.contents.filter((work) => {
-        return (
-          !work.skills.includes('JavaScript') && work.skills.includes('HTML')
-        )
-      })
-      return htmlWorks
-    },
-    javascriptWorks() {
-      const javascriptWorks = this.contents.filter((work) => {
-        return work.skills.includes('JavaScript')
-      })
-      return javascriptWorks
-    },
-    bootstrapWorks() {
-      const bootstrapWorks = this.contents.filter((work) => {
-        return work.skills.includes('Bootstrap')
-      })
-      return bootstrapWorks
-    },
-    vueWorks() {
-      const vueWorks = this.contents.filter((work) => {
-        return work.skills.includes('Vue.js')
-      })
-      return vueWorks
-    },
-    apiWorks() {
-      const apiWorks = this.contents.filter((work) => {
-        return work.api.length && !work.skills.includes('Nuxt.js')
-      })
-      return apiWorks
-    },
-    nuxtWorks() {
-      const nuxtWorks = this.contents.filter((work) => {
-        return work.skills.includes('Nuxt.js')
-      })
-      return nuxtWorks
-    },
-    categrisedWorks() {
-      return [
-        this.htmlWorks,
-        this.javascriptWorks,
-        this.bootstrapWorks,
-        this.vueWorks,
-        this.apiWorks,
-        this.nuxtWorks,
-      ]
-    },
-  },
+  computed: {},
   mounted() {
     this.$vuetify.theme.dark = false
   },
@@ -213,15 +120,35 @@ export default {
     externalLink(url) {
       window.open(url, '_blank')
     },
+    getSkillIcon(skill) {
+      const icons = {
+        html: {
+          icon: 'mdi-language-html5',
+          color: 'red',
+        },
+        css: {
+          icon: 'mdi-language-html5',
+          color: 'blue',
+        },
+      }
+      switch (skill) {
+        case 'HTML':
+          return icons.html
+        default:
+          return 'HELLO'
+      }
+    },
   },
 }
 </script>
 
 <style scoped>
-.programing-icon {
-  border: 1px solid #ccc;
+.card-text {
+  height: 8rem;
+  overflow: hidden;
 }
-.title-pointer {
-  cursor: pointer;
+
+.card-skills {
+  height: 6rem;
 }
 </style>

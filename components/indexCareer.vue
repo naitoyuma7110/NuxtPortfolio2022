@@ -7,6 +7,7 @@
         <v-card-subtitle class="py-0">History</v-card-subtitle>
       </v-col>
     </v-row>
+
     <v-card-text>
       <v-timeline :dense="$vuetify.breakpoint.name == 'xs'">
         <v-timeline-item
@@ -18,17 +19,28 @@
         >
           <template>
             <span
-              :class="`headline font-weight-bold ${item.color}--text`"
+              :class="`headline font-weight-bold ${item.color}--text text--lighten-1`"
               v-text="item.year"
             ></span>
           </template>
           <div class="py-4">
-            <h2 :class="`headline font-weight-light mb-4 ${item.color}--text`">
+            <h3
+              :class="`text-h6 subtitle-2 mb-4 ${item.color}--text text--lighten-1`"
+            >
               {{ item.title }}
-            </h2>
-            <div>
+            </h3>
+            <div class="grey--text text--lighten-1">
               {{ item.body }}
             </div>
+            <v-btn
+              v-if="item.link"
+              icon
+              class="ml-5"
+              @click="externalLink(item.link)"
+            >
+              <v-icon color="blue lighten-1 left">mdi-link</v-icon>
+              sample
+            </v-btn>
           </div>
         </v-timeline-item>
       </v-timeline>
@@ -42,37 +54,40 @@ export default {
     return {
       history: [
         {
-          color: 'green',
+          color: 'orange',
           year: '2010',
-          title: 'BOTCHAN ',
-          body: 'Because of an hereditary recklessness, I have been playing always a losing game since my childhood.During my grammar school days, I was once laid up for about a week by jumping from the second story of the school building.',
-        },
-        {
-          color: 'green',
-          year: '2014',
-          title: 'BOTCHAN ',
-          body: 'Because of an hereditary recklessness, I have been playing always a losing game since my childhood.During my grammar school days, I was once laid up for about a week by jumping from the second story of the school building.',
+          link: 'https://docs.google.com/presentation/d/17vu2753vPS4-_fN7HMctV1U8ebKgzi66/edit?usp=sharing&ouid=108098578287300322924&rtpof=true&sd=true',
+          title: '理学療法学科卒業',
+          body: '回復期リハビリテーション病院に7年勤務し、学会で何回か治療経験に基ずく発表を行いました。',
         },
         {
           color: 'amber',
-          year: '2018',
-          title: 'BOTCHAN ',
-          body: 'Because of an hereditary recklessness, I have been playing always a losing game since my childhood.During my grammar school days, I was once laid up for about a week by jumping from the second story of the school building.',
+          year: '2020',
+          link: 'https://docs.google.com/presentation/d/1IqhsWxXTzqxGCBppxXXvWQxOXAIJbcCP/edit?usp=sharing&ouid=108098578287300322924&rtpof=true&sd=true',
+          title: 'プログラムの勉強',
+          body: '治療効果の検証のため、スマホの加速度センサーから重心動揺を取得するプログラムを作成しました。それをきっかけに転職する事にしました。',
         },
         {
-          color: 'orange',
-          year: '2019',
-          title: 'BOTCHAN ',
-          body: 'Because of an hereditary recklessness, I have been playing always a losing game since my childhood.During my grammar school days, I was once laid up for about a week by jumping from the second story of the school building.',
-        },
-        {
-          color: 'orange',
+          color: 'yellow',
           year: '2021',
-          title: 'BOTCHAN ',
-          body: 'Because of an hereditary recklessness, I have been playing always a losing game since my childhood.During my grammar school days, I was once laid up for about a week by jumping from the second story of the school building.',
+          link: null,
+          title: 'プログラマーに転職 ',
+          body: 'ご縁を頂き東証プライム上場企業にプログラマーとして就職しました。フロントエンドではJavascriptのフレームワークであるjQueryやVueを使用しています。個人的にはLaravelやPythonを使用したWebアプリの作成などしています。',
+        },
+        {
+          color: 'cyan',
+          year: '2022',
+          link: null,
+          title: 'この先やってみたい事',
+          body: '前職では物理的なデータに基づく運動解析などに興味があり、現在も数学、統計学、物理学の勉強を続けています。今後はそうした経験とIT技術を掛け合わせた仕事がしたいと考えています。',
         },
       ],
     }
+  },
+  methods: {
+    externalLink(url) {
+      window.open(url, '_blank')
+    },
   },
 }
 </script>

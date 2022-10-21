@@ -2,29 +2,18 @@
   <div>
     <v-row>
       <v-col cols="12" sm="5">
-        <v-card-title class="pb-0">技術・知識</v-card-title>
+        <v-card-title class="pb-0">技術</v-card-title>
         <v-divider class="mx-5"></v-divider>
         <v-card-subtitle class="py-0">Skills</v-card-subtitle>
       </v-col>
     </v-row>
-    <v-tabs v-model="tab" show-arrows icons-and-text>
-      <v-tabs-slider></v-tabs-slider>
 
-      <v-tab>
-        開発環境/ツール
-        <v-icon>mdi-hammer-wrench</v-icon>
-      </v-tab>
-
-      <v-tab>
-        フロントエンド
-        <v-icon>mdi-application-brackets-outline</v-icon>
-      </v-tab>
-
-      <v-tab>
-        バックエンド
-        <v-icon>mdi-server </v-icon>
-      </v-tab>
-    </v-tabs>
+    <v-btn-toggle v-model="toggle_exclusive">
+      <v-btn v-for="(item, i) in skillCategory" :key="i" @click="tabChoice(i)">
+        <v-icon>{{ item.icon }}</v-icon>
+        {{ item.name }}
+      </v-btn>
+    </v-btn-toggle>
     <v-tabs-items v-model="tab" class="bg-black">
       <v-tab-item v-for="(skills, i) in skillSet" :key="i" :value="i">
         <v-card
@@ -33,20 +22,41 @@
           class="mx-auto"
           elevation="1"
         >
-          <v-layout d-flex align-center class="py-2">
-            <v-avatar class="ma-5">
-              <v-icon size="50" :color="skill.color">
-                {{ `mdi-` + skill.icon }}
-              </v-icon>
-            </v-avatar>
-            <div>
+          <div class="py-2">
+            <div class="d-flex ma-2">
+              <v-avatar>
+                <v-icon size="50" :color="skill.color">
+                  {{ `mdi-` + skill.icon }}
+                </v-icon>
+              </v-avatar>
               <v-card-title class="my-0 py-0">{{ skill.name }}</v-card-title>
+            </div>
+            <div>
               <v-card-text class="my-0 py-0">
-                {{ skill.discription }}
                 {{ skill.discription }}
               </v-card-text>
             </div>
-          </v-layout>
+          </div>
+
+          <v-list-item
+            v-for="(item, i) in skill.flamework"
+            :key="i"
+            class="my-3"
+          >
+            <v-row>
+              <v-col cols="2">
+                <div class="d-flex align-center flex-column">
+                  <v-icon :color="item.color">{{ `mdi-` + item.icon }}</v-icon>
+                  <div>
+                    {{ item.name }}
+                  </div>
+                </div>
+              </v-col>
+              <v-col jsutify="start" cols="10">
+                {{ item.discription }}
+              </v-col>
+            </v-row>
+          </v-list-item>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -56,15 +66,55 @@
 export default {
   data() {
     return {
-      tab: null,
+      tab: 0,
       toggle: [],
+      skillCategory: [
+        {
+          name: 'フロント',
+          icon: 'mdi-application-brackets-outline',
+        },
+        {
+          name: '開発ツール',
+          icon: 'mdi-hammer-wrench',
+        },
+        {
+          name: 'バックエンド',
+          icon: 'mdi-application-brackets-outline',
+        },
+      ],
       skillSet: [
+        [
+          {
+            name: 'JavaScript',
+            icon: 'nodejs',
+            color: 'yellow',
+            discription:
+              '業務では主にWebアプリの画面UIを作成し、APIを介しサーバーサイドとデータのやり取りを行っています。自社製品が医療介護系のシステムという事もあり、前職の経験から現場のユーザーが使いやすいUI設計を心がけています',
+            flamework: [
+              {
+                name: 'Jquery',
+                icon: 'jquery',
+                color: 'yellow',
+                rate: '3',
+                discription:
+                  'this is discription. this is discription.this is discription.this is discription.',
+              },
+              {
+                name: 'Vue',
+                icon: 'vuejs',
+                color: 'teal',
+                rate: '3',
+                discription:
+                  'this is discription. this is discription.this is discription.this is discription.',
+              },
+            ],
+          },
+        ],
         [
           {
             name: 'Docker',
             icon: 'docker',
             color: 'primary',
-            rate: 2,
             discription:
               'this is Docker discription. Simple and No error great container env',
           },
@@ -83,42 +133,6 @@ export default {
             rate: 1,
             discription:
               'this is Heroku discription. I dont know him this is Heroku discription. I dont know him',
-          },
-        ],
-        [
-          {
-            name: 'JavaScript',
-            icon: 'nodejs',
-            color: 'yellow',
-            rate: 3,
-            discription:
-              'this is Docker discription. Simple and No error great container env',
-            flamework: [
-              {
-                name: 'Vue',
-                icon: 'vuejs',
-                color: 'teal',
-                rate: '3',
-                discription:
-                  'this is discription. this is discription.this is discription.this is discription.',
-              },
-              {
-                name: 'Nuxt',
-                icon: 'nuxt',
-                color: 'teal',
-                rate: '3',
-                discription:
-                  'this is discription. this is discription.this is discription.this is discription.',
-              },
-              {
-                name: 'Jquery',
-                icon: 'jquery',
-                color: 'yellow',
-                rate: '3',
-                discription:
-                  'this is discription. this is discription.this is discription.this is discription.',
-              },
-            ],
           },
         ],
         [
@@ -170,9 +184,19 @@ export default {
       ],
     }
   },
+  methods: {
+    tabChoice(i) {
+      if (this.tab !== i) {
+        this.tab = i
+      }
+    },
+  },
 }
 </script>
 <style>
+.skilltab.active {
+  background: #ccc;
+}
 .skillArea {
   height: 600px;
 }
