@@ -15,48 +15,62 @@
       </v-btn>
     </v-btn-toggle>
     <v-tabs-items v-model="tab" class="bg-black">
-      <v-tab-item v-for="(skills, i) in skillSet" :key="i" :value="i">
+      <v-tab-item
+        v-for="(skills, i) in skillSet"
+        :key="i"
+        class="py-0 my-0"
+        :value="i"
+      >
         <v-card
           v-for="(skill, j) in skills"
           :key="j"
-          class="mx-auto"
+          class="mx-auto py-0"
           elevation="1"
         >
-          <div class="py-2">
-            <div class="d-flex ma-2">
-              <v-avatar>
-                <v-icon size="50" :color="skill.color">
-                  {{ `mdi-` + skill.icon }}
-                </v-icon>
-              </v-avatar>
-              <v-card-title class="my-0 py-0">{{ skill.name }}</v-card-title>
-            </div>
-            <div>
-              <v-card-text class="my-0 py-0">
-                {{ skill.discription }}
-              </v-card-text>
-            </div>
-          </div>
-
-          <v-list-item
-            v-for="(item, i) in skill.flamework"
-            :key="i"
-            class="my-3"
+          <v-alert
+            border="bottom"
+            colored-border
+            :color="skill.color"
+            elevation="1"
           >
-            <v-row>
-              <v-col cols="2">
-                <div class="d-flex align-center flex-column">
-                  <v-icon :color="item.color">{{ `mdi-` + item.icon }}</v-icon>
-                  <div>
-                    {{ item.name }}
+            <div class="py-2">
+              <div class="d-flex ma-2">
+                <v-avatar>
+                  <v-icon size="50" :color="skill.color">
+                    {{ `mdi-` + skill.icon }}
+                  </v-icon>
+                </v-avatar>
+                <v-card-title class="my-0 py-0">{{ skill.name }}</v-card-title>
+              </div>
+              <div>
+                <v-card-text class="my-0 py-0">
+                  {{ skill.discription }}
+                </v-card-text>
+              </div>
+            </div>
+
+            <v-list-item
+              v-for="(item, i) in skill.flamework"
+              :key="i"
+              class="mb-1"
+            >
+              <v-row>
+                <v-col cols="2">
+                  <div class="d-flex align-center flex-column">
+                    <v-icon :color="item.color">{{
+                      `mdi-` + item.icon
+                    }}</v-icon>
+                    <div>
+                      {{ item.name }}
+                    </div>
                   </div>
-                </div>
-              </v-col>
-              <v-col jsutify="start" cols="10">
-                {{ item.discription }}
-              </v-col>
-            </v-row>
-          </v-list-item>
+                </v-col>
+                <v-col jsutify="start" cols="10">
+                  {{ item.discription }}
+                </v-col>
+              </v-row>
+            </v-list-item>
+          </v-alert>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -96,8 +110,7 @@ export default {
                 icon: 'jquery',
                 color: 'yellow',
                 rate: '3',
-                discription:
-                  'this is discription. this is discription.this is discription.this is discription.',
+                discription: '',
               },
               {
                 name: 'Vue',
