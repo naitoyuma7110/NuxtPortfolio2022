@@ -13,23 +13,21 @@
         <v-timeline-item
           v-for="(item, i) in history"
           :key="i"
-          :color="history.color"
+          :color="item.color"
           :right="$vuetify.breakpoint.name == 'xs'"
           small
         >
           <template>
             <span
-              :class="`headline font-weight-bold ${item.color}--text text--lighten-1`"
+              :class="`headline font-weight-bold ${item.color}--text`"
               v-text="item.year"
             ></span>
           </template>
           <div class="py-4">
-            <h3
-              :class="`text-h6 subtitle-2 mb-4 ${item.color}--text text--lighten-1`"
-            >
+            <h3 :class="`text-h6 subtitle-2 mb-4 ${item.color}--text`">
               {{ item.title }}
             </h3>
-            <div class="grey--text text--lighten-1">
+            <div class="grey--text">
               {{ item.body }}
             </div>
             <v-btn
@@ -54,11 +52,11 @@ export default {
     return {
       history: [
         {
-          color: 'orange',
+          color: 'deep-orange',
           year: '2010',
           link: 'https://docs.google.com/presentation/d/17vu2753vPS4-_fN7HMctV1U8ebKgzi66/edit?usp=sharing&ouid=108098578287300322924&rtpof=true&sd=true',
           title: '理学療法学科卒業',
-          body: '回復期リハビリテーション病院に7年勤務し、学会で何回か治療経験に基ずく発表を行いました。',
+          body: '回復期リハビリテーション病院に7年勤務し、学会やフォーラムで何回か治療経験に基ずく発表を行いました。',
         },
         {
           color: 'amber',
@@ -68,14 +66,14 @@ export default {
           body: '治療効果の検証のため、スマホの加速度センサーから重心動揺を取得するプログラムを作成しました。それをきっかけに転職する事にしました。',
         },
         {
-          color: 'yellow',
+          color: 'blue',
           year: '2021',
           link: null,
           title: 'プログラマーに転職 ',
           body: 'ご縁を頂き東証プライム上場企業にプログラマーとして就職しました。フロントエンドではJavascriptのフレームワークであるjQueryやVueを使用しています。個人的にはLaravelやPythonを使用したWebアプリの作成などしています。',
         },
         {
-          color: 'cyan',
+          color: 'indigo',
           year: '2022',
           link: null,
           title: 'この先やってみたい事',

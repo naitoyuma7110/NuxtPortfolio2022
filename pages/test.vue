@@ -41,8 +41,8 @@ import IndexSkills from '~/components/indexSkills.vue';
                 ></v-img>
                 <div class="d-flex flex-wrap pa-2">
                   <v-btn
-                    v-for="(item, i) in work.skills"
-                    :key="i"
+                    v-for="(item, k) in work.skills"
+                    :key="k"
                     x-small
                     rounded
                     depressed

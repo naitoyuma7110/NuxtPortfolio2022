@@ -14,7 +14,7 @@
         <v-avatar class="myimg_border" size="170" color="white">
           <img class="avater-img" alt="user" src="/img/myimg.jpg" />
         </v-avatar>
-        <h3 class="text-h4 mb-0">内藤祐馬</h3>
+        <h2 class="text-h4 my-3">内藤祐馬</h2>
         <p class="grey--text">Naito Yuma</p>
       </v-layout>
     </v-img>
@@ -96,11 +96,10 @@ export default {
 <style>
 .card-back-image {
   overflow: visible;
-  margin-bottom: 8rem;
+  margin-bottom: 12rem;
 }
 
 .card-front-items {
-  bottom: -8rem;
   transform: translateY(40%);
   z-index: 20;
 }

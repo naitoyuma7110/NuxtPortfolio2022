@@ -31,8 +31,8 @@
             </div>
             <div class="flex-wrap pa-2 card-skills">
               <v-btn
-                v-for="(item, i) in work.skills"
-                :key="i"
+                v-for="(item, k) in work.skills"
+                :key="k"
                 small
                 rounded
                 depressed
@@ -84,32 +84,6 @@ export default {
   data() {
     return {
       stepId: 1,
-      stepInfo: [
-        {
-          title: 'HTML,CSS',
-          discription: 'How to make static web site',
-        },
-        {
-          title: 'JavaScript',
-          discription: 'It is based my fronend work',
-        },
-        {
-          title: 'Bootstrap',
-          discription: 'complement the design by CSS framework',
-        },
-        {
-          title: 'Vue.js',
-          discription: 'JS frameWork Vue-X,Vue-roouter',
-        },
-        {
-          title: 'サーバーサイド言語',
-          discription: 'Backend and API servies',
-        },
-        {
-          title: 'Nuxt.js',
-          discription: 'SPA,SSR',
-        },
-      ],
     }
   },
   computed: {},
@@ -149,6 +123,6 @@ export default {
 }
 
 .card-skills {
-  height: 6rem;
+  height: 4.5rem;
 }
 </style>

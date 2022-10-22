@@ -8,9 +8,10 @@
       </v-col>
     </v-row>
 
-    <v-btn-toggle v-model="toggle_exclusive">
-      <v-btn v-for="(item, i) in skillCategory" :key="i" @click="tabChoice(i)">
-        <v-icon>{{ item.icon }}</v-icon>
+    <!-- <v-btn-toggle v-model="toggle_exclusive"> -->
+    <v-btn-toggle v-model="tab">
+      <v-btn v-for="(item, i) in skillCategory" :key="i" text @click="tab = i">
+        <v-icon class="d-none d-sm-flex">{{ item.icon }}</v-icon>
         {{ item.name }}
       </v-btn>
     </v-btn-toggle>
@@ -50,8 +51,8 @@
             </div>
 
             <v-list-item
-              v-for="(item, i) in skill.flamework"
-              :key="i"
+              v-for="(item, k) in skill.flamework"
+              :key="k"
               class="mb-1"
             >
               <v-row>
@@ -135,7 +136,6 @@ export default {
             name: 'AWS',
             icon: 'aws',
             color: 'yellow',
-            rate: 2,
             discription:
               'this is AWS discription. I aften use EC2 server as static hosting servies',
           },
@@ -143,7 +143,6 @@ export default {
             name: 'Heroku',
             icon: 'abjad-hebrew',
             color: 'purple',
-            rate: 1,
             discription:
               'this is Heroku discription. I dont know him this is Heroku discription. I dont know him',
           },
@@ -153,7 +152,6 @@ export default {
             name: 'PHP',
             icon: 'language-php',
             color: 'deep-purple lighten-1',
-            rate: 3,
             discription:
               'this is Docker discription. Simple and No error great container env',
             flamework: [
@@ -161,7 +159,6 @@ export default {
                 name: 'Laravel',
                 icon: 'laravel',
                 color: 'red lighten-2',
-                rate: '3',
                 discription:
                   'this is discription. this is discription.this is discription.this is discription.',
               },
@@ -169,7 +166,6 @@ export default {
                 name: 'Wordpress',
                 icon: 'wordpress',
                 color: 'primary',
-                rate: '3',
                 discription:
                   'this is discription. this is discription.this is discription.this is discription.',
               },
@@ -179,7 +175,6 @@ export default {
             name: 'Python',
             icon: 'language-python',
             color: 'primary',
-            rate: 3,
             discription:
               'this is Docker discription. Simple and No error great container env',
             flamework: [
@@ -187,7 +182,6 @@ export default {
                 name: 'Jupyter Lab',
                 icon: 'dev-to',
                 color: 'red lighten-2',
-                rate: '3',
                 discription:
                   'this is discription. this is discription.this is discription.this is discription.',
               },
@@ -196,13 +190,6 @@ export default {
         ],
       ],
     }
-  },
-  methods: {
-    tabChoice(i) {
-      if (this.tab !== i) {
-        this.tab = i
-      }
-    },
   },
 }
 </script>
