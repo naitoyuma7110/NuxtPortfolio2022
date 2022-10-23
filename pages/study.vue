@@ -88,6 +88,7 @@
                 outlined
                 color="grey"
                 class="mb-1"
+                @click="selectedTag = item"
               >
                 <v-icon
                   size="1.4rem"
