@@ -53,23 +53,23 @@ export default {
       history: [
         {
           color: 'deep-orange',
-          year: '2010',
+          year: '2013',
           link: 'https://docs.google.com/presentation/d/17vu2753vPS4-_fN7HMctV1U8ebKgzi66/edit?usp=sharing&ouid=108098578287300322924&rtpof=true&sd=true',
-          title: '理学療法士',
-          body: '回復期リハビリテーション病院に7年勤務し、学会やフォーラムで何回か治療経験に基ずく発表を行いました。',
+          title: 'リハビリ病院の理学療法士',
+          body: '大学の理学療法学科を卒業した後、回復期リハビリテーション病院に7年勤務し学会やフォーラムで何回か治療経験に基づく発表を行いました。',
         },
         {
           color: 'amber',
           year: '2020',
           link: 'https://docs.google.com/presentation/d/1IqhsWxXTzqxGCBppxXXvWQxOXAIJbcCP/edit?usp=sharing&ouid=108098578287300322924&rtpof=true&sd=true',
-          title: 'プログラムの勉強',
-          body: '治療効果の検証のため、スマホの加速度センサーから重心動揺を取得するプログラムを作成しました。それをきっかけに転職する事にしました。',
+          title: 'プログラムの勉強と転職活動',
+          body: '治療効果の測定のためプログラムを書いたのをきっかけにIT技術に興味を持ち転職する事にしました。',
         },
         {
           color: 'blue',
           year: '2021',
           link: null,
-          title: 'プログラマーに転職 ',
+          title: '転職のため上京',
           body: 'ご縁を頂き東証プライム上場企業にプログラマーとして就職しました。フロントエンドではJavascriptのフレームワークであるjQueryやVueを使用しています。個人的にはLaravelやPythonを使用したWebアプリの作成などしています。',
         },
         {

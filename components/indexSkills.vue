@@ -89,12 +89,12 @@ export default {
           icon: 'mdi-application-brackets-outline',
         },
         {
-          name: '開発ツール',
-          icon: 'mdi-hammer-wrench',
-        },
-        {
           name: 'バックエンド',
           icon: 'mdi-application-brackets-outline',
+        },
+        {
+          name: '開発/ツール',
+          icon: 'mdi-hammer-wrench',
         },
       ],
       skillSet: [
@@ -110,41 +110,17 @@ export default {
                 name: 'Jquery',
                 icon: 'jquery',
                 color: 'yellow',
-                rate: '3',
-                discription: '',
+                discription:
+                  '単純なDOM操作やjQuery-uiを使用した画面作成で使用します。UIに関する色々なライブラリを使用しますが、自由に記述できるため往々にしてごちゃつきます。',
               },
               {
                 name: 'Vue',
                 icon: 'vuejs',
                 color: 'teal',
-                rate: '3',
                 discription:
-                  'this is discription. this is discription.this is discription.this is discription.',
+                  '簡単なDOM操作やjQuery-uiを使用した画面作成で使用します',
               },
             ],
-          },
-        ],
-        [
-          {
-            name: 'Docker',
-            icon: 'docker',
-            color: 'primary',
-            discription:
-              'this is Docker discription. Simple and No error great container env',
-          },
-          {
-            name: 'AWS',
-            icon: 'aws',
-            color: 'yellow',
-            discription:
-              'this is AWS discription. I aften use EC2 server as static hosting servies',
-          },
-          {
-            name: 'Heroku',
-            icon: 'abjad-hebrew',
-            color: 'purple',
-            discription:
-              'this is Heroku discription. I dont know him this is Heroku discription. I dont know him',
           },
         ],
         [
@@ -179,13 +155,36 @@ export default {
               'this is Docker discription. Simple and No error great container env',
             flamework: [
               {
-                name: 'Jupyter Lab',
+                name: 'Jupyter',
                 icon: 'dev-to',
                 color: 'red lighten-2',
                 discription:
                   'this is discription. this is discription.this is discription.this is discription.',
               },
             ],
+          },
+        ],
+        [
+          {
+            name: 'Docker',
+            icon: 'docker',
+            color: 'primary',
+            discription:
+              'this is Docker discription. Simple and No error great container env',
+          },
+          {
+            name: 'AWS',
+            icon: 'aws',
+            color: 'yellow',
+            discription:
+              'this is AWS discription. I aften use EC2 server as static hosting servies',
+          },
+          {
+            name: 'Heroku',
+            icon: 'abjad-hebrew',
+            color: 'purple',
+            discription:
+              'this is Heroku discription. I dont know him this is Heroku discription. I dont know him',
           },
         ],
       ],
