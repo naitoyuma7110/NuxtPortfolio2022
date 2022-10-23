@@ -36,7 +36,6 @@
                 small
                 rounded
                 depressed
-                text
                 class="mb-1"
               >
                 <v-icon
