@@ -1,4 +1,4 @@
-import IndexSkills from '~/components/indexSkills.vue';
+<!-- import IndexSkills from '~/components/indexSkills.vue';
 <template>
   <div>
     <v-row class="py-5">
@@ -201,4 +201,50 @@ export default {
 .title-pointer {
   cursor: pointer;
 }
-</style>
+</style> -->
+
+<template>
+  <div>
+    // code export default { //
+    ライフフック：asyncDataメソッドは、APIなどからデータを取得し、ローカルデータに格納する時に使用
+    async asyncData({ $microcms }) { const contents = await $microcms.get({
+    endpoint: 'works', queries: { limit: 20 }, //
+    取得するコンテンツにフィルターをかける場合 // queries: { filters:
+    'skill[contains]Bootstrap' }, }) return contents }, data() { return {
+    stepId: 1, stepInfo: [ { title: 'HTML,CSS', discription: 'How to make static
+    web site', }, { title: 'JavaScript', discription: 'It is based my fronend
+    work', }, { title: 'Bootstrap', discription: 'complement the design by CSS
+    framework', }, { title: 'Vue.js', discription: 'JS frameWork
+    Vue-X,Vue-roouter', }, { title: 'サーバーサイド言語', discription: 'Backend
+    and API servies', }, { title: 'Nuxt.js', discription: 'SPA,SSR', }, ], } },
+    computed: { htmlWorks() { const htmlWorks = this.contents.filter((work) => {
+    return ( !work.skills.includes('JavaScript') && work.skills.includes('HTML')
+    ) }) return htmlWorks }, javascriptWorks() { const javascriptWorks =
+    this.contents.filter((work) => { return work.skills.includes('JavaScript')
+    }) return javascriptWorks }, bootstrapWorks() { const bootstrapWorks =
+    this.contents.filter((work) => { return work.skills.includes('Bootstrap') })
+    return bootstrapWorks }, vueWorks() { const vueWorks =
+    this.contents.filter((work) => { return work.skills.includes('Vue.js') })
+    return vueWorks }, apiWorks() { const apiWorks = this.contents.filter((work)
+    => { return work.api.length && !work.skills.includes('Nuxt.js') }) return
+    apiWorks }, nuxtWorks() { const nuxtWorks = this.contents.filter((work) => {
+    return work.skills.includes('Nuxt.js') }) return nuxtWorks },
+    categrisedWorks() { return [ this.htmlWorks, this.javascriptWorks,
+    this.bootstrapWorks, this.vueWorks, this.apiWorks, this.nuxtWorks, ] }, },
+    mounted() { this.$vuetify.theme.dark = false }, methods: { externalLink(url)
+    { window.open(url, '_blank') }, }, } //
+  </div>
+</template>
+<script>
+export default {
+  async asyncData({ $microcms }) {
+    const contents = await $microcms.get({
+      endpoint: 'works',
+      queries: { limit: 20 },
+      // 取得するコンテンツにフィルターをかける場合
+      // queries: { filters: 'skill[contains]Bootstrap' },
+    })
+    return contents
+  },
+}
+</script>
