@@ -36,17 +36,21 @@
                 small
                 rounded
                 depressed
+                outlined
+                color="grey"
                 class="mb-1"
               >
                 <v-icon
-                  size="1.6rem"
-                  class="mr-2"
+                  size="1.4rem"
+                  class="mr-1"
                   :color="getSkillIcon(item).color"
                   left
                   >{{ getSkillIcon(item).icon }}</v-icon
                 >
-                {{ item }}</v-btn
-              >
+                <span class="grey--text text--darken-3 d-none d-sm-flex">
+                  {{ item }}
+                </span>
+              </v-btn>
             </div>
             <v-card-text class="pa-2 card-text">
               {{ work.discription }}
