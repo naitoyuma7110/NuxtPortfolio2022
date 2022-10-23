@@ -24,11 +24,20 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar dark collapse-on-scroll app :src="path">
-      <v-app-bar-nav-icon
+      <!-- <v-app-bar-nav-icon
         color="white"
         class="nav-icon"
         @click.stop="drawer = !drawer"
-      />
+      /> -->
+      <v-btn
+        class="mr-3 ml-0"
+        small
+        fab
+        color="black"
+        @click.stop="drawer = !drawer"
+      >
+        <v-icon color="white" x-large> mdi-menu-down </v-icon>
+      </v-btn>
       <v-toolbar-title color="white" class="nav-title" v-text="activeTitle" />
     </v-app-bar>
     <v-main>

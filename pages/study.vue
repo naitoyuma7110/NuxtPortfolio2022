@@ -2,9 +2,9 @@
   <div>
     <v-row class="py-5">
       <v-col cols="12" sm="5">
-        <v-card-title class="pb-0">プログラムの勉強</v-card-title>
+        <v-card-title class="pb-0">勉強と制作物</v-card-title>
         <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="py-0">pleasure</v-card-subtitle>
+        <v-card-subtitle class="py-0">Study/Production</v-card-subtitle>
       </v-col>
     </v-row>
 
@@ -36,12 +36,12 @@
                 small
                 rounded
                 depressed
-                outlined
+                text
                 class="mb-1"
               >
                 <v-icon
-                  size="1.8rem"
-                  class="mr-1"
+                  size="1.6rem"
+                  class="mr-2"
                   :color="getSkillIcon(item).color"
                   left
                   >{{ getSkillIcon(item).icon }}</v-icon
@@ -95,22 +95,109 @@ export default {
       window.open(url, '_blank')
     },
     getSkillIcon(skill) {
-      const icons = {
-        html: {
+      const skillItems = [
+        {
+          name: 'HTML',
           icon: 'mdi-language-html5',
           color: 'red',
         },
-        css: {
-          icon: 'mdi-language-html5',
+        {
+          name: 'CSS',
+          icon: 'mdi-language-css3',
           color: 'blue',
         },
+        {
+          name: 'WordPress',
+          icon: 'mdi-wordpress',
+          color: 'primary',
+        },
+        {
+          name: 'Stylus',
+          icon: 'mdi-sass',
+          color: 'pink',
+        },
+        {
+          name: 'Vue',
+          icon: 'mdi-vuejs',
+          color: 'teal',
+        },
+        {
+          name: 'Nuxt',
+          icon: 'mdi-nuxt',
+          color: 'teal',
+        },
+        {
+          name: 'MicroCMS',
+          icon: 'mdi-alpha-m-box',
+          color: 'black',
+        },
+        {
+          name: 'Vuetify',
+          icon: 'mdi-vuetify',
+          color: 'teal',
+        },
+        {
+          name: 'Netlify',
+          icon: 'mdi-abugida-thai',
+          color: 'cyan',
+        },
+        {
+          name: 'PHP',
+          icon: 'mdi-language-php',
+          color: 'deep-purple lighten-1',
+        },
+        {
+          name: 'Laravel',
+          icon: 'mdi-laravel',
+          color: 'red lighten-2',
+        },
+        {
+          name: 'Docker',
+          icon: 'mdi-docker',
+          color: 'primary',
+        },
+        {
+          name: 'Heroku',
+          icon: 'mdi-abjad-hebrew',
+          color: 'purple',
+        },
+        {
+          name: 'JavaScript',
+          icon: 'mdi-nodejs',
+          color: 'yellow',
+        },
+        {
+          name: 'Python',
+          icon: 'mdi-language-python',
+          color: 'primary',
+        },
+        {
+          name: 'Anaconda',
+          icon: 'mdi-dev-to',
+          color: 'red lighten-2',
+        },
+        {
+          name: 'Jquery',
+          icon: 'mdi-jquery',
+          color: 'yellow',
+        },
+        {
+          name: 'Bootstrap',
+          icon: 'mdi-bootstrap',
+          color: 'red',
+        },
+        {
+          name: 'jQuery',
+          icon: 'mdi-jquery',
+          color: 'yellow',
+        },
+      ]
+      for (let i = 0; i < skillItems.length; i++) {
+        if (skillItems[i].name === skill) {
+          return skillItems[i]
+        }
       }
-      switch (skill) {
-        case 'HTML':
-          return icons.html
-        default:
-          return 'HELLO'
-      }
+      return 'hello'
     },
   },
 }

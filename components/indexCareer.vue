@@ -55,7 +55,7 @@ export default {
           color: 'deep-orange',
           year: '2010',
           link: 'https://docs.google.com/presentation/d/17vu2753vPS4-_fN7HMctV1U8ebKgzi66/edit?usp=sharing&ouid=108098578287300322924&rtpof=true&sd=true',
-          title: '理学療法学科卒業',
+          title: '理学療法士',
           body: '回復期リハビリテーション病院に7年勤務し、学会やフォーラムで何回か治療経験に基ずく発表を行いました。',
         },
         {

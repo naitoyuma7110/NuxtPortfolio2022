@@ -30,7 +30,7 @@ export default {
     return {
       files: [
         {
-          title: '理学療法国家資格',
+          title: '理学療法士資格',
           subtitle: '2012',
           link: null,
           body: '理学療法士は病気やケガにより身体機能が低下した方がもとの生活に復帰できるよう訓練を行う仕事です。',
