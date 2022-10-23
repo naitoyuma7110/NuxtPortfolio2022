@@ -9,9 +9,58 @@
     </v-row>
 
     <div>
+      <v-expansion-panels flat>
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            <v-layout column>
+              <v-layout align-center class="my-3">
+                <div>技術選択</div>
+                <v-chip
+                  v-if="selectedTag"
+                  class="ml-2"
+                  :close="selectedTag == 'All Skills' ? false : true"
+                  @click:close="selectedTag = 'All Skills'"
+                  >{{ selectedTag }}</v-chip
+                >
+              </v-layout>
+            </v-layout>
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <v-item-group
+              active-class="text--accent-4"
+              color="primary"
+              mandatory
+              column
+            >
+              <v-btn
+                v-for="(skill, i) in skills"
+                :key="i"
+                small
+                rounded
+                depressed
+                :outlined="selectedTag !== skill.name"
+                :color="selectedTag === skill.name ? `${skill.color} ` : 'grey'"
+                class="mb-1"
+                @click="selectedTag = skill.name"
+              >
+                <v-icon
+                  size="1.2rem"
+                  :color="selectedTag !== skill.name ? skill.color : 'white'"
+                  left
+                >
+                  {{ skill.icon }}
+                </v-icon>
+                <span :class="selectedTag !== skill.name ? '' : 'white--text'">
+                  {{ skill.name }}
+                </span>
+              </v-btn>
+            </v-item-group>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
       <v-row class="mx-0 pa-0">
         <v-col
-          v-for="(work, i) in contents"
+          v-for="(work, i) in selectedWorks"
           :key="i"
           cols="12"
           sm="6"
@@ -47,7 +96,7 @@
                   left
                   >{{ getSkillIcon(item).icon }}</v-icon
                 >
-                <span class="grey--text text--darken-3 d-none d-sm-flex">
+                <span class="grey--text text--darken-3">
                   {{ item }}
                 </span>
               </v-btn>
@@ -87,18 +136,9 @@ export default {
   data() {
     return {
       stepId: 1,
-    }
-  },
-  computed: {},
-  mounted() {
-    this.$vuetify.theme.dark = false
-  },
-  methods: {
-    externalLink(url) {
-      window.open(url, '_blank')
-    },
-    getSkillIcon(skill) {
-      const skillItems = [
+      teg: '',
+      selectedTag: 'All Skills',
+      skills: [
         {
           name: 'HTML',
           icon: 'mdi-language-html5',
@@ -179,11 +219,7 @@ export default {
           icon: 'mdi-dev-to',
           color: 'red lighten-2',
         },
-        {
-          name: 'Jquery',
-          icon: 'mdi-jquery',
-          color: 'yellow',
-        },
+
         {
           name: 'Bootstrap',
           icon: 'mdi-bootstrap',
@@ -194,7 +230,30 @@ export default {
           icon: 'mdi-jquery',
           color: 'yellow',
         },
-      ]
+      ],
+    }
+  },
+  computed: {
+    selectedWorks() {
+      const works = this.contents.filter((work) => {
+        if (this.selectedTag === 'All Skills') {
+          return true
+        }
+        return work.skills.includes(this.selectedTag)
+      })
+
+      return works
+    },
+  },
+  mounted() {
+    this.$vuetify.theme.dark = false
+  },
+  methods: {
+    externalLink(url) {
+      window.open(url, '_blank')
+    },
+    getSkillIcon(skill) {
+      const skillItems = this.skills
       for (let i = 0; i < skillItems.length; i++) {
         if (skillItems[i].name === skill) {
           return skillItems[i]
