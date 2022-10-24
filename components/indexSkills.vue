@@ -61,7 +61,7 @@
                     <v-icon :color="item.color">{{
                       `mdi-` + item.icon
                     }}</v-icon>
-                    <div>
+                    <div class="text-subtitle-2">
                       {{ item.name }}
                     </div>
                   </div>
@@ -69,7 +69,7 @@
                 <v-col
                   jsutify="start"
                   cols="10"
-                  class="grey--text text--lighten-2"
+                  class="grey--text text--lighten-2 text-subtitle-2"
                 >
                   {{ item.discription }}
                 </v-col>
@@ -218,21 +218,22 @@ export default {
             name: 'Docker',
             icon: 'docker',
             color: 'primary',
-            discription: '個人的には',
-          },
-          {
-            name: 'AWS',
-            icon: 'aws',
-            color: 'yellow',
             discription:
-              'this is AWS discription. I aften use EC2 server as static hosting servies',
+              '私は普段WindowsのPCを使用するのですが、色々な言語やフレームワークを試すとき、Dockerを使用する事で各々の言語に最適化された環境を瞬時に構築できます。複雑な設定は詳しくないですが、色々やってておかしくなったらコンテナを壊してまた作り直せるのは本当に素晴らしい。',
           },
           {
             name: 'Heroku',
             icon: 'abjad-hebrew',
             color: 'purple',
             discription:
-              'this is Heroku discription. I dont know him this is Heroku discription. I dont know him',
+              'デプロイ環境としてよく使います。これ以外にもAzure製のAPIを使うときはAzure,静的なホスティングサービスはNetlifyを使います。インフラ関係に詳しくなくてもGUIで全部設定できるのがいいです。',
+          },
+          {
+            name: 'AWS',
+            icon: 'aws',
+            color: 'yellow',
+            discription:
+              '統合開発環境にCloud9を使用しMysqlやEC2と接続して開発環境をそのままデプロイするみたいな事を無料期間中にやったりしましたが、今ではさっぱりわかりせん。',
           },
         ],
       ],
