@@ -275,4 +275,34 @@ export default {
 .card-skills {
   height: 4.5rem;
 }
+
+.animation-enter {
+  opacity: 0;
+}
+.animation-enter-active {
+  animation: slide 1s;
+  transition: opacity 3s;
+}
+.animation-enter-to {
+  opacity: 1;
+}
+.animation-leave {
+  opacity: 1;
+}
+.animation-leave-active {
+  animation: slide 1s reverse;
+  transition: opacity 3s;
+}
+.animation-leave-to {
+  opacity: 0;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(200px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 </style>
