@@ -13,10 +13,10 @@
           {{ file.title }}
         </v-list-title>
         <v-list-item-subtitle
-          class="mb-5 grey--text text--lighten-1"
+          class="mb-5 grey--text text--lighten-2"
           v-text="file.subtitle"
         ></v-list-item-subtitle>
-        <v-list-item-body class="grey--text text--lighten-1">
+        <v-list-item-body class="grey--text text--lighten-2">
           {{ file.body }}
         </v-list-item-body>
       </v-alert>

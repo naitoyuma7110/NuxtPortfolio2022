@@ -28,7 +28,7 @@
         <v-card-subtitle class="pt-0 grey--text"
           >Pyhisical Therapist / Programer
         </v-card-subtitle>
-        <v-card-text class="mb-1 grey--text text--lighten-1">
+        <v-card-text class="mb-1 grey--text text--lighten-2">
           医療業界が抱える問題を解決する手段としてIT技術に興味を持ち転職しました。
           前職の経験とプログラムの技術を利用して医療現場の専門家に貢献する仕事がしたいと思っています。
         </v-card-text>
@@ -66,7 +66,7 @@
         <v-card-title class="pb-0">プロフィール</v-card-title>
         <v-divider class="mx-5"></v-divider>
         <v-card-subtitle class="pt-0 grey--text">Profile</v-card-subtitle>
-        <v-card-text class="grey--text text--lighten-1">
+        <v-card-text class="grey--text text--lighten-2">
           <div class="mb-2">出身地: 静岡</div>
           <div class="mb-2">年齢: 30</div>
           <div class="mb-2">仕事: プログラマー(フロントエンド)</div>
