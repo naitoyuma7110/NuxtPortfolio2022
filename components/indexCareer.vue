@@ -63,7 +63,7 @@ export default {
           year: '2020',
           link: 'https://docs.google.com/presentation/d/1IqhsWxXTzqxGCBppxXXvWQxOXAIJbcCP/edit?usp=sharing&ouid=108098578287300322924&rtpof=true&sd=true',
           title: 'ITの勉強と転職活動',
-          body: '治療効果の測定のためプログラムを書いたのをきっかけにIT技術に興味を持ち転職する事にしました。本とネットで基本情報技術者とでプログラムの勉強をしました。',
+          body: '治療効果の測定のためプログラムを書いたのをきっかけにIT技術に興味を持ち転職する事にしました。主に本とネットでプログラムの勉強をしました。',
         },
         {
           color: 'blue',

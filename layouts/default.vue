@@ -68,6 +68,7 @@
 
 <script>
 import imgPath from '~/assets/img/gotfather-nav.jpg'
+// import imgPath from '~/assets/img/leon.jpeg'
 export default {
   name: 'DefaultLayout',
   data() {
