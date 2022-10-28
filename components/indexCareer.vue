@@ -70,7 +70,7 @@ export default {
           year: '2021',
           link: null,
           title: '転職のため上京',
-          body: 'ご縁を頂き東証プライム上場企業にプログラマーとして就職しました。フロントエンドではJavascriptのフレームワークであるjQueryやVueを使用しています。個人的にはLaravelやPythonを使用したWebアプリの作成などしています。',
+          body: 'ご縁を頂き東証プライム上場のIT企業にプログラマーとして就職しました。医療、介護に関するシステム開発をしている会社で、私はフロントエンドでJavascriptのフレームワークであるjQueryやVueを使用しています。個人的にはLaravelやPythonを使用したWebアプリの作成などしています。',
         },
         {
           color: 'indigo',

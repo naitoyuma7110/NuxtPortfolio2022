@@ -153,7 +153,7 @@ export default {
             icon: 'language-css3',
             color: 'blue',
             discription:
-              '会社のシステム関連のUIデザインはXDを使用して作成する事がありますが、ホームページやLPはデザイナーのカンプを元に作成する事が多いです。CSSはFlexboxやGrid、stickyといった新機能が続々更新されるため、何でもとりあえず使ってみる事にしています。',
+              '会社のシステム関連のUIデザインはXDを使用して作成する事がありますが、ホームページやLPはデザイナーのカンプを元に作成する事が多いです。',
             flamework: [
               {
                 name: 'Stylus',

@@ -1,11 +1,8 @@
 <template>
   <div>
     <IndexProfile></IndexProfile>
-
     <IndexCareer></IndexCareer>
-
     <IndexPerformance></IndexPerformance>
-
     <IndexSkills></IndexSkills>
   </div>
 </template>
