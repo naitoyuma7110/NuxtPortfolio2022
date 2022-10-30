@@ -150,7 +150,7 @@ sns.heatmap(df1_corr, annot=True)
 
     <AxesSubplot:>
 
-![png](img/md/sale_anlysis/output_6_1.png)
+![png](/img/md/sale_anlysis/output_6_1.png)
 
 ### 散布図の作成
 
@@ -176,7 +176,7 @@ ax.set_title('sales-promo-correlation')  # グラフタイトル
 
     Text(0.5, 1.0, 'sales-promo-correlation')
 
-![png](img/md/sale_anlysis/output_9_1.png)
+![png](/img/md/sale_anlysis/output_9_1.png)
 
 ```python
 print(df1_corr)
@@ -214,11 +214,9 @@ print('p値：', p_value)
 ```
 
     相関係数： -0.9261708886842639
-    p値： 5.5001264430936035e-06
+    p値： 5.5001264430936035-06
+
+P 値 5.5…-6 より 有意水準 0.05 を下回る
 
 1.標本から相関係数から求める  
 2.相関が母集団にも当てはまるか無相関の検定を行う
-
-```python
-
-```
