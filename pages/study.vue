@@ -264,7 +264,7 @@ export default {
 
 <style scoped>
 .card-text {
-  height: 8rem;
+  height: 10rem;
   overflow: hidden;
 }
 
