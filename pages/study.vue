@@ -106,13 +106,9 @@
               {{ work.discription }}
             </v-card-text>
             <v-card-text class="pa-2">
-              <v-btn small text color="dark" @click="externalLink(work.url)">
-                <v-icon size="1.8rem" left> mdi-github </v-icon>
-                view code
-              </v-btn>
               <v-btn small text color="primary" @click="externalLink(work.url)">
-                <v-icon size="1.8rem" left> mdi-link-variant </v-icon>
-                view site
+                <v-icon size="1.8rem" left> mdi-vector-link </v-icon>
+                view
               </v-btn>
             </v-card-text>
           </v-card>
