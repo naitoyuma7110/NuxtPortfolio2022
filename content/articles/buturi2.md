@@ -155,7 +155,7 @@ $$ T_B = \sqrt T_A$$
 
 ## 弾性力
 
-<img src="/img/md/syahou/bane.png" width="300px">
+<img src="/img/md/syahou/bane.png">
 
 伸びた距離に比例して力が増す
 

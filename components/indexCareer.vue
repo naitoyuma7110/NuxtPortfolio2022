@@ -54,14 +54,14 @@ export default {
         {
           color: 'deep-orange',
           year: '2013',
-          link: 'https://docs.google.com/presentation/d/17vu2753vPS4-_fN7HMctV1U8ebKgzi66/edit?usp=sharing&ouid=108098578287300322924&rtpof=true&sd=true',
+          link: 'https://docs.google.com/presentation/d/11aT29a-YGjZuEPKv3rMIXFdBWlLYwV3PxY26gvCsxG4/edit?usp=sharing',
           title: 'リハビリ病院勤務',
           body: '大学の理学療法学科を卒業した後、回復期リハビリテーション病院に7年勤務し学会やフォーラムで何回か治療経験に基づく発表を行いました。',
         },
         {
           color: 'amber',
           year: '2020',
-          link: 'https://docs.google.com/presentation/d/1IqhsWxXTzqxGCBppxXXvWQxOXAIJbcCP/edit?usp=sharing&ouid=108098578287300322924&rtpof=true&sd=true',
+          link: 'https://docs.google.com/presentation/d/15LNVibVr49zHP8qz6Q8uPN088N5qiy3Lrc9ewvshvY0/edit?usp=sharing',
           title: 'ITの勉強と転職活動',
           body: '治療効果の測定のためプログラムを書いたのをきっかけにIT技術に興味を持ち転職する事にしました。主に本とネットでプログラムの勉強をしました。',
         },
@@ -75,7 +75,7 @@ export default {
         {
           color: 'indigo',
           year: '2022',
-          link: null,
+          link: 'https://docs.google.com/presentation/d/16-44aSW7KU5UwMEESP7qeNZW7OBKZ6HQi1NrpRxx_AI/edit?usp=sharing',
           title: 'この先やってみたい事',
           body: '前職では物理的なデータに基づく運動解析などに興味があり、現在も数学、統計学、物理学の勉強を続けています。今後はそうした経験とIT技術を掛け合わせた仕事がしたいと考えています。',
         },

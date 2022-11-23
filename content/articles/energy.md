@@ -113,7 +113,7 @@ $$ N × m $$
 
 ### <b>変化する速度と運動エネルギー</b>
 
-![undoE2.png](attachment:e0e31f4a-ea7f-495d-aaba-d49cb7cc0094.png)
+<img src="/img/md/buturi5/undoE.png">
 
 初速$V_1$で移動する質量 m の物体に F(一定)の力を加え距離 L 移動させた。  
 またこの時、物体は速度$V_2$となった。
@@ -155,7 +155,7 @@ $$ W = k - k_0 $$
 
 ### <b>(重力による)位置エネルギー</b>
 
-![iti.png](attachment:c3c97228-5e8c-44ea-a842-0369a1d55db2.png)
+<img src="/img/md/buturi5/iti.png">
 
 高さ h から落下する質量 m の物体について
 
@@ -231,7 +231,7 @@ $$ U= mgh 【J】$$
 
 物体に働く力(F)と位置(x)のグラフ
 
-![danse.png](attachment:a29b2637-83e4-48fd-b655-f61106000568.png)
+<img src="/img/md/buturi5/danse.png">
 
 ※比較に意味で… もし重力による力であれば、x に関わらず、kx は一定(mg)
 
@@ -250,7 +250,7 @@ $$ U = \frac{1}{2}kx^2【J】 $$
 - 非保存力：摩擦力、空気抵抗など
 
 経路に依存しないとは…  
-![hozon.png](attachment:4b76679d-9b1a-4513-bcfa-5ac85eab03a3.png)
+<img src="/img/md/buturi5/hozon.png">
 
 例えば
 
@@ -285,7 +285,7 @@ $$ U = \frac{1}{2}kx^2【J】 $$
 
 ### <b>センター試験物理 Ⅰ 典型問題</b>
 
-![kako.png](attachment:9e2deb98-1685-4fa5-a80a-4f5d4b24fad1.png)
+<img src="/img/md/buturi5/kako.png">
 
 質量 m の物体が、ばねの自然長から d の位置にある。  
 ここから物体をばねの力によって発射し、なめらかな斜面を滑り最大の高さ h に達した。
@@ -331,7 +331,7 @@ $$ h = \frac{kd^2}{2mg} $$
 
 ### <b>センター試験物理 Ⅰ 典型問題 2</b>
 
-![hozon2.png](attachment:927c8661-b324-419c-aa6a-458903a75f49.png)
+<img src="/img/md/buturi5/hozon2.png">
 
 質量 m の物体 B を質量 M の物体 A が滑車を介してひもで引っ張り h 移動したときの速さが V
 
