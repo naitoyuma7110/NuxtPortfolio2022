@@ -1,15 +1,23 @@
 <template>
-  <v-app>
-    <Header />
-    <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
-    </v-main>
-    <Footer />
-  </v-app>
+  <v-footer color="black">
+    <v-row justify="center" no-gutters>
+      <v-btn
+        v-for="(footerItem, i) in items"
+        :key="i"
+        color="white"
+        :to="footerItem.to"
+        text
+        rounded
+        class="my-2"
+      >
+        {{ footerItem.title }}
+      </v-btn>
+      <v-col class="black py-4 text-center white--text" cols="12">
+        {{ new Date().getFullYear() }} — <strong>Hello,world</strong>
+      </v-col>
+    </v-row>
+  </v-footer>
 </template>
-
 <script>
 import imgPath from '~/assets/img/gotfather-nav.jpg'
 // import imgPath from '~/assets/img/leon.jpeg'
@@ -29,12 +37,12 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-pen',
+          icon: 'mdi-application-braces',
           title: 'プログラミング',
           to: '/study'
         },
         {
-          icon: 'mdi-card-text-outline',
+          icon: 'mdi-pen',
           title: '勉強ノート',
           to: '/post'
         },
@@ -61,11 +69,3 @@ export default {
   mounted() {}
 }
 </script>
-<style>
-.nav-title {
-  text-shadow: 0.5px 0.5px 0.1px black;
-}
-.nav-icon {
-  text-shadow: 1px 2px 1px black;
-}
-</style>
