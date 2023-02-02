@@ -17,10 +17,10 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
       { hid: 'og:site_name', property: 'og:site_name', content: '内藤祐馬\'s Portfolio' },
       { hid: 'og:type', property: 'og:type', content: 'profile' },
-      { hid: 'og:url', property: 'og:url', content: 'https://naito-portfolio.netlify.app/' },
+      { hid: 'og:url', property: 'og:url', content: 'https://naito-portfolio.netlify.app' },
       { hid: 'og:title', property: 'og:title', content: '内藤祐馬\'s Portfolio' },
       { hid: 'og:description', property: 'og:description', content: '理学療法士/プログラマー 医療業界が抱える問題を解決する手段としてIT技術に興味を持ち転職しました。 前職の経験とプログラムの技術を利用して医療現場の専門家に貢献する仕事がしたいと思っています。' },
-      { hid: 'og:image', property: 'og:image', content: '/img/myimg.JPG' },
+      { hid: 'og:image', property: 'og:image', content: 'https://naito-portfolio.netlify.app/img/myimg.JPG' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
