@@ -13,8 +13,8 @@
       </v-list>
     </v-navigation-drawer>
     <!-- <v-app-bar dark collapse-on-scroll app :src="path"> -->
-    <v-app-bar dense height="40px" border="grey" color="black" collapse-on-scroll app>
-      <v-btn class="my-0 mr-3" fab x-small color="grey darken-3" @click.stop="drawer = !drawer">
+    <v-app-bar dense height="40px" color="black" collapse-on-scroll app>
+      <v-btn class="my-0 mr-3" fab x-small color="black" @click.stop="drawer = !drawer">
         <v-icon color="white" large> mdi-menu-down </v-icon>
       </v-btn>
       <v-toolbar-title color="white" class="nav-title" v-text="activeTitle"></v-toolbar-title>
