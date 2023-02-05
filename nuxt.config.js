@@ -10,7 +10,7 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name :"google-site-verification", content:"pKDA1XZgQXJWQkOPHYhNs7iD8zZUCGlhDPkduawc4Q4"},
+      { name :'google-site-verification', content:'pKDA1XZgQXJWQkOPHYhNs7iD8zZUCGlhDPkduawc4Q4'},
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '理学療法士/プログラマー 医療業界が抱える問題を解決する手段としてIT技術に興味を持ち転職しました。 前職の経験とプログラムの技術を利用して医療現場の専門家に貢献する仕事がしたいと思っています。' },
       { hid: 'keywords', name: 'keywords', content: '内藤祐馬,理学療法士,プログラマー' },

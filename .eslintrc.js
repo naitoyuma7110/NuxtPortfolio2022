@@ -13,6 +13,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'vue/multi-word-component-names': 0,
+    'vue/first-attribute-linebreak': 0,
   },
   overrides: [
     {

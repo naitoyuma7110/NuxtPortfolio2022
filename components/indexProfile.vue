@@ -1,11 +1,6 @@
 <template>
   <div>
-    <v-img
-      height="14rem"
-      lazy-src
-      :src="path"
-      class="card-back-image rounded-0"
-    >
+    <v-img height="14rem" lazy-src :src="path" class="card-back-image rounded-0">
       <v-app-bar flat color="rgba(0, 0, 0, 0)">
         <v-toolbar-title class="text-h5 white--text">About</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -25,40 +20,35 @@
           理学療法士/プログラマー
         </v-card-title>
         <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="pt-0 grey--text"
-          >Pyhisical Therapist / Programer
+        <v-card-subtitle class="pt-0 grey--text">Pyhisical Therapist / Programer
         </v-card-subtitle>
         <v-card-text class="mb-1 grey--text text--lighten-2">
           医療業界が抱える問題を解決する手段としてIT技術に興味を持ち転職しました。
           前職の経験とプログラムの技術を利用して医療現場の専門家に貢献する仕事がしたいと思っています。
         </v-card-text>
-        <v-layout d-flex>
-          <v-btn
-            depressed
-            rounded
-            small
-            @click="externalLink('https://www.facebook.com/naitoyuma/')"
-          >
+        <v-layout d-flex wrap class="pl-3">
+          <v-btn class="mb-1 mr-1" depressed rounded small @click="externalLink('https://www.facebook.com/naitoyuma/')">
             <v-icon color="blue" left>mdi-facebook</v-icon>
             FaceBook
           </v-btn>
-          <v-btn
-            depressed
-            rounded
-            small
-            @click="externalLink('https://github.com/naitoyuma3230')"
-          >
+          <v-btn class="mb-1 mr-1" depressed rounded small @click="externalLink('https://github.com/naitoyuma3230')">
             <v-icon left>mdi-github</v-icon>
             GitHub
           </v-btn>
-          <v-btn
-            depressed
-            rounded
-            small
-            @click="externalLink('https://www.wantedly.com/id/naito_yuma')"
-          >
+          <v-btn class="mb-1 mr-1" depressed rounded small
+            @click="externalLink('https://www.wantedly.com/id/naito_yuma')">
             <v-icon left>mdi-account-arrow-right</v-icon>
             Wantedly
+          </v-btn>
+          <v-btn class="mb-1 mr-1" depressed rounded small
+            @click="externalLink('https://findy-code.io/share_profiles/2C29oSrNNElKH')">
+            <v-icon left>mdi-account-arrow-right</v-icon>
+            Findy
+          </v-btn>
+          <v-btn depressed rounded small class="mb-1 mr-1"
+            @click="externalLink('https://portfolio.forkwell.com/@naitoyuma3230')">
+            <v-icon left>mdi-account-arrow-right</v-icon>
+            Forkwell
           </v-btn>
         </v-layout>
       </v-col>
@@ -94,6 +84,7 @@ export default {
 }
 </script>
 <style>
+.card-b
 .card-back-image {
   overflow: visible;
   margin-bottom: 9rem;
@@ -107,7 +98,7 @@ export default {
 .card-front-items .avater-img {
   width: auto;
 }
+
 .myimg_border {
   border: 0.2rem solid white;
 }
-</style>
