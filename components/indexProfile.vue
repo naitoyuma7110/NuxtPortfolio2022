@@ -35,19 +35,21 @@
             <v-icon left>mdi-github</v-icon>
             GitHub
           </v-btn>
+        </v-layout>
+        <v-layout d-flex wrap class="pl-3">
           <v-btn class="mb-1 mr-1" depressed rounded small
             @click="externalLink('https://www.wantedly.com/id/naito_yuma')">
-            <v-icon left>mdi-account-arrow-right</v-icon>
+            <!-- <v-icon color="blue" left>mdi-account-arrow-right</v-icon> -->
             Wantedly
           </v-btn>
           <v-btn class="mb-1 mr-1" depressed rounded small
             @click="externalLink('https://findy-code.io/share_profiles/2C29oSrNNElKH')">
-            <v-icon left>mdi-account-arrow-right</v-icon>
+            <!-- <v-icon left>mdi-account-arrow-right</v-icon> -->
             Findy
           </v-btn>
           <v-btn depressed rounded small class="mb-1 mr-1"
             @click="externalLink('https://portfolio.forkwell.com/@naitoyuma3230')">
-            <v-icon left>mdi-account-arrow-right</v-icon>
+            <!-- <v-icon left>mdi-account-arrow-right</v-icon> -->
             Forkwell
           </v-btn>
         </v-layout>
