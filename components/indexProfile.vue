@@ -1,17 +1,17 @@
 <template>
   <div>
-    <v-img height="16rem" lazy-src :src="path" class="rounded-0">
+    <v-img height="14rem" lazy-src :src="path" class="rounded-0 card-back-image">
       <v-app-bar flat color="rgba(0, 0, 0, 0)">
         <v-toolbar-title class="text-h5 white--text">About</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-app-bar>
-      <div class="text-center avatar-position">
+      <v-layout class="card-front-items" d-flex flex-column align-center>
         <v-avatar size="12rem">
           <v-img alt="user" size="12rem" src="/img/myimg.jpg" />
         </v-avatar>
         <h2 class="text-h5 ma-1">内藤祐馬</h2>
         <p class="grey--text">Naito Yuma</p>
-      </div>
+      </v-layout>
     </v-img>
 
     <v-row>
@@ -85,14 +85,15 @@ export default {
 </script>
 <style>
 .card-back-image {
+  position: relative;
   overflow: visible;
-  margin-bottom: 6rem;
+  margin-bottom: 10rem;
 }
 
-.card-front-items .avater-img {
-  width: auto;
+.card-front-items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 10%);
 }
-
-.myimg_border {
-  border: 0.2rem solid white;
-}
+</style>
