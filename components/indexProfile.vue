@@ -6,8 +6,8 @@
         <v-spacer></v-spacer>
       </v-app-bar>
       <v-layout class="card-front-items" d-flex flex-column align-center>
-        <v-avatar size="12rem">
-          <v-img alt="user" size="12rem" src="/img/myimg.jpg" />
+        <v-avatar size="11rem">
+          <v-img alt="user" src="/img/myimg.jpg" />
         </v-avatar>
         <h2 class="text-h5 ma-1">内藤祐馬</h2>
         <p class="grey--text">Naito Yuma</p>
@@ -87,7 +87,7 @@ export default {
 .card-back-image {
   position: relative;
   overflow: visible;
-  margin-bottom: 10rem;
+  margin-bottom: 9rem;
 }
 
 .card-front-items {
