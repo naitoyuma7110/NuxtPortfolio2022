@@ -1,23 +1,24 @@
 <template>
   <div>
-    <v-row>
-      <v-col cols="12" sm="5">
-        <v-card-title class="pb-0">経歴</v-card-title>
-        <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="pt-0 grey--text">History</v-card-subtitle>
-      </v-col>
-    </v-row>
+    <Title>
+      <template v-slot:title>
+        経歴
+      </template>
+      <template v-slot:subtitle>
+        History
+      </template>
+    </Title>
 
     <v-card-text>
-      <v-timeline :dense="$vuetify.breakpoint.name == 'xs'">
-        <v-timeline-item v-for="(item, i) in history" :key="i" :color="item.color"
-          :right="$vuetify.breakpoint.name == 'xs'" small>
-          <v-alert class="">
+      <v-timeline :dense="!$vuetify.breakpoint.mdAndUp">
+        <v-timeline-item v-for="(item, i) in history" :key="i" :color="item.color" :right="!$vuetify.breakpoint.mdAndUp"
+          small>
+          <v-alert dense colored-border border="left" :color="`${item.color}`">
             <template>
-              <span :class="`headline font-weight-bold ${item.color}--text`" v-text="item.year"></span>
+              <span class="headline font-weight-bold" v-text="item.year"></span>
             </template>
             <div class="py-4">
-              <h3 :class="`text-h6 subtitle-2 mb-4 ${item.color}--text`">
+              <h3 :class="`text-h6 subtitle-2 mb-4 `">
                 {{ item.title }}
               </h3>
               <div class="grey--text text--lighten-2">
@@ -26,13 +27,13 @@
             </div>
           </v-alert>
         </v-timeline-item>
-        <v-timeline-item :right="$vuetify.breakpoint.name == 'xs'" small color="cyan">
+        <v-timeline-item :right="$vuetify.breakpoint.mdAndUp" small color="cyan">
           <template>
             <span class="headline"></span>
           </template>
           <div class=" alert-pointer" @click="externalLink('https://speakerdeck.com/naitoyuma3230')">
             <v-alert color="cyan" border="left" elevation="2" colored-border icon="mdi-share-all">
-              スライドの共有
+              アウトプット用のスライド
             </v-alert>
           </div>
         </v-timeline-item>
@@ -47,13 +48,13 @@ export default {
     return {
       history: [
         {
-          color: 'deep-orange',
+          color: 'teal',
           year: '2013',
           title: 'リハビリ病院勤務',
           body: '大学の理学療法学科を卒業した後、回復期リハビリテーション病院に7年勤務し学会やフォーラムで何回か治療経験に基づく発表を行いました。',
         },
         {
-          color: 'amber',
+          color: 'cyan',
           year: '2020',
           title: 'ITの勉強と転職活動',
           body: '治療効果の測定のためプログラムを書いたのをきっかけにIT技術に興味を持ち転職する事にしました。主に本とネットでプログラムの勉強をしました。',

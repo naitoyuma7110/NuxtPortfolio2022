@@ -1,12 +1,13 @@
 <template>
   <div>
-    <v-row class="py-5">
-      <v-col cols="12" sm="5">
-        <v-card-title class="pb-0">勉強と制作物</v-card-title>
-        <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="py-0">Study/Production</v-card-subtitle>
-      </v-col>
-    </v-row>
+    <Title>
+      <template v-slot:title>
+        勉強と制作物
+      </template>
+      <template v-slot:subtitle>
+        Study/Production
+      </template>
+    </Title>
 
     <div>
       <v-expansion-panels flat>

@@ -1,12 +1,13 @@
 <template>
   <div>
-    <v-row>
-      <v-col cols="12" sm="5">
-        <v-card-title class="pb-0">技術</v-card-title>
-        <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="pt-0 grey--text">Skills</v-card-subtitle>
-      </v-col>
-    </v-row>
+    <Title>
+      <template v-slot:title>
+        技術
+      </template>
+      <template v-slot:subtitle>
+        Skills
+      </template>
+    </Title>
 
     <!-- <v-btn-toggle v-model="toggle_exclusive"> -->
     <v-btn-toggle v-model="tab">
