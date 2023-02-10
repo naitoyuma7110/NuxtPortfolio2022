@@ -13,6 +13,7 @@
         <p class="grey--text">Naito Yuma</p>
       </v-layout>
     </v-img>
+    <!-- <YoutubePlayer></YoutubePlayer> -->
 
     <v-row class="my-5">
       <v-col cols="12" sm="7">
@@ -86,7 +87,8 @@
               Paiza
             </v-btn>
             <v-btn depressed color="white" :small="$vuetify.breakpoint.name == 'xs'"
-              class="teal--text font-weight-bold mb-2 mr-2 pl-1" @click="externalLink('https://lapras.com/person')">
+              class="teal--text font-weight-bold mb-2 mr-2 pl-1"
+              @click="externalLink('https://lapras.com/public/QB2AXDH')">
               <v-avatar :size="$vuetify.breakpoint.name == 'xs' ? '1.6rem' : '2.2rem'" class="mr-1">
                 <v-img src="https://logo.clearbit.com/lapras.com"></v-img>
               </v-avatar>
@@ -108,16 +110,18 @@
 </template>
 
 <script>
+// import YoutubePlayer from './youtubePlayer.vue';
 import imgPath from '~/assets/img/gotfathe.jpg'
 export default {
+  // components: { YoutubePlayer },
   data() {
     return {
       path: imgPath,
-    }
+    };
   },
   methods: {
     externalLink(url) {
-      window.open(url, '_blank')
+      window.open(url, "_blank");
     },
   },
 }

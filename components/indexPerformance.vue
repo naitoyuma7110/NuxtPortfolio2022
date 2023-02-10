@@ -8,16 +8,15 @@
         Paformance
       </template>
     </Title>
-    <v-card v-for="file in files" :key="file.title" class="mb-3">
-      <v-alert border="bottom" colored-border :color="file.color + ' lighten-1'">
-        <v-list-title class="mb-5 text-h6 grey--text text--lighten-3">
+    <v-card v-for="file in files" :key="file.title" class="mb-5">
+      <v-alert border="bottom" dense colored-border :color="file.color + ' lighten-1'">
+        <div class="mb-0 text-h6 grey--text text--lighten-3">
           {{ file.title }}
-        </v-list-title>
-        <v-list-item-subtitle class="mb-4 text-subtitle-1 grey--text text--lighten-2"
-          v-text="file.subtitle"></v-list-item-subtitle>
-        <v-list-item-body class="grey--text text--lighten-2">
+        </div>
+        <div class="mb-4 text-subtitle-1 grey--text text--lighten-2" v-text="file.subtitle"></div>
+        <div class="grey--text text--lighten-2">
           {{ file.body }}
-        </v-list-item-body>
+        </div>
       </v-alert>
     </v-card>
   </div>

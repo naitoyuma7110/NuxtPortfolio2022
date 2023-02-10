@@ -1,38 +1,22 @@
 <template>
   <div>
     <section class="movie-container">
-      <youtube
-        ref="youtube"
-        :video-id="videoId"
-        :player-vars="{ autoplay: 1, mute: mute, playsinline: 1 }"
-        @playing="playing"
-        @paused="paused"
-        @ended="ended"
-        @ready="ready"
-      />
+      <youtube ref="youtube" :video-id="videoId" :player-vars="{ autoplay: 1, mute: mute, playsinline: 1 }"
+        @playing="playing" @paused="paused" @ended="ended" @ready="ready" />
       <div class="youtube-filter">
         <v-app-bar flat color="rgba(0, 0, 0, 0)">
-          <v-toolbar-title class="text-h5 white--text"
-            >About me</v-toolbar-title
-          >
           <v-spacer></v-spacer>
         </v-app-bar>
-        <v-icon
-          color="white"
-          class="ma-5 music-btn"
-          size="40"
-          @click="musicSwitch"
-          >mdi-music-circle-outline</v-icon
-        >
+        <v-icon color="white" class="ma-5 music-btn" size="40" @click="musicSwitch">mdi-music-circle-outline</v-icon>
       </div>
     </section>
     <div class="profile-img">
       <v-layout class="card-front-items" d-flex flex-column align-center>
-        <v-avatar class="myimg_border" size="170" color="white">
-          <img class="avater-img" alt="user" src="/img/myimg.jpg" />
+        <v-avatar size="11rem" class="avator-border">
+          <v-img alt="user" src="/img/myimg.jpg" />
         </v-avatar>
-        <h3 class="text-h4 mb-0">内藤祐馬</h3>
-        <small>Naito Yuma</small>
+        <h2 class="text-h5 ma-1">内藤祐馬</h2>
+        <p class="grey--text">Naito Yuma</p>
       </v-layout>
     </div>
   </div>
@@ -74,7 +58,7 @@ export default {
       youtubePlayer.mute()
       youtubePlayer.playVideo()
     },
-    musicSwitch() {},
+    musicSwitch() { },
   },
 }
 </script>
@@ -82,12 +66,12 @@ export default {
 <style>
 iframe {
   width: 100%;
-  height: 70vw;
+  height: 80rem;
 }
 
 .movie-container {
   background: #ddd;
-  height: 50vw;
+  height: 30rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,12 +87,10 @@ iframe {
 }
 
 .profile-img {
-  margin-top: -11rem;
   margin-bottom: 4rem;
 }
 
 .music-btn {
   cursor: pointer;
 }
-
 </style>

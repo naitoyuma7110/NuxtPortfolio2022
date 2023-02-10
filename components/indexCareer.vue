@@ -9,7 +9,7 @@
       </template>
     </Title>
 
-    <v-card-text>
+    <div :class="!$vuetify.breakpoint.mdAndUp && 'position-left'">
       <v-timeline :dense="!$vuetify.breakpoint.mdAndUp">
         <v-timeline-item v-for="(item, i) in history" :key="i" :color="item.color" :right="!$vuetify.breakpoint.mdAndUp"
           small>
@@ -27,6 +27,7 @@
             </div>
           </v-alert>
         </v-timeline-item>
+
         <v-timeline-item :right="$vuetify.breakpoint.mdAndUp" small color="cyan">
           <template>
             <span class="headline"></span>
@@ -38,7 +39,7 @@
           </div>
         </v-timeline-item>
       </v-timeline>
-    </v-card-text>
+    </div>
   </div>
 </template>
 
@@ -84,5 +85,17 @@ export default {
 <style>
 .alert-pointer {
   cursor: pointer;
+}
+
+.position-left .v-timeline-item__divider {
+  min-width: 48px;
+}
+
+.position-left .v-timeline--dense .v-timeline-item__body {
+  max-width: calc(100% - 48px);
+}
+
+.v-application--is-ltr .v-timeline--dense:not(.v-timeline--reverse):before {
+  left: calc(32px - 10px)
 }
 </style>
