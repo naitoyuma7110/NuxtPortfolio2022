@@ -6,7 +6,7 @@
         <v-spacer></v-spacer>
       </v-app-bar>
       <v-layout class="card-front-items" d-flex flex-column align-center>
-        <v-avatar size="11rem">
+        <v-avatar size="11rem" class="avator-border">
           <v-img alt="user" src="/img/myimg.jpg" />
         </v-avatar>
         <h2 class="text-h5 ma-1">内藤祐馬</h2>
@@ -36,23 +36,37 @@
             GitHub
           </v-btn>
         </v-layout>
-        <v-layout d-flex wrap class="pl-3">
-          <v-btn class="mb-1 mr-1" depressed rounded small
-            @click="externalLink('https://www.wantedly.com/id/naito_yuma')">
-            <!-- <v-icon color="blue" left>mdi-account-arrow-right</v-icon> -->
-            Wantedly
-          </v-btn>
-          <v-btn class="mb-1 mr-1" depressed rounded small
-            @click="externalLink('https://findy-code.io/share_profiles/2C29oSrNNElKH')">
-            <!-- <v-icon left>mdi-account-arrow-right</v-icon> -->
-            Findy
-          </v-btn>
-          <v-btn depressed rounded small class="mb-1 mr-1"
-            @click="externalLink('https://portfolio.forkwell.com/@naitoyuma3230')">
-            <!-- <v-icon left>mdi-account-arrow-right</v-icon> -->
-            Forkwell
-          </v-btn>
-        </v-layout>
+        <v-alert dense color="blue-grey" class="ma-2" outlined>
+          <v-row align="center">
+            <v-col class="grow">
+              <!-- <v-card-text class="mb-1 pb-1 "> -->
+              現在、転職活動に各種サービスを利用しています
+              <!-- </v-card-text> -->
+              <div class="d-flex wrap mt-2">
+                <v-btn class="mb-1 mr-2" color="blue-grey" depressed small
+                  @click="externalLink('https://www.wantedly.com/id/naito_yuma')">
+                  Wantedly
+                </v-btn>
+                <v-btn class="mb-1 mr-2" color="blue-grey" depressed small
+                  @click="externalLink('https://findy-code.io/share_profiles/2C29oSrNNElKH')">
+                  Findy
+                </v-btn>
+                <v-btn depressed color="blue-grey" small class="mb-1 mr-2"
+                  @click="externalLink('https://portfolio.forkwell.com/@naitoyuma3230')">
+                  Forkwell
+                </v-btn>
+                <v-btn depressed color="blue-grey" small class="mb-1 mr-2"
+                  @click="externalLink('https://paiza.jp/users/basic_profile')">
+                  Paiza
+                </v-btn>
+                <v-btn depressed color="blue-grey" small class="mb-1 mr-2"
+                  @click="externalLink('https://lapras.com/person')">
+                  LAPRAS
+                </v-btn>
+              </div>
+            </v-col>
+          </v-row>
+        </v-alert>
       </v-col>
       <v-col cols="12" sm="5">
         <v-card-title class="pb-0">プロフィール</v-card-title>
@@ -97,5 +111,9 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 5%);
+}
+
+.avator-border {
+  border: white 2px solid;
 }
 </style>

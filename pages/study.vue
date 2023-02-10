@@ -15,39 +15,17 @@
             <v-layout column>
               <v-layout align-center class="my-3">
                 <div>技術選択</div>
-                <v-chip
-                  v-if="selectedTag"
-                  class="ml-2"
-                  :close="selectedTag == 'All Skills' ? false : true"
-                  @click:close="selectedTag = 'All Skills'"
-                  >{{ selectedTag }}</v-chip
-                >
+                <v-chip v-if="selectedTag" class="ml-2" :close="selectedTag == 'All Skills' ? false : true"
+                  @click:close="selectedTag = 'All Skills'">{{ selectedTag }}</v-chip>
               </v-layout>
             </v-layout>
           </v-expansion-panel-header>
           <v-expansion-panel-content>
-            <v-item-group
-              active-class="text--accent-4"
-              color="primary"
-              mandatory
-              column
-            >
-              <v-btn
-                v-for="(skill, i) in skills"
-                :key="i"
-                small
-                rounded
-                depressed
-                :outlined="selectedTag !== skill.name"
-                :color="selectedTag === skill.name ? `${skill.color} ` : 'grey'"
-                class="mb-1"
-                @click="selectedTag = skill.name"
-              >
-                <v-icon
-                  size="1.2rem"
-                  :color="selectedTag !== skill.name ? skill.color : 'white'"
-                  left
-                >
+            <v-item-group active-class="text--accent-4" color="primary" mandatory column>
+              <v-btn v-for="(skill, i) in skills" :key="i" small rounded depressed
+                :outlined="selectedTag !== skill.name" :color="selectedTag === skill.name ? `${skill.color} ` : 'grey'"
+                class="mb-1" @click="selectedTag = skill.name">
+                <v-icon size="1.2rem" :color="selectedTag !== skill.name ? skill.color : 'white'" left>
                   {{ skill.icon }}
                 </v-icon>
                 <span :class="selectedTag !== skill.name ? '' : 'white--text'">
@@ -59,44 +37,17 @@
         </v-expansion-panel>
       </v-expansion-panels>
       <v-row class="mx-0 pa-0">
-        <v-col
-          v-for="(work, i) in selectedWorks"
-          :key="i"
-          cols="12"
-          sm="6"
-          class="pa-1 my-1"
-          lg="4"
-        >
+        <v-col v-for="(work, i) in selectedWorks" :key="i" cols="12" sm="6" class="pa-1 my-1" lg="4">
           <v-card class="mx-auto" rounded outlined elevation="1">
-            <v-img
-              lazy-src
-              position="center"
-              width="auto"
-              height="12rem"
-              :src="work.thumbnail.url"
-            ></v-img>
+            <v-img lazy-src position="center" width="auto" height="12rem" :src="work.thumbnail.url"></v-img>
             <div class="pa-2 text-center">
               {{ work.title }}
             </div>
             <div class="flex-wrap pa-2 card-skills">
-              <v-btn
-                v-for="(item, k) in work.skills"
-                :key="k"
-                small
-                rounded
-                depressed
-                outlined
-                color="grey"
-                class="mb-1"
-                @click="selectedTag = item"
-              >
-                <v-icon
-                  size="1.4rem"
-                  class="mr-1"
-                  :color="getSkillIcon(item).color"
-                  left
-                  >{{ getSkillIcon(item).icon }}</v-icon
-                >
+              <v-btn v-for="(item, k) in work.skills" :key="k" small rounded depressed outlined color="grey"
+                class="mb-1" @click="selectedTag = item">
+                <v-icon size="1.4rem" class="mr-1" :color="getSkillIcon(item).color"
+                  left>{{ getSkillIcon(item).icon }}</v-icon>
                 <span class="grey--text text--darken-3">
                   {{ item }}
                 </span>
@@ -227,6 +178,11 @@ export default {
           icon: 'mdi-jquery',
           color: 'yellow',
         },
+        {
+          name: 'React',
+          icon: 'mdi-react',
+          color: '#61DBFB',
+        },
       ],
     }
   },
@@ -275,20 +231,25 @@ export default {
 .animation-enter {
   opacity: 0;
 }
+
 .animation-enter-active {
   animation: slide 1s;
   transition: opacity 3s;
 }
+
 .animation-enter-to {
   opacity: 1;
 }
+
 .animation-leave {
   opacity: 1;
 }
+
 .animation-leave-active {
   animation: slide 1s reverse;
   transition: opacity 3s;
 }
+
 .animation-leave-to {
   opacity: 0;
 }
@@ -297,6 +258,7 @@ export default {
   from {
     transform: translateX(200px);
   }
+
   to {
     transform: translateX(0);
   }

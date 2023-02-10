@@ -10,18 +10,10 @@
 
     <v-card-text>
       <v-timeline :dense="$vuetify.breakpoint.name == 'xs'">
-        <v-timeline-item
-          v-for="(item, i) in history"
-          :key="i"
-          :color="item.color"
-          :right="$vuetify.breakpoint.name == 'xs'"
-          small
-        >
+        <v-timeline-item v-for="(item, i) in history" :key="i" :color="item.color"
+          :right="$vuetify.breakpoint.name == 'xs'" small>
           <template>
-            <span
-              :class="`headline font-weight-bold ${item.color}--text`"
-              v-text="item.year"
-            ></span>
+            <span :class="`headline font-weight-bold ${item.color}--text`" v-text="item.year"></span>
           </template>
           <div class="py-4">
             <h3 :class="`text-h6 subtitle-2 mb-4 ${item.color}--text`">
@@ -30,15 +22,16 @@
             <div class="grey--text text--lighten-2">
               {{ item.body }}
             </div>
-            <v-btn
-              v-if="item.link"
-              icon
-              class="ml-5"
-              @click="externalLink(item.link)"
-            >
-              <v-icon color="blue lighten-1 left">mdi-link</v-icon>
-              sample
-            </v-btn>
+          </div>
+        </v-timeline-item>
+        <v-timeline-item :right="$vuetify.breakpoint.name == 'xs'" small color="cyan">
+          <template>
+            <span class="headline"></span>
+          </template>
+          <div class=" alert-pointer" @click="externalLink('https://speakerdeck.com/naitoyuma3230')">
+            <v-alert color="cyan" border="left" elevation="2" colored-border icon="mdi-share-all">
+              スライドの共有
+            </v-alert>
           </div>
         </v-timeline-item>
       </v-timeline>
@@ -54,28 +47,24 @@ export default {
         {
           color: 'deep-orange',
           year: '2013',
-          link: 'https://docs.google.com/presentation/d/11aT29a-YGjZuEPKv3rMIXFdBWlLYwV3PxY26gvCsxG4/edit?usp=sharing',
           title: 'リハビリ病院勤務',
           body: '大学の理学療法学科を卒業した後、回復期リハビリテーション病院に7年勤務し学会やフォーラムで何回か治療経験に基づく発表を行いました。',
         },
         {
           color: 'amber',
           year: '2020',
-          link: 'https://docs.google.com/presentation/d/15LNVibVr49zHP8qz6Q8uPN088N5qiy3Lrc9ewvshvY0/edit?usp=sharing',
           title: 'ITの勉強と転職活動',
           body: '治療効果の測定のためプログラムを書いたのをきっかけにIT技術に興味を持ち転職する事にしました。主に本とネットでプログラムの勉強をしました。',
         },
         {
           color: 'blue',
           year: '2021',
-          link: null,
           title: '転職のため上京',
           body: 'ご縁を頂き東証プライム上場のIT企業にプログラマーとして就職しました。医療、介護に関するシステム開発をしている会社で、私はフロントエンドでJavascriptのフレームワークであるjQueryやVueを使用しています。個人的にはLaravelやPythonを使用したWebアプリの作成などしています。',
         },
         {
           color: 'indigo',
           year: '2022',
-          link: 'https://docs.google.com/presentation/d/16-44aSW7KU5UwMEESP7qeNZW7OBKZ6HQi1NrpRxx_AI/edit?usp=sharing',
           title: 'この先やってみたい事',
           body: '前職では物理的なデータに基づく運動解析などに興味があり、現在も数学、統計学、物理学の勉強を続けています。今後はそうした経験とIT技術を掛け合わせた仕事がしたいと考えています。',
         },
@@ -89,3 +78,8 @@ export default {
   },
 }
 </script>
+<style>
+.alert-pointer {
+  cursor: pointer;
+}
+</style>
