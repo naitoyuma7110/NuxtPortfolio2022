@@ -4,7 +4,7 @@
       <v-col cols="12" sm="5">
         <v-card-title class="pb-0">技術</v-card-title>
         <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="py-0">Skills</v-card-subtitle>
+        <v-card-subtitle class="pt-0 grey--text">Skills</v-card-subtitle>
       </v-col>
     </v-row>
 
@@ -16,24 +16,9 @@
       </v-btn>
     </v-btn-toggle>
     <v-tabs-items v-model="tab" class="bg-black">
-      <v-tab-item
-        v-for="(skills, i) in skillSet"
-        :key="i"
-        class="py-0 my-0"
-        :value="i"
-      >
-        <v-card
-          v-for="(skill, j) in skills"
-          :key="j"
-          class="mx-auto py-0"
-          elevation="1"
-        >
-          <v-alert
-            border="bottom"
-            colored-border
-            :color="skill.color"
-            elevation="1"
-          >
+      <v-tab-item v-for="(skills, i) in skillSet" :key="i" class="py-0 my-0" :value="i">
+        <v-card v-for="(skill, j) in skills" :key="j" class="mx-auto py-0" elevation="1">
+          <v-alert border="bottom" colored-border :color="skill.color" elevation="1">
             <div class="py-2 mb-2">
               <div class="d-flex ma-2">
                 <v-avatar>
@@ -50,11 +35,7 @@
               </div>
             </div>
 
-            <v-list-item
-              v-for="(item, k) in skill.flamework"
-              :key="k"
-              class="mb-2"
-            >
+            <v-list-item v-for="(item, k) in skill.flamework" :key="k" class="mb-2">
               <v-row>
                 <v-col cols="2">
                   <div class="d-flex align-center flex-column">
@@ -66,11 +47,7 @@
                     </div>
                   </div>
                 </v-col>
-                <v-col
-                  jsutify="start"
-                  cols="10"
-                  class="grey--text text--lighten-2 text-subtitle-2"
-                >
+                <v-col jsutify="start" cols="10" class="grey--text text--lighten-2 text-subtitle-2">
                   {{ item.discription }}
                 </v-col>
               </v-row>
@@ -245,9 +222,11 @@ export default {
 .skilltab.active {
   background: #ccc;
 }
+
 .skillArea {
   height: 600px;
 }
+
 .bg-black {
   background: black;
 }

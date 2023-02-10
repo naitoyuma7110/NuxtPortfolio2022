@@ -4,7 +4,7 @@
       <v-col cols="12" sm="5">
         <v-card-title class="pb-0">資格・実績</v-card-title>
         <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="py-0">Paformance</v-card-subtitle>
+        <v-card-subtitle class="pt-0 grey--text">Paformance</v-card-subtitle>
       </v-col>
     </v-row>
     <v-card v-for="file in files" :key="file.title" color="dark" class="mb-3">
@@ -12,10 +12,7 @@
         <v-list-title class="mb-5 text-h7">
           {{ file.title }}
         </v-list-title>
-        <v-list-item-subtitle
-          class="mb-5 grey--text text--lighten-2"
-          v-text="file.subtitle"
-        ></v-list-item-subtitle>
+        <v-list-item-subtitle class="mb-5 grey--text text--lighten-2" v-text="file.subtitle"></v-list-item-subtitle>
         <v-list-item-body class="grey--text text--lighten-2">
           {{ file.body }}
         </v-list-item-body>

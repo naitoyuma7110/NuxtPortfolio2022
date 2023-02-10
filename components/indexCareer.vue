@@ -4,7 +4,7 @@
       <v-col cols="12" sm="5">
         <v-card-title class="pb-0">経歴</v-card-title>
         <v-divider class="mx-5"></v-divider>
-        <v-card-subtitle class="py-0">History</v-card-subtitle>
+        <v-card-subtitle class="pt-0 grey--text">History</v-card-subtitle>
       </v-col>
     </v-row>
 
@@ -12,17 +12,19 @@
       <v-timeline :dense="$vuetify.breakpoint.name == 'xs'">
         <v-timeline-item v-for="(item, i) in history" :key="i" :color="item.color"
           :right="$vuetify.breakpoint.name == 'xs'" small>
-          <template>
-            <span :class="`headline font-weight-bold ${item.color}--text`" v-text="item.year"></span>
-          </template>
-          <div class="py-4">
-            <h3 :class="`text-h6 subtitle-2 mb-4 ${item.color}--text`">
-              {{ item.title }}
-            </h3>
-            <div class="grey--text text--lighten-2">
-              {{ item.body }}
+          <v-alert class="">
+            <template>
+              <span :class="`headline font-weight-bold ${item.color}--text`" v-text="item.year"></span>
+            </template>
+            <div class="py-4">
+              <h3 :class="`text-h6 subtitle-2 mb-4 ${item.color}--text`">
+                {{ item.title }}
+              </h3>
+              <div class="grey--text text--lighten-2">
+                {{ item.body }}
+              </div>
             </div>
-          </div>
+          </v-alert>
         </v-timeline-item>
         <v-timeline-item :right="$vuetify.breakpoint.name == 'xs'" small color="cyan">
           <template>
