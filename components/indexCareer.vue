@@ -13,7 +13,7 @@
       <v-timeline :dense="!$vuetify.breakpoint.mdAndUp">
         <v-timeline-item v-for="(item, i) in history" :key="i" :color="item.color" :right="!$vuetify.breakpoint.mdAndUp"
           small>
-          <v-alert dense colored-border border="left" :color="`${item.color}`">
+          <v-alert dense border="left" :color="`${item.color} darken-4`">
             <template>
               <span class="headline font-weight-bold" v-text="item.year"></span>
             </template>
@@ -32,8 +32,8 @@
           <template>
             <span class="headline"></span>
           </template>
-          <div class=" alert-pointer" @click="externalLink('https://speakerdeck.com/naitoyuma3230')">
-            <v-alert color="cyan" border="left" elevation="2" colored-border icon="mdi-share-all">
+          <div class="alert-pointer" @click="externalLink('https://speakerdeck.com/naitoyuma3230')">
+            <v-alert color="cyan darken-4" border="left" elevation="2" icon="mdi-share-all">
               アウトプット用のスライド
             </v-alert>
           </div>
