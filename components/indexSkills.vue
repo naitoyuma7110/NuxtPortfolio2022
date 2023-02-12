@@ -16,9 +16,9 @@
         {{ item.name }}
       </v-btn>
     </v-btn-toggle>
-    <v-tabs-items v-model="tab" class="bg-black">
+    <v-tabs-items v-model="tab" class="black">
       <v-tab-item v-for="(skills, i) in skillSet" :key="i" class="py-0" :value="i">
-        <v-card v-for="(skill, j) in skills" :key="j" class="mx-auto py-1 mb-4 px-0 grey darken-4">
+        <v-card v-for="(skill, j) in skills" :key="j" class="mx-auto mb-10 grey darken-4" elevation="2">
           <div class="py-2 mb-2">
             <div class="d-flex ma-2">
               <v-avatar>
@@ -34,18 +34,21 @@
               </v-card-text>
             </div>
           </div>
-          <v-alert v-for="(item, k) in skill.flamework" :key="k" border="left" colored-border
-            :color="item.color + ' darken-2'" :icon="`mdi-` + item.icon" dense prominent class="my-1 ml-2 pl-1 pr-0"
-            elevation="2">
-            <v-list-item class="mb-2 px-0">
-              <div>
-                <p :class="`text-body-1 text-${item.color}`">{{ item.name }}</p>
-                <div jsutify="start" cols="10" class="grey--text text--lighten-2 text-subtitle-2">
-                  {{ item.discription }}
-                </div>
-              </div>
-            </v-list-item>
-          </v-alert>
+          <v-row class="my-4">
+            <v-col v-for="(item, k) in skill.flamework" :key="k" cols="12" md="6" class="my-0 py-0">
+              <v-alert border="left" height="100%" colored-border :color="item.color + ' darken-2'"
+                :icon="`mdi-` + item.icon" dense prominent class="ml-2 pl-1 pr-0" elevation="2">
+                <v-list-item class="mb-2 px-0">
+                  <div>
+                    <p :class="`text-body-1 text-${item.color}`">{{ item.name }}</p>
+                    <div jsutify="start" cols="10" class="grey--text text--lighten-2 text-subtitle-2">
+                      {{ item.discription }}
+                    </div>
+                  </div>
+                </v-list-item>
+              </v-alert>
+            </v-col>
+          </v-row>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -218,9 +221,5 @@ export default {
 
 .skillArea {
   height: 600px;
-}
-
-.bg-black {
-  background-color: black;
 }
 </style>

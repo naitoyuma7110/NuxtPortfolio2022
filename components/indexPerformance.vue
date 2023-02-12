@@ -8,17 +8,21 @@
         Paformance
       </template>
     </Title>
-    <v-card v-for="file in files" :key="file.title" class="mb-5">
-      <v-alert border="bottom" dense colored-border :color="file.color + ' lighten-1'">
-        <div class="mb-0 text-h6 grey--text text--lighten-3">
-          {{ file.title }}
-        </div>
-        <div class="mb-4 text-subtitle-1 grey--text text--lighten-2" v-text="file.subtitle"></div>
-        <div class="grey--text text--lighten-2">
-          {{ file.body }}
-        </div>
-      </v-alert>
-    </v-card>
+    <v-row>
+      <v-col v-for="file in files" :key="file.title" cols="12" md="6" class="h-">
+        <v-card class="mb-5" height="100%">
+          <v-alert border="bottom" height="100%" dense colored-border :color="file.color + ' lighten-1'">
+            <div class="mb-0 text-h6 grey--text text--lighten-3">
+              {{ file.title }}
+            </div>
+            <div class="mb-4 text-subtitle-1 grey--text text--lighten-2" v-text="file.subtitle"></div>
+            <div class="grey--text text--lighten-2">
+              {{ file.body }}
+            </div>
+          </v-alert>
+        </v-card>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -30,7 +34,7 @@ export default {
         {
           title: '理学療法士資格',
           subtitle: '2012',
-          body: '理学療法士は病気やケガにより身体機能が低下した方がもとの生活に復帰できるよう訓練を行う仕事です。',
+          body: '理学療法士は病気やケガにより身体機能が低下した方がもとの生活に復帰できるよう訓練を行う仕事です。筋骨格系、脳神経系、運動力学などの専門知識をもとに患者の身体に生じた障害を分析し治療します。',
           color: 'teal',
 
         },
