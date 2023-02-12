@@ -20,10 +20,12 @@
       <v-toolbar-title color="white" class="nav-title" v-text="activeTitle"></v-toolbar-title>
       <v-spacer />
       <v-toolbar-title>
-        <v-btn v-for="(item, i) in items" :key="i" dark color="blue-grey darken-4" rounded class="mx-1" small
-          :to="item.to">
+        <v-btn v-for="(item, i) in items" :key="i" :fab="$vuetify.breakpoint.name == 'xs'" dark
+          color="blue-grey darken-4" rounded class="mx-1" small :to="item.to">
           <v-icon color="mr-2">{{ item.icon }}</v-icon>
-          {{ item.title }}
+          <div v-if="!($vuetify.breakpoint.name == 'xs')">
+            {{ item.title }}
+          </div>
         </v-btn>
       </v-toolbar-title>
     </v-app-bar>
