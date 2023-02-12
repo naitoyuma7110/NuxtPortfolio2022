@@ -1,10 +1,6 @@
 <template>
   <div>
     <v-img height="14rem" lazy-src :src="path" class="rounded-0 card-back-image">
-      <v-app-bar flat color="rgba(0, 0, 0, 0)">
-        <v-toolbar-title class="text-h5 white--text">About</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-app-bar>
       <v-layout class="card-front-items" d-flex flex-column align-center>
         <v-avatar size="11rem" class="avator-border">
           <v-img alt="user" src="/img/myimg.jpg" />
