@@ -57,12 +57,16 @@
             <v-card-text class="pa-2 card-text">
               {{ work.discription }}
             </v-card-text>
-            <v-card-text class="pa-2">
-              <v-btn small text color="primary" @click="externalLink(work.url)">
+            <v-layout class="px-2 py-4 d-flex">
+              <v-btn text small color="primary" @click="externalLink(work.url)">
                 <v-icon size="1.8rem" left> mdi-vector-link </v-icon>
-                view
+                View Site
               </v-btn>
-            </v-card-text>
+              <v-spacer></v-spacer>
+              <div v-if="work.created_at" class="text--grey text-body-1">
+                作成日：{{ $dayjs(work.created_at).format('YYYY-MM-DD') }}
+              </div>
+            </v-layout>
           </v-card>
         </v-col>
       </v-row>
@@ -71,6 +75,10 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import dayjs from 'dayjs'
+dayjs.locale("ja");
+Vue.prototype.$dayjs = dayjs;
 export default {
   // ライフフック：asyncDataメソッドは、APIなどからデータを取得し、ローカルデータに格納する時に使用
   async asyncData({ $microcms }) {

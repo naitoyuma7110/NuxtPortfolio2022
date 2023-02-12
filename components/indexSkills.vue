@@ -35,7 +35,7 @@
             </div>
           </div>
           <v-alert v-for="(item, k) in skill.flamework" :key="k" border="left" colored-border
-            :color="item.color + ' darken-2'" :icon="`mdi-` + item.icon" dense prominent class="my-1 pl-1 pr-0"
+            :color="item.color + ' darken-2'" :icon="`mdi-` + item.icon" dense prominent class="my-1 ml-2 pl-1 pr-0"
             elevation="2">
             <v-list-item class="mb-2 px-0">
               <div>
