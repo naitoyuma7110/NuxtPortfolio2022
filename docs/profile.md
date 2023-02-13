@@ -7,19 +7,19 @@ IT 業界にエンジニアとして転職したのは、治療効果の定量�
 
 <div style="display:flex">
  <a style="margin:0 5px;" href="https://www.wantedly.com/id/naito_yuma">
-  <img src="https://logo.clearbit.com/wantedly.com" width="60" style="border-radius:10px" />
+  <img src="https://logo.clearbit.com/wantedly.com" width="50"  style="border-radius:10px; " />
  </a>
   <a style="margin:0 5px;" href="https://lapras.com/public/QB2AXDH">
-  <img src="https://logo.clearbit.com/lapras.com" width="60" style="border-radius:10px" />
+  <img src="https://logo.clearbit.com/lapras.com" width="50"  style="border-radius:10px; " />
  </a>
    <a style="margin:0 5px;" href="https://findy-code.io/share_profiles/2C29oSrNNElKH">
-  <img src="https://logo.clearbit.com/findy-code.io" width="60" style="border-radius:10px" />
+  <img src="https://logo.clearbit.com/findy-code.io" width="50"  style="border-radius:10px; " />
  </a>
   <a style="margin:0 5px;" href="https://portfolio.forkwell.com/@naitoyuma3230">
-  <img src="https://logo.clearbit.com/forkwell.com" width="60" style="border-radius:10px" />
+  <img src="https://logo.clearbit.com/forkwell.com" width="50"  style="border-radius:10px; " />
  </a>
   <a style="margin:0 5px;" href="https://naito-portfolio.netlify.app">
-   <img src="https://logo.clearbit.com/naito-portfolio.netlify.app" width="60" style="border-radius:10px" />
+   <img src="https://logo.clearbit.com/naito-portfolio.netlify.app" width="40"  style="border-radius:10px; " />
  </a>
 </div>
 

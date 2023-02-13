@@ -37,8 +37,8 @@
           <v-row class="my-4">
             <v-col v-for="(item, k) in skill.flamework" :key="k" cols="12" md="6" class="my-0 py-0">
               <v-alert border="left" height="100%" colored-border :color="item.color + ' darken-2'"
-                :icon="`mdi-` + item.icon" dense prominent class="ml-2 pl-1 pr-0" elevation="2">
-                <v-list-item class="mb-2 px-0">
+                :icon="`mdi-` + item.icon" dense prominent class="ml-2 pl-1 pr-2 pt-2 pb-0" elevation="2">
+                <v-list-item class="px-0">
                   <div>
                     <p :class="`text-body-1 text-${item.color}`">{{ item.name }}</p>
                     <div jsutify="start" cols="10" class="grey--text text--lighten-2 text-subtitle-2">
