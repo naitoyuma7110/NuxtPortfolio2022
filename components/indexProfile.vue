@@ -1,6 +1,7 @@
 <template>
   <div>
-    <v-img height="14rem" lazy-src :src="path" class="rounded-0 card-back-image">
+    <v-img position="center center" :height="$vuetify.breakpoint.name == 'lg' ? '20rem' : '18rem'" lazy-src
+      :src="path[random]" class="rounded-0 card-back-image">
       <v-layout class="card-front-items" d-flex flex-column align-center>
         <v-avatar size="11rem" class="avator-border">
           <v-img alt="user" src="/img/myimg.jpg" />
@@ -76,7 +77,7 @@
             </v-btn>
             <v-btn depressed color="white" :small="$vuetify.breakpoint.name == 'xs'"
               class="teal--text font-weight-bold mb-2 mr-2 pl-1"
-              @click="externalLink('https://lapras.com/public/QB2AXDH')">
+              @click="externalLink('https://lapras.com/public/naitoyuma')">
               <v-avatar :size="$vuetify.breakpoint.name == 'xs' ? '1.6rem' : '2.2rem'" class="mr-1">
                 <v-img src="https://logo.clearbit.com/lapras.com"></v-img>
               </v-avatar>
@@ -107,13 +108,24 @@
 
 <script>
 // import YoutubePlayer from './youtubePlayer.vue';
-import imgPath from '~/assets/img/gotfathe.jpg'
+import gotfather from '~/assets/img/gotfathe.jpg'
+import gattaca from '~/assets/img/gattaca.jpg'
+import granblue from '~/assets/img/granblue.jpg'
+import chinema from '~/assets/img/newchinema.jpg'
+import goofwill from '~/assets/img/goodwill.jpg'
+import greatblue from '~/assets/img/greatblue.jpg'
+
+
 export default {
-  // components: { YoutubePlayer },
   data() {
     return {
-      path: imgPath,
+      path: [gotfather, gattaca, granblue, chinema, goofwill, greatblue],
+      random: null
     };
+  },
+  created() {
+    const max = this.path.length
+    this.random = Math.floor(Math.random() * max)
   },
   methods: {
     externalLink(url) {
@@ -126,7 +138,7 @@ export default {
 .card-back-image {
   position: relative;
   overflow: visible;
-  margin-bottom: 9rem;
+  margin-bottom: 8rem;
 }
 
 .card-front-items {

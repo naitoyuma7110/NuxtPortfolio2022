@@ -11,14 +11,12 @@
 </template>
 
 <script>
-import imgPath from '~/assets/img/gotfather-nav.jpg'
 // import imgPath from '~/assets/img/leon.jpeg'
 export default {
   name: 'DefaultLayout',
   data() {
     return {
       isDarkMode: false,
-      path: imgPath,
       drawer: false,
       clipped: true,
       fixed: true,
@@ -58,13 +56,14 @@ export default {
       return activeTitle
     }
   },
-  mounted() {}
+  mounted() { }
 }
 </script>
 <style>
 .nav-title {
   text-shadow: 0.5px 0.5px 0.1px black;
 }
+
 .nav-icon {
   text-shadow: 1px 2px 1px black;
 }

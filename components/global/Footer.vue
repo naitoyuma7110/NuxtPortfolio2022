@@ -11,14 +11,11 @@
   </v-footer>
 </template>
 <script>
-import imgPath from '~/assets/img/gotfather-nav.jpg'
-// import imgPath from '~/assets/img/leon.jpeg'
 export default {
   name: 'DefaultLayout',
   data() {
     return {
       isDarkMode: false,
-      path: imgPath,
       drawer: false,
       clipped: true,
       fixed: true,
