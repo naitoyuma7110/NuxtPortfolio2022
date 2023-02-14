@@ -3,7 +3,7 @@
     <v-img position="center center" :height="$vuetify.breakpoint.name == 'lg' ? '20rem' : '18rem'" lazy-src
       :src="path[random]" class="rounded-0 card-back-image">
       <v-layout class="card-front-items" d-flex flex-column align-center>
-        <v-avatar size="11rem" class="avator-border">
+        <v-avatar :size="$vuetify.breakpoint.name == 'lg' ? '13rem' : '11rem'" class="avator-border">
           <v-img alt="user" src="/img/myimg.jpg" />
         </v-avatar>
         <h2 class="text-h5 ma-1">内藤祐馬</h2>
