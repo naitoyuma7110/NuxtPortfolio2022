@@ -76,7 +76,7 @@
               Findy
             </v-btn>
             <v-btn depressed color="white" :small="$vuetify.breakpoint.name == 'xs'"
-              class="teal--text font-weight-bold mb-2 mr-2 pl-1"
+              class="light-blue--text font-weight-bold mb-2 mr-2 pl-1"
               @click="externalLink('https://lapras.com/public/naitoyuma')">
               <v-avatar :size="$vuetify.breakpoint.name == 'xs' ? '1.6rem' : '2.2rem'" class="mr-1">
                 <v-img src="https://logo.clearbit.com/lapras.com"></v-img>
