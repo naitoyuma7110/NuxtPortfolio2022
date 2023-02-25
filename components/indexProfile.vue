@@ -68,20 +68,20 @@
           <!-- </v-card-text> -->
           <v-layout d-flex wrap mt-2>
             <v-btn depressed color="white" :small="$vuetify.breakpoint.name == 'xs'"
-              class="blue--text text--darken-3 font-weight-bold mb-2 mr-2 pl-1"
-              @click="externalLink('https://findy-code.io/share_profiles/2C29oSrNNElKH')">
-              <v-avatar :size="$vuetify.breakpoint.name == 'xs' ? '1.6rem' : '2.2rem'" class="mr-1">
-                <v-img src="https://logo.clearbit.com/findy-code.io"></v-img>
-              </v-avatar>
-              Findy
-            </v-btn>
-            <v-btn depressed color="white" :small="$vuetify.breakpoint.name == 'xs'"
               class="light-blue--text font-weight-bold mb-2 mr-2 pl-1"
               @click="externalLink('https://lapras.com/public/naitoyuma')">
               <v-avatar :size="$vuetify.breakpoint.name == 'xs' ? '1.6rem' : '2.2rem'" class="mr-1">
                 <v-img src="https://logo.clearbit.com/lapras.com"></v-img>
               </v-avatar>
               LAPRAS
+            </v-btn>
+            <v-btn depressed color="white" :small="$vuetify.breakpoint.name == 'xs'"
+              class="blue--text text--darken-3 font-weight-bold mb-2 mr-2 pl-1"
+              @click="externalLink('https://findy-code.io/share_profiles/2C29oSrNNElKH')">
+              <v-avatar :size="$vuetify.breakpoint.name == 'xs' ? '1.6rem' : '2.2rem'" class="mr-1">
+                <v-img src="https://logo.clearbit.com/findy-code.io"></v-img>
+              </v-avatar>
+              Findy
             </v-btn>
             <v-btn depressed color="white" :small="$vuetify.breakpoint.name == 'xs'"
               class="light-blue--text text--darken-3 font-weight-bold mb-2 mr-2 pl-1"

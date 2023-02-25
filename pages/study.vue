@@ -23,9 +23,9 @@
           </v-expansion-panel-header>
           <v-expansion-panel-content>
             <v-item-group active-class="text--accent-4" color="primary" mandatory column>
-              <v-btn v-for="(skill, i) in skills" :key="i" small rounded depressed
-                :outlined="selectedTag !== skill.name" :color="selectedTag === skill.name ? `${skill.color} ` : 'grey'"
-                class="mb-1" @click="selectedTag = skill.name">
+              <v-btn v-for="(skill, i) in skills" :key="i" small rounded depressed :outlined="selectedTag !== skill.name"
+                :color="selectedTag === skill.name ? `${skill.color} ` : 'grey'" class="mb-1"
+                @click="selectedTag = skill.name">
                 <v-icon size="1.2rem" :color="selectedTag !== skill.name ? skill.color : 'white'" left>
                   {{ skill.icon }}
                 </v-icon>
@@ -45,8 +45,8 @@
               {{ work.title }}
             </div>
             <div class="flex-wrap pa-2 card-skills">
-              <v-btn v-for="(item, k) in work.skills" :key="k" small rounded depressed outlined color="grey"
-                class="mb-1" @click="selectedTag = item">
+              <v-btn v-for="(item, k) in work.skills" :key="k" small rounded depressed outlined color="grey" class="mb-1"
+                @click="selectedTag = item">
                 <v-icon size="1.4rem" class="mr-1" :color="getSkillIcon(item).color"
                   left>{{ getSkillIcon(item).icon }}</v-icon>
                 <span class="grey--text text--darken-3">
@@ -191,6 +191,11 @@ export default {
           name: 'React',
           icon: 'mdi-react',
           color: '#61DBFB',
+        },
+        {
+          name: 'Typescript',
+          icon: 'mdi-language-typescript',
+          color: '#2D79C7',
         },
       ],
     }
