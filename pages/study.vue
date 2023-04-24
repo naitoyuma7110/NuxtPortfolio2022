@@ -1,12 +1,8 @@
 <template>
   <div>
     <Title>
-      <template v-slot:title>
-        勉強と制作物
-      </template>
-      <template v-slot:subtitle>
-        Study/Production
-      </template>
+      <template v-slot:title> 勉強と制作物 </template>
+      <template v-slot:subtitle> Study/Production </template>
     </Title>
 
     <div>
@@ -16,17 +12,39 @@
             <v-layout column>
               <v-layout align-center class="my-3">
                 <div>技術選択</div>
-                <v-chip v-if="selectedTag" class="ml-2" :close="selectedTag == 'All Skills' ? false : true"
-                  @click:close="selectedTag = 'All Skills'">{{ selectedTag }}</v-chip>
+                <v-chip
+                  v-if="selectedTag"
+                  class="ml-2"
+                  :close="selectedTag == 'All Skills' ? false : true"
+                  @click:close="selectedTag = 'All Skills'"
+                  >{{ selectedTag }}</v-chip
+                >
               </v-layout>
             </v-layout>
           </v-expansion-panel-header>
           <v-expansion-panel-content>
-            <v-item-group active-class="text--accent-4" color="primary" mandatory column>
-              <v-btn v-for="(skill, i) in skills" :key="i" small rounded depressed :outlined="selectedTag !== skill.name"
-                :color="selectedTag === skill.name ? `${skill.color} ` : 'grey'" class="mb-1"
-                @click="selectedTag = skill.name">
-                <v-icon size="1.2rem" :color="selectedTag !== skill.name ? skill.color : 'white'" left>
+            <v-item-group
+              active-class="text--accent-4"
+              color="primary"
+              mandatory
+              column
+            >
+              <v-btn
+                v-for="(skill, i) in skills"
+                :key="i"
+                small
+                rounded
+                depressed
+                :outlined="selectedTag !== skill.name"
+                :color="selectedTag === skill.name ? `${skill.color} ` : 'grey'"
+                class="mb-1"
+                @click="selectedTag = skill.name"
+              >
+                <v-icon
+                  size="1.2rem"
+                  :color="selectedTag !== skill.name ? skill.color : 'white'"
+                  left
+                >
                   {{ skill.icon }}
                 </v-icon>
                 <span :class="selectedTag !== skill.name ? '' : 'white--text'">
@@ -38,17 +56,44 @@
         </v-expansion-panel>
       </v-expansion-panels>
       <v-row class="mx-0 pa-0">
-        <v-col v-for="(work, i) in selectedWorks" :key="i" cols="12" sm="6" class="pa-1 my-1" lg="4">
+        <v-col
+          v-for="(work, i) in selectedWorks"
+          :key="i"
+          cols="12"
+          sm="6"
+          class="pa-1 my-1"
+          lg="4"
+        >
           <v-card class="mx-auto" rounded outlined elevation="1">
-            <v-img lazy-src position="center" width="auto" height="12rem" :src="work.thumbnail.url"></v-img>
+            <v-img
+              lazy-src
+              position="center"
+              width="auto"
+              height="12rem"
+              :src="work.thumbnail.url"
+            ></v-img>
             <div class="pa-2 text-center">
               {{ work.title }}
             </div>
             <div class="flex-wrap pa-2 card-skills">
-              <v-btn v-for="(item, k) in work.skills" :key="k" small rounded depressed outlined color="grey" class="mb-1"
-                @click="selectedTag = item">
-                <v-icon size="1.4rem" class="mr-1" :color="getSkillIcon(item).color"
-                  left>{{ getSkillIcon(item).icon }}</v-icon>
+              <v-btn
+                v-for="(item, k) in work.skills"
+                :key="k"
+                small
+                rounded
+                depressed
+                outlined
+                color="grey"
+                class="mb-1"
+                @click="selectedTag = item"
+              >
+                <v-icon
+                  size="1.4rem"
+                  class="mr-1"
+                  :color="getSkillIcon(item).color"
+                  left
+                  >{{ getSkillIcon(item).icon }}</v-icon
+                >
                 <span class="grey--text text--darken-3">
                   {{ item }}
                 </span>
@@ -64,7 +109,7 @@
               </v-btn>
               <v-spacer></v-spacer>
               <div v-if="work.created_at" class="text--grey text-body-1">
-                作成日：{{ $dayjs(work.created_at).format('YYYY-MM-DD') }}
+                作成日:{{ $dayjs(work.created_at).format('YYYY-MM-DD') }}
               </div>
             </v-layout>
           </v-card>
@@ -77,8 +122,8 @@
 <script>
 import Vue from 'vue'
 import dayjs from 'dayjs'
-dayjs.locale("ja");
-Vue.prototype.$dayjs = dayjs;
+dayjs.locale('ja')
+Vue.prototype.$dayjs = dayjs
 export default {
   // ライフフック：asyncDataメソッドは、APIなどからデータを取得し、ローカルデータに格納する時に使用
   async asyncData({ $microcms }) {
