@@ -12,9 +12,9 @@ https://naito-portfolio.netlify.app/
 - Typescript
 - nuxt-content(.mdの画面描画)
 - vueX(状態管理)  
-- MicroCMS(外部AIP):https://microcms.io/    
+- MicroCMS(外部AIP)：https://microcms.io/    
 - Vuetify(デザインフレームワーク) 
-- Netlify(デプロイ環境):https://www.netlify.com/)
+- Netlify(デプロイ環境)：https://www.netlify.com/
 
 ## 概要
 Nuxt を使用して作成したアプリや勉強内容を掲載しています。  
