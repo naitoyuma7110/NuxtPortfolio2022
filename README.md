@@ -10,10 +10,12 @@ https://naito-portfolio.netlify.app/
 ## 使用技術
 - Nuxt.js(vue2)
 - Typescript
-- nuxt-content(.mdの画面描画)
+- nuxt-content,nuxtjs/markdownit(.mdの画面描画)
 - vueX(状態管理)  
 - MicroCMS(外部AIP)：https://microcms.io/    
-- Vuetify(デザインフレームワーク) 
+- Vuetify(デザインフレームワーク)
+- stylus(cssフレームワーク)
+- vue-youtube(背景のYOUTUBE動画)
 - Netlify(デプロイ環境)：https://www.netlify.com/
 
 ## 概要
