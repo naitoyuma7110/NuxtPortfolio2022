@@ -2,7 +2,8 @@
 恥の多いポートフォリオを作ってきました。
 
 ## 概要
-URL:https://naito-portfolio.netlify.app/
+
+https://naito-portfolio.netlify.app/
 
 あまり自慢できるクオリティではないですが、自分の技術的なレベルやキャリアに対する考えを説明する時、これまでやってきた事や興味のある事をまとめました。
 
