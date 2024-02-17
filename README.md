@@ -1,14 +1,14 @@
 ## 過去のポートフォリオ(2022)
 恥の多いポートフォリオを作ってきました。
 
+デザイン能力が欠落していますがそこはご愛敬。
 https://naito-portfolio.netlify.app/
-
-あまり自慢できるクオリティではないですが、自分の技術的なレベルやキャリアに対する考えを説明する時、これまでやってきた事や興味のある事をまとめました。
 
 ## 使用技術
 - Nuxt.js(vue2)
 - Typescript
-- nuxt-content,nuxtjs/markdownit(.mdの画面描画)
+- nuxt-content(.mdファイルの描画)
+- nuxtjs/markdownit(.mdファイルの描画)
 - vueX(状態管理)  
 - MicroCMS(外部AIP)：https://microcms.io/    
 - Vuetify(デザインフレームワーク)
